@@ -7,7 +7,8 @@
     "test": "jest",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "stylelint": "stylelint src",
-    "prettier": "prettier --check \"src\""
+    "prettier": "prettier --check \"src\"",
+    "prepare": "husky install"
   },
   "license": "MIT",
   "dependencies": {
@@ -28,7 +29,9 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "husky": ">=6",
     "jest": "^27.0.6",
+    "lint-staged": ">=10",
     "prettier": "2.3.2",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0"
@@ -36,5 +39,10 @@
   "engines": {
     "node": "^14.17.3",
     "yarn": "^1.22.10"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --cache --fix",
+    "*.css": "stylelint --fix",
+    "*.{js,jsx,json,css,md}": "prettier --write"
   }
 }
