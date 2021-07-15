@@ -1,0 +1,14 @@
+.profile-pic {
+  margin: auto;
+  float: left;
+}
+
+.user {
+  margin: auto;
+  align-items: center;
+}
+
+.track progress {
+  margin: auto;
+  align-items: center;
+}
