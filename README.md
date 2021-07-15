@@ -12,4 +12,4 @@ hook, the commit will fail, and you will have to manually correct the issues.
 
 [![Greetings](https://github.com/docedson/snapit-hacktoberfest/actions/workflows/greetings.yml/badge.svg?branch=andy-ci-pipeline-integration)](https://github.com/docedson/snapit-hacktoberfest/actions/workflows/greetings.yml)
 
-[![Node CI](https://github.com/docedson/snapit-hacktoberfest/actions/workflows/actions.yml/badge.svg?branch=andy-ci-pipeline-integration)](https://github.com/docedson/snapit-hacktoberfest/actions/workflows/actions.yml)
+[![Node CI](https://github.com/docedson/snapit-hacktoberfest/actions/workflows/main.yml/badge.svg)](https://github.com/docedson/snapit-hacktoberfest/actions/workflows/main.yml)
