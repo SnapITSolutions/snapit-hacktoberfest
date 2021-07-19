@@ -1,14 +1,24 @@
 .profile-pic {
-  margin: auto;
-  float: left;
+  position: relative;
+  top: 70px;
+  left: 500px;
 }
 
 .user {
-  margin: auto;
-  align-items: center;
+  position: absolute;
+  right: 700px;
+  top: 70px;
 }
 
-.track progress {
-  margin: auto;
-  align-items: center;
+.track-progress {
+  position: relative;
+  left: 300px;
+  top: 85px;
+}
+
+.progressBar {
+  width: 30%;
+  position: relative;
+  left: 300px;
+  top: 90px;
 }
