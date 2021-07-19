@@ -3,8 +3,8 @@ import React from "react";
 const Information = () => (
   <>
     <div data-test="information-display">
-      <h2>What is HacktoberFest?</h2>
-      <p>
+      <h2 data-test="heading-display">What is HacktoberFest?</h2>
+      <p data-test="para-display">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -13,18 +13,18 @@ const Information = () => (
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum.
       </p>
-      <img src="" alt="hacktoberfest" />
+      <img data-test="image-display" src="" alt="hacktoberfest" />
     </div>
     <div>
-      <h2>When & Where</h2>
-      <p>
+      <h2 data-test="heading-display">When & Where</h2>
+      <p data-test="para-display">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </div>
     <div>
-      <h2>Come join the FUN!</h2>
-      <p>
+      <h2 data-test="heading-display">Come join the FUN!</h2>
+      <p data-test="para-display">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.{" "}
       </p>
