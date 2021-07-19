@@ -2,7 +2,7 @@ import React from "react";
 
 const Information = () => (
   <>
-    <div>
+    <div data-test="information-display">
       <h2>What is HacktoberFest?</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
