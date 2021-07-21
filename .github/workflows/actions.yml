@@ -22,13 +22,13 @@ jobs:
           yarn install
 
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: |
-          echo 'Running yarn build'
-          yarn build
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - run: |
+  #         echo 'Running yarn build'
+  #         yarn build
 
   # lint:
   #   runs-on: ubuntu-latest
