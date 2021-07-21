@@ -3,5 +3,8 @@
     "browser": true,
     "jest": true
   },
-  "extends": ["airbnb", "airbnb/hooks", "prettier"]
+  "extends": ["airbnb", "airbnb/hooks", "prettier"],
+  "rules": {
+    "import/no-unresolved": 0
+  }
 }
