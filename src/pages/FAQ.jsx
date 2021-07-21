@@ -1,5 +1,4 @@
 import React from "react";
-import AccordionList from "../components/AccordionList";
 
 const FAQ = () => (
   <div className="FAQ" data-test="FAQ-page">
