@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import Information from "../Pages/Information";
-import Profile from "../Pages/Profile";
-import FAQ from "../Pages/FAQ";
-import Registration from "../Pages/Registration";
+import Information from "../pages/Information";
+import Profile from "../pages/Profile";
+import FAQ from "../pages/FAQ";
+import Registration from "../pages/Registration";
 
 const Router = () => (
   <BrowserRouter basename="/HacktoberFest">

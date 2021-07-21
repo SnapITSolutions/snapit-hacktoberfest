@@ -2,10 +2,10 @@ import React from "react";
 import Enzyme, { shallow } from "enzyme";
 import EnzymeAdapter from "enzyme-adapter-react-16";
 import App from "./App";
-import FAQ from "./Pages/FAQ";
-import Information from "./Pages/Information";
-import Profile from "./Pages/Profile";
-import Registration from "./Pages/Registration";
+import FAQ from "./pages/FAQ";
+import Information from "./pages/Information";
+import Profile from "./pages/Profile";
+import Registration from "./pages/Registration";
 import AccordionList from "./components/AccordionList";
 import NavBar from "./components/NavBar";
 
