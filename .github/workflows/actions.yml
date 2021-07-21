@@ -13,10 +13,10 @@ jobs:
         with:
           node-version: 14.x
 
-      # - name: Build
-      #   run: |
-      #     echo 'Running yarn build'
-      #     yarn build
+      - name: Build
+        run: |
+          echo 'Running yarn build'
+          yarn build
 
       - name: Install
         run: |
@@ -39,40 +39,3 @@ jobs:
         run: |
           echo 'Yarn linting beginning'
           yarn lint
-
-  # establish:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #       with:
-  #         persist-credentials: false
-  #     - uses: actions/setup-node@v2
-  #       with:
-  #         node-version: 14.x
-
-  # install:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - run: |
-  #         echo 'Installing yarn'
-  #         yarn install
-
-
-  # build:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - run: |
-  #         echo 'Running yarn build'
-  #         yarn build
-
-  # lint:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - run: yarn lint
-
-  # test:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - run: yarn test
