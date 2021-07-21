@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => (
-  <div>
+  <div className="NavBar" data-test="component-navBar">
     <ul>
       <li>
         <Link to="/">Information</Link>
