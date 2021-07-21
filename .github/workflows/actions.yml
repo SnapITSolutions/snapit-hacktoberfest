@@ -1,9 +1,10 @@
 name: Node CI
-
 on: push
 
 jobs:
-  establish:
+
+  Job1:
+    name: Job 1 of 2
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,13 +14,51 @@ jobs:
         with:
           node-version: 14.x
 
-  install:
+      - name: Build
+        run: |
+          echo 'Running yarn build'
+          yarn build
+
+      - name: Install
+        run: |
+          echo 'Installing yarn'
+          yarn install
+
+  Job2:
+    needs: job1
+    name: Job 2 of 2
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          echo 'Installing yarn'
-          yarn install
+
+      - name: Testing
+        run: |
+          echo 'Yarn testing beginning'
+          yarn test
+
+      - name: Linting
+        run: |
+          echo 'Yarn linting beginning'
+          yarn lint
+
+  # establish:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #       with:
+  #         persist-credentials: false
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: 14.x
+
+  # install:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - run: |
+  #         echo 'Installing yarn'
+  #         yarn install
+
 
   # build:
   #   runs-on: ubuntu-latest
