@@ -8,7 +8,7 @@ import Registration from "../pages/Registration";
 
 const Router = () => (
   <BrowserRouter basename="/HacktoberFest">
-    <div className="App">
+    <div className="App NavBar">
       <NavBar />
     </div>
     <Switch>
