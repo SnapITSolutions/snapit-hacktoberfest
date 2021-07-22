@@ -33,7 +33,7 @@ test("renders FAQ page", () => {
 
 test("renders Information page", () => {
   const wrapper = shallow(<Information />);
-  const infoComponent = findByTestAttr(wrapper, "Info-page");
+  const infoComponent = findByTestAttr(wrapper, "information-display");
   expect(infoComponent.length).toBe(1);
 });
 
