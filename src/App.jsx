@@ -1,10 +1,11 @@
 import React from "react";
-import Information from "./pages/Information";
+import "./App.css";
+import Router from "./router/Router";
 
 const App = () => (
-  <>
-    <Information />
-  </>
+  <div className="App" data-test="component-app">
+    <Router />
+  </div>
 );
 
 export default App;
