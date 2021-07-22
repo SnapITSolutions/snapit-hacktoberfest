@@ -39,7 +39,7 @@
     "stylelint-config-standard": "^22.0.0"
   },
   "engines": {
-    "node": "^14.17.3",
+    "node": ">=14",
     "yarn": "^1.22.10"
   },
   "lint-staged": {
