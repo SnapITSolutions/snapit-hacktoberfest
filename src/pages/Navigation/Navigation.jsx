@@ -1,59 +1,83 @@
-import React from "react";
-// import { Link, NavLink} from 'react-router-dom';
+import React, { useState } from "react";
+import clsx from "clsx";
+import { makeStyles } from "@material-ui/core/styles";
+import Drawer from "@material-ui/core/Drawer";
+import Button from "@material-ui/core/Button";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import MenuIcon from "@material-ui/icons/Menu";
+import { useMediaQuery } from "react-responsive";
 
-const Navigation = () => (
-  <>
-    <aside className="mdc-drawer">
-      <div className="mdc-drawer__content">
-        <nav className="mdc-list">
-          <li
-            className="mdc-list-item mdc-list-item--activated"
-            aria-current="page"
-          >
-            {/* <Link to='/' className="mdc-list-item__text">Information</Link>  */}
-            <span className="mdc-list-item__ripple">??</span>
-            <i
-              className="material-icons mdc-list-item__graphic"
-              aria-hidden="true"
-            >
-              inbox
-            </i>
-            {/* <span className="mdc-list-item__text">Information</span> */}
-          </li>
-          <a className="mdc-list-item" href="https://www.google.com">
-            <span className="mdc-list-item__ripple">??</span>
-            <i
-              className="material-icons mdc-list-item__graphic"
-              aria-hidden="true"
-            >
-              send
-            </i>
-            <span className="mdc-list-item__text">Profile</span>
-          </a>
-          <a className="mdc-list-item" href="https://www.google.com">
-            <span className="mdc-list-item__ripple">??</span>
-            <i
-              className="material-icons mdc-list-item__graphic"
-              aria-hidden="true"
-            >
-              drafts
-            </i>
-            <span className="mdc-list-item__text">FAQ</span>
-          </a>
-          <a className="mdc-list-item" href="https://www.google.com">
-            <span className="mdc-list-item__ripple">??</span>
-            <i
-              className="material-icons mdc-list-item__graphic"
-              aria-hidden="true"
-            >
-              drafts
-            </i>
-            <span className="mdc-list-item__text">Registration</span>
-          </a>
-        </nav>
-      </div>
-    </aside>
-  </>
-);
+const useStyles = makeStyles({
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: "auto",
+  },
+});
 
-export default Navigation;
+export default function TemporaryDrawer() {
+  const classes = useStyles();
+  const [menu, setMenu] = useState({
+    top: false,
+    left: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (!event) {
+      return;
+    }
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setMenu({ ...menu, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <div
+      className={clsx(classes.list, {
+        [classes.fullList]: anchor === "top" || anchor === "bottom",
+      })}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List data-test="list-display">
+        {["Information", "Profile", "FAQ", "Registration"].map((text) => (
+          <ListItem button key={text}>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+    </div>
+  );
+
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 1224px)",
+  });
+
+  const anchor = isDesktopOrLaptop ? "left" : "top";
+
+  return (
+    <div data-test="navigation-display">
+      <React.Fragment key={anchor}>
+        <Button data-test="nav-button" onClick={toggleDrawer(anchor, true)}>
+          <MenuIcon />
+        </Button>
+        <Drawer
+          anchor={anchor}
+          open={menu[anchor]}
+          onClose={toggleDrawer(anchor, false)}
+        >
+          {list(anchor)}
+        </Drawer>
+      </React.Fragment>
+    </div>
+  );
+}
