@@ -1,10 +1,10 @@
 import React from "react";
-import ProfilePage from "./components/ProfilePage";
+import ProfilePage from "./pages/Profile/ProfilePage";
 
 const App = () => (
-    <div className="App">
-      <ProfilePage />
-    </div>
-  );
+  <div className="App">
+    <ProfilePage />
+  </div>
+);
 
 export default App;
