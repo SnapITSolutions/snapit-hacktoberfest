@@ -1,9 +1,10 @@
 import React from "react";
-import ProfilePage from "./pages/Profile/ProfilePage";
+import "./App.css";
+import Router from "./router/Router";
 
 const App = () => (
-  <div className="App">
-    <ProfilePage />
+  <div className="App" data-test="component-app">
+    <Router />
   </div>
 );
 
