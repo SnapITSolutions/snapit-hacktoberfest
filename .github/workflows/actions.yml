@@ -1,18 +1,30 @@
+# The name of this workflow, which will be displayed in GitHub's Actions page.
 name: Node CI
+# The name of the GitHub event that triggers the workflow.
 on:
+  # This causes the action to activate on a push to any branch.
   push:
     branches: [ '**' ]
+  # This causes the action to activate on a pull request from the master branch.
   pull_request:
     branches: [ master ]
 
+# Groups together all the jobs that run in this workflow file.
 jobs:
-  Job1:
+  # The first job
+  job1:
     name: Job 1 of 2
+    # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
     runs-on: ubuntu-latest
+    # Groups together all the steps that run in this job
     steps:
+      # Retrieves v2 of the community action named actions/checkout@v2. This
+      # checks out the repo and downloads it to the runner, allowing it to run
+      # actions against the code (such as testing tools).
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
+      # The actions/setup-node@v2 action installs the specified node version on the runner.
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
@@ -27,9 +39,14 @@ jobs:
           echo 'Installing yarn'
           yarn install
 
-  Job2:
-    needs: Job1
+  # The second job
+  job2:
+    # This makes job2 always run after job1 completes even if job1 fails.
+    if: always()
+    # This requires job1 to complete before job2 starts
+    needs: job1
     name: Job 2 of 2
+    # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
