@@ -8,6 +8,26 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
+
+const links = [
+  {
+    name: "Information",
+    endpoint: "/",
+  },
+  {
+    name: "Profile",
+    endpoint: "/profile",
+  },
+  {
+    name: "FAQ",
+    endpoint: "/faq",
+  },
+  {
+    name: "Registration",
+    endpoint: "/registration",
+  },
+];
 
 const useStyles = makeStyles({
   list: {
@@ -49,9 +69,11 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List data-test="list-display">
-        {["Information", "Profile", "FAQ", "Registration"].map((text) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
+        {links.map(({ name, endpoint }) => (
+          <ListItem button key={name}>
+            <Link to={endpoint}>
+              <ListItemText primary={name} />
+            </Link>
           </ListItem>
         ))}
       </List>

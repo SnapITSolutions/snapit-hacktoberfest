@@ -14,22 +14,19 @@
   "dependencies": {
     "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.11.2",
-    "@material/drawer": "^11.0.0",
-    "@material/list": "^11.0.0",
     "@vitejs/plugin-react-refresh": "^1.3.5",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
-    "react-router-dom": "^5.2.0",
     "clsx": "^1.1.1",
     "enzyme": "^3.11.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-responsive": "^8.2.0",
+    "react-router-dom": "^5.2.0",
     "vite": "^2.4.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
-    "enzyme-adapter-react-16": "^1.15.6",
     "babel-jest": "^27.0.6",
     "enzyme": "^3.11.0",
     "eslint": "^7.2.0",
