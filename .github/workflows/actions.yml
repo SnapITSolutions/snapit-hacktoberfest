@@ -34,10 +34,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # - name: Testing
-      #   run: |
-      #     echo 'Yarn testing beginning'
-      #     yarn test
+      - name: Testing
+        run: |
+          echo 'Yarn testing beginning'
+          yarn test
 
       - name: Linting
         run: |
