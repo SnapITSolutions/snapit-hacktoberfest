@@ -4,10 +4,13 @@
 
 Install Node Version:
 `nvm install v14.17.3`
+
 Install Yarn
 `https://classic.yarnpkg.com/en/docs/install/`
+
 Install Packages
 `yarn install`
+
 Run Application
 `yarn dev`
 
