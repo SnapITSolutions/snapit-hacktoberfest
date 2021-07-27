@@ -35,38 +35,39 @@ jobs:
         run: |
           echo 'Installing yarn'
           yarn install
+          HUSKY_SKIP_INSTALL=1
       # Builds the project
       - name: Build
         run: |
           echo 'Running yarn build'
           yarn build
 
-  # The second job - testing and lint
-  job2:
-    # This makes job2 always run after job1 completes even if job1 fails.
-    if: always()
-    # This requires job1 to complete before job2 starts, and then uses that job
-    # to proceed
-    needs: job1
-    name: Job 2 of 2
-    # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
-    runs-on: ubuntu-latest
-    steps:
-      # # This checks out the repo and downloads it to the runner, allowing it to
-      # # run actions against the code (such as testing tools).
-      # - uses: actions/checkout@v2
-      #   # By default, auth is persisted by above, these lines do not allow this
-      #   with:
-      #     persist-credentials: false
-      # # The actions/setup-node@v2 action installs the specified node version on the runner.
-      # - uses: actions/setup-node@v2
-      #   with:
-      #     node-version: 14.x
-      # # Runs the test script that is defined by package.json.
-      # - name: Testing
-      #   run: |
-      #     echo 'Yarn testing beginning'
-      #     yarn test
+  # # The second job - testing and lint
+  # job2:
+  #   # This makes job2 always run after job1 completes even if job1 fails.
+  #   if: always()
+  #   # This requires job1 to complete before job2 starts, and then uses that job
+  #   # to proceed
+  #   needs: job1
+  #   name: Job 2 of 2
+  #   # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     # This checks out the repo and downloads it to the runner, allowing it to
+  #     # run actions against the code (such as testing tools).
+  #     - uses: actions/checkout@v2
+  #       # By default, auth is persisted by above, these lines do not allow this
+  #       with:
+  #         persist-credentials: false
+  #     # The actions/setup-node@v2 action installs the specified node version on the runner.
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: 14.x
+      # Runs the test script that is defined by package.json.
+      - name: Testing
+        run: |
+          echo 'Yarn testing beginning'
+          yarn test
       # Runs the lint script that is defined by package.json.
       - name: Linting
         run: |
