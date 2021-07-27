@@ -43,7 +43,6 @@ jobs:
       - name: Create directory for Upload
         run: |
           mkdir -p artifact/lib
-          cp build/ark artifact
       - name: Upload build to use in job2
         uses: actions/upload-artifact@v2
         with:
