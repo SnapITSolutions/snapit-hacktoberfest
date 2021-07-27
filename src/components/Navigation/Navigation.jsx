@@ -38,7 +38,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TemporaryDrawer() {
+const TemporaryDrawer = () => {
   const classes = useStyles();
   const [menu, setMenu] = useState({
     top: false,
@@ -102,4 +102,6 @@ export default function TemporaryDrawer() {
       </React.Fragment>
     </div>
   );
-}
+};
+
+export default TemporaryDrawer;
