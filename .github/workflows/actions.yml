@@ -42,12 +42,12 @@ jobs:
           yarn build
       - name: Create directory for Upload
         run: |
-          mkdir -p artifact/lib
+          mkdir -p build_upload/lib
       - name: Upload build to use in job2
         uses: actions/upload-artifact@v2
         with:
           name: job1_build
-          path: artifact
+          path: build_upload
 
   # The second job - testing and lint
   job2:
@@ -63,7 +63,7 @@ jobs:
       - name: Download build from job1
         uses: actions/download-artifact@v2
         with:
-          name: job1_build
+          name: build_upload
       # Runs the test script that is defined by package.json.
       - name: Testing
         run: |
