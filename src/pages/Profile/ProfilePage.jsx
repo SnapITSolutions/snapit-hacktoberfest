@@ -1,5 +1,5 @@
 import React from "react";
-import "../../ProfilePage.css";
+import "./Profile.css";
 import Avatar from "@material-ui/core/Avatar";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
