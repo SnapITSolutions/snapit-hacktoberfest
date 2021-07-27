@@ -1,6 +1,6 @@
 # The name of this workflow, which will be displayed in GitHub's Actions page.
 name: Node CI
-# The name of the GitHub event that triggers the workflow.
+# The GitHub event that triggers the workflow.
 on:
   # This causes the action to activate on a push to any branch.
   push:
@@ -11,7 +11,7 @@ on:
 
 # Groups together all the jobs that run in this workflow file.
 jobs:
-  # The first job
+  # The first job - environment setting, installing, and building
   job1:
     name: Job 1 of 2
     # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
@@ -21,7 +21,7 @@ jobs:
       # This checks out the repo and downloads it to the runner, allowing it to
       # run actions against the code (such as testing tools).
       - uses: actions/checkout@v2
-        # By default, auth is persisted by above, these lines do not allow persisting the auth
+        # By default, auth is persisted by above, these lines do not allow this
         with:
           persist-credentials: false
       # The actions/setup-node@v2 action installs the specified node version on the runner.
@@ -30,6 +30,8 @@ jobs:
           node-version: 14.x
       # Installs the project's dependencies
       - name: Install
+        # Echo prints the process that is happening in the logs so they can be
+        # searched easier
         run: |
           echo 'Installing yarn'
           yarn install
@@ -39,26 +41,27 @@ jobs:
           echo 'Running yarn build'
           yarn build
 
-  # The second job
+  # The second job - testing and lint
   job2:
     # This makes job2 always run after job1 completes even if job1 fails.
     if: always()
-    # This requires job1 to complete before job2 starts
+    # This requires job1 to complete before job2 starts, and then uses that job
+    # to proceed
     needs: job1
     name: Job 2 of 2
     # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        # By default, auth is persisted by above, these lines do not allow this.
-        with:
-          persist-credentials: false
-
+      # - uses: actions/checkout@v2
+      #   # By default, auth is persisted by above, these lines do not allow this.
+      #   with:
+      #     persist-credentials: false
+      # Runs the test script that is defined by package.json.
       - name: Testing
         run: |
           echo 'Yarn testing beginning'
-          yarn test:ci --verbose --maxWorkers=2
-
+          yarn test
+      # Runs the lint script that is defined by package.json.
       - name: Linting
         run: |
           echo 'Yarn linting beginning'
