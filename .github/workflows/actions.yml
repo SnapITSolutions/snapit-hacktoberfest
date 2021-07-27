@@ -18,10 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     # Groups together all the steps that run in this job
     steps:
-      # Retrieves v2 of the community action named actions/checkout@v2. This
-      # checks out the repo and downloads it to the runner, allowing it to run
-      # actions against the code (such as testing tools).
+      # This checks out the repo and downloads it to the runner, allowing it to
+      # run actions against the code (such as testing tools).
       - uses: actions/checkout@v2
+        # By default, auth is persisted by above, these lines do not allow persisting the auth
         with:
           persist-credentials: false
       # The actions/setup-node@v2 action installs the specified node version on the runner.
@@ -29,15 +29,15 @@ jobs:
         with:
           node-version: 14.x
 
-      - name: Build
-        run: |
-          echo 'Running yarn build'
-          yarn build
-
       - name: Install
         run: |
           echo 'Installing yarn'
           yarn install
+          
+      - name: Build
+        run: |
+          echo 'Running yarn build'
+          yarn build
 
   # The second job
   job2:
