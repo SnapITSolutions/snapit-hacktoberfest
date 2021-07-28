@@ -1,5 +1,5 @@
 # The name of this workflow, which will be displayed in GitHub's Actions page.
-name: Node CI
+name: CI Pipeline
 # The GitHub event that triggers the workflow.
 on:
   # This causes the action to activate on a push to any branch.
