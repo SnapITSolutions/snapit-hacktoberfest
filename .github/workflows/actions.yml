@@ -32,8 +32,9 @@ jobs:
       - name: Install
         # Echo prints the process that is happening in the logs so they can be
         # searched easier
+        # Installing dependencies for a project with yarn
         run: |
-          echo 'Installing yarn'
+          echo 'Running yarn install'
           yarn install
       # Builds the project
       - name: Build
