@@ -81,9 +81,6 @@ jobs:
           yarn test
       # Runs the lint script that is defined by package.json.
       - name: Linting
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
         run: |
           echo 'Yarn linting beginning'
           yarn lint
