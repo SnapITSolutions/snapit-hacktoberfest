@@ -74,6 +74,8 @@ jobs:
       # Downloads all artifacts created in job1
       - name: Download build from job1
         uses: actions/download-artifact@v2
+      - name: Rerun yarn install
+        run: yarn install
       # Runs the test script that is defined by package.json.
       - name: Testing
         run: |
