@@ -38,7 +38,7 @@ const useStyles = makeStyles({
   },
 });
 
-const TemporaryDrawer = () => {
+const Navigation = () => {
   const classes = useStyles();
   const [menu, setMenu] = useState({
     top: false,
@@ -104,4 +104,4 @@ const TemporaryDrawer = () => {
   );
 };
 
-export default TemporaryDrawer;
+export default Navigation;
