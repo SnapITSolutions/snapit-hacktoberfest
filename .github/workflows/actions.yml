@@ -63,6 +63,8 @@ jobs:
     # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
     runs-on: ubuntu-latest
     steps:
+      # This checks out the repo and downloads it to the runner, allowing it to
+      # run actions against the code (such as testing tools).
       - uses: actions/checkout@v2
         # By default, auth is persisted by above, these lines do not allow this
         with:
@@ -74,6 +76,7 @@ jobs:
       # Downloads all artifacts created in job1
       - name: Download build from job1
         uses: actions/download-artifact@v2
+      # Need to run yarn again as jest isn't being found to run tests if not
       - name: Rerun yarn install
         run: yarn install
       # Runs the test script that is defined by package.json.
