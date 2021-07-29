@@ -1,3 +1,13 @@
 {
-  "first": "The language is English"
+  "Info.first-header": "What is HacktoberFest?",
+  "Info.second-header": "When & Where",
+  "Info.third-header": "Come join the FUN!",
+  "Registration.first-header": "Registration",
+  "Profile.first-header": "Profile",
+  "FAQ-list.header1": "Question 1",
+  "FAQ-list.header2": "Question 2",
+  "FAQ-list.header3": "Question 3",
+  "FAQ-list.header4": "Question 4",
+  "FAQ-list.header5": "Question 5",
+  "FAQ-list.header6": "Question 6"
 }
