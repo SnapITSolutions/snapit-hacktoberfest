@@ -28,6 +28,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       # Installs the project's dependencies
       - name: Install
         # Echo prints the process that is happening in the logs so they can be
