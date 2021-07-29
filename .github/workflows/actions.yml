@@ -24,22 +24,29 @@ jobs:
         # By default, auth is persisted by above, these lines do not allow this
         with:
           persist-credentials: false
+      # Creating the cache
+      - name: Cache node modules
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: cache-node-modules-${{ hashFiles('yarn.lock') }}
       # The actions/setup-node@v2 action installs the specified node version on the runner.
       - uses: actions/setup-node@v2
+        # Will only run if needed compared to the cache
+        if: steps.cache.outputs.cache-hit != 'true'
         with:
           node-version: 14.x
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       # Installs the project's dependencies
       - name: Install
+        # Yarn install will only run if needed compared to cache
+        if: steps.cache.outputs.cache-hit != 'true'
         # Echo prints the process that is happening in the logs so they can be
         # searched easier
         # Installing dependencies for a project with yarn
         run: |
           echo 'Running yarn install'
-          yarn install
+          yarn install --frozen-lockfile
       # Builds the project
       - name: Build
         run: |
@@ -48,6 +55,7 @@ jobs:
 
   # The second job - testing and lint
   job2:
+    runs-on: ubuntu-latest
     # This makes job2 always run after job1 completes even if job1 fails.
     if: always()
     # This requires job1 to complete before job2 starts, and then uses that job
@@ -55,7 +63,6 @@ jobs:
     needs: job1
     name: Testing and Lint
     # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
-    runs-on: ubuntu-latest
     steps:
       # This checks out the repo and downloads it to the runner, allowing it to
       # run actions against the code (such as testing tools).
