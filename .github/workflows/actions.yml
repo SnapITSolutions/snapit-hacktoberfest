@@ -67,8 +67,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      - name: Rerun yarn install
-        run: yarn install
       # Runs the test script that is defined by package.json.
       - name: Testing
         run: |
