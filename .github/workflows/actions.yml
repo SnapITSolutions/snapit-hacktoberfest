@@ -52,17 +52,6 @@ jobs:
         run: |
           echo 'Running yarn build'
           yarn build
-      # - name: Upload build to use in job2
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     # The name of the artifact
-      #     name: job1_build
-      #     # The path to the storage location of the artifact
-      #     path: |
-      #       dist
-      #       !dist/**/*.md
-      #     # Defines retention period for the artifact
-      #     retention-days: 5
 
   # The second job - testing and lint
   job2:
@@ -86,16 +75,6 @@ jobs:
         with:
           path: node_modules
           key: cache-node-modules-${{ hashFiles('yarn.lock') }}
-      # # The actions/setup-node@v2 action installs the specified node version on the runner.
-      # - uses: actions/setup-node@v2
-      #   with:
-      #     node-version: 14.x
-      # # Downloads all artifacts created in job1
-      # - name: Download build from job1
-      #   uses: actions/download-artifact@v2
-      # # Need to run yarn again as jest isn't being found to run tests if not
-      # - name: Rerun yarn install
-      #   run: yarn install
       # Runs the test script that is defined by package.json.
       - name: Testing
         run: |
