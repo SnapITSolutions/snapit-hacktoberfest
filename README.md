@@ -15,3 +15,4 @@ hook, the commit will fail, and you will have to manually correct the issues.
 [![Greetings](https://github.com/docedson/snapit-hacktoberfest/actions/workflows/greetings.yml/badge.svg)](https://github.com/docedson/snapit-hacktoberfest/actions/workflows/greetings.yml)
 
 [![CI Pipeline](https://github.com/docedson/snapit-hacktoberfest/actions/workflows/actions.yml/badge.svg?branch=andy-ci-pipeline-integration)](https://github.com/docedson/snapit-hacktoberfest/actions/workflows/actions.yml)
+[![CI Pipeline](https://github.com/docedson/snapit-hacktoberfest/actions/workflows/actions.yml/badge.svg?branch=main)](https://github.com/docedson/snapit-hacktoberfest/actions/workflows/actions.yml)
