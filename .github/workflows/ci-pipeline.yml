@@ -1,0 +1,87 @@
+# The name of this workflow, which will be displayed in GitHub's Actions page.
+name: CI Pipeline
+# The GitHub event that triggers the workflow.
+on:
+  # This causes the action to activate on a push to any branch.
+  push:
+    branches: [ '**' ]
+  # This causes the action to activate on a pull request from the master branch.
+  pull_request:
+    branches: [ master ]
+
+# Groups together all the jobs that run in this workflow file.
+jobs:
+  # The first job - environment setting, installing, and building
+  job1:
+    name: Environment Install and Build
+    # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
+    runs-on: ubuntu-latest
+    # Groups together all the steps that run in this job
+    steps:
+      # This checks out the repo and downloads it to the runner, allowing it to
+      # run actions against the code (such as testing tools).
+      - uses: actions/checkout@v2
+        # By default, auth is persisted by above, these lines do not allow this
+        with:
+          persist-credentials: false
+      # Creating the cache
+      - name: Cache node modules
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: cache-node-modules-${{ hashFiles('yarn.lock') }}
+      # The actions/setup-node@v2 action installs the specified node version on the runner.
+      - uses: actions/setup-node@v2
+        # Will only run if needed compared to the cache
+        if: steps.cache.outputs.cache-hit != 'true'
+        with:
+          node-version: 14.x
+      # Installs the project's dependencies
+      - name: Install
+        # Yarn install will only run if needed compared to cache
+        if: steps.cache.outputs.cache-hit != 'true'
+        # Echo prints the process that is happening in the logs so they can be
+        # searched easier
+        # Installing dependencies for a project with yarn
+        run: |
+          echo 'Running yarn install'
+          yarn install --pure-lockfile
+      # Builds the project
+      - name: Build
+        run: |
+          echo 'Running yarn build'
+          yarn build
+
+  # The second job - testing and lint
+  job2:
+    runs-on: ubuntu-latest
+    # This makes job2 always run after job1 completes even if job1 fails.
+    if: always()
+    # This requires job1 to complete before job2 starts, and then uses that job
+    # to proceed
+    needs: job1
+    name: Testing and Lint
+    # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
+    steps:
+      # This checks out the repo and downloads it to the runner, allowing it to
+      # run actions against the code (such as testing tools).
+      - uses: actions/checkout@v2
+        # By default, auth is persisted by above, these lines do not allow this
+        with:
+          persist-credentials: false
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: cache-node-modules-${{ hashFiles('yarn.lock') }}
+      # Runs the test script that is defined by package.json.
+      - name: Testing
+        run: |
+          echo 'Yarn testing beginning'
+          yarn test
+      # Runs the lint script that is defined by package.json.
+      - name: Linting
+        run: |
+          echo 'Yarn linting beginning'
+          yarn lint
