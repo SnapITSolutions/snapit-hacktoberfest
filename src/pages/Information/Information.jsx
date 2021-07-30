@@ -19,7 +19,12 @@ const Information = () => (
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum.
       </p>
-      <img data-test="image-display" src="" alt="hacktoberfest" />
+      <img
+        data-test="image-display"
+        src="https://pngimg.com/uploads/pumpkin/pumpkin_PNG86719.png"
+        alt="hacktoberfest"
+        style={{ height: "100px" }}
+      />
     </div>
     <div>
       <h2 data-test="heading-display">
