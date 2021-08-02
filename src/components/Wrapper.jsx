@@ -17,23 +17,6 @@ if (locale === "en-US") {
 }
 
 const Wrapper = ({ children }) => (
-  //     const [locale, setLocale] = useState(userLanguage);
-  //     const [messages, setMessages] = useState(English);
-
-  //     function selectLang(event) {
-  //         event.preventDefault();
-  //         const newLocale = event.target.value;
-  //         setLocale(newLocale);
-  //         console.log(newLocale)
-  //         console.log(locale);
-  //         if (newLocale === "es-US") {
-  //             setMessages(Spanish);
-  //         } else {
-  //             setMessages(English);
-  //             console.log(messages);
-  //         }
-  //     }
-  //     console.log(locale);
   <Context.Provider value={{ locale }}>
     <IntlProvider locale={locale} messages={messages}>
       {children}

@@ -9,5 +9,9 @@
   "FAQ-list.header3": "Question 3",
   "FAQ-list.header4": "Question 4",
   "FAQ-list.header5": "Question 5",
-  "FAQ-list.header6": "Question 6"
+  "FAQ-list.header6": "Question 6",
+  "information-nav": "Information",
+  "profile-nav": "Profile",
+  "faq-nav": "FAQ",
+  "registration-nav": "Registration"
 }
