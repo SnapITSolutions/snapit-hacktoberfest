@@ -9,30 +9,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useMediaQuery } from "react-responsive";
 import { Link as RouterLink } from "react-router-dom";
+import { useIntl } from "react-intl";
 import Link from "@material-ui/core/Link";
-
-const links = [
-  {
-    name: "Home",
-    endpoint: "/",
-  },
-  {
-    name: "Information",
-    endpoint: "/information",
-  },
-  {
-    name: "FAQ",
-    endpoint: "/faq",
-  },
-  {
-    name: "Login",
-    endpoint: "/login",
-  },
-  {
-    name: "Profile",
-    endpoint: "/profile",
-  },
-];
 
 const useStyles = makeStyles({
   list: {
@@ -44,6 +22,27 @@ const useStyles = makeStyles({
 });
 
 const Navigation = () => {
+  const intl = useIntl();
+
+  const links = [
+    {
+      name: intl.formatMessage({ id: "information-nav" }),
+      endpoint: "/",
+    },
+    {
+      name: intl.formatMessage({ id: "profile-nav" }),
+      endpoint: "/profile",
+    },
+    {
+      name: intl.formatMessage({ id: "faq-nav" }),
+      endpoint: "/faq",
+    },
+    {
+      name: intl.formatMessage({ id: "registration-nav" }),
+      endpoint: "/registration",
+    },
+  ];
+
   const classes = useStyles();
   const [menu, setMenu] = useState({
     top: false,
