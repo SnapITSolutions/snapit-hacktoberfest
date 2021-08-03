@@ -24,8 +24,8 @@ const links = [
     endpoint: "/faq",
   },
   {
-    name: "Registration",
-    endpoint: "/registration",
+    name: "Login",
+    endpoint: "/login",
   },
 ];
 
