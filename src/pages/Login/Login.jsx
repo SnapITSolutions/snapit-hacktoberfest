@@ -1,22 +1,22 @@
-import React, { useContext } from "react";
-import // useHistory,
-// useLocation
-"react-router-dom";
-import UserContext from "../../hooks/UserContext";
-// import PrivateRoute from "../../router/PrivateRoute";
+import React from "react";
+import { useHistory, useLocation } from "react-router-dom";
+import { useAuthContext } from "../../context/AuthContext";
 
 const Login = () => {
-  // const history = useHistory();
-  // const location = useLocation();
-  const { user, setUser } = useContext(UserContext);
+  const history = useHistory();
+  const location = useLocation();
+  const { signin } = useAuthContext();
 
-  const login = user.isAuthenticated ? setUser(user) : null;
-  // user.isAuthenticated = true;
-  //     setUser(user);
+  const { from } = location.state || { from: { pathname: "/" } };
+  const onLoginButtonClick = () => {
+    signin(() => {
+      history.replace(from);
+    });
+  };
 
   return (
     <div>
-      <button type="submit" onClick={login}>
+      <button type="button" onClick={onLoginButtonClick}>
         Login
       </button>
     </div>
