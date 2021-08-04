@@ -61,6 +61,7 @@ jobs:
 
   # The second job - testing and lint
   job2:
+    # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
     runs-on: ubuntu-latest
     # This makes job2 always run after job1 completes even if job1 fails.
     if: always()
