@@ -2,6 +2,13 @@ import React from "react";
 import { shallow } from "enzyme";
 import Navigation from "./Navigation";
 
+jest.mock("react-intl", () => ({
+  ...jest.requireActual("react-intl"),
+  useIntl: () => ({
+    formatMessage: jest.fn(),
+  }),
+}));
+
 describe("Navigation", () => {
   const setup = () => shallow(<Navigation />);
 
