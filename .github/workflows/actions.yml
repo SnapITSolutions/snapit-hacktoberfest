@@ -77,16 +77,11 @@ jobs:
         # By default, auth is persisted by above, these lines do not allow this
         with:
           persist-credentials: false
-      - name: Install Dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: |
-          cd snapit-hacktoberfest/node_modules
-          yarn install
-      # - name: Cache node modules
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: node_modules
-      #     key: cache-node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: cache-node-modules-${{ hashFiles('yarn.lock') }}
       # Runs the test script that is defined by package.json.
       - name: Testing
         run: |
