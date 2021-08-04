@@ -61,6 +61,7 @@ jobs:
 
   # The second job - testing and lint
   job2:
+    # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
     runs-on: ubuntu-latest
     # This makes job2 always run after job1 completes even if job1 fails.
     if: always()
@@ -76,11 +77,16 @@ jobs:
         # By default, auth is persisted by above, these lines do not allow this
         with:
           persist-credentials: false
-      - name: Cache node modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: cache-node-modules-${{ hashFiles('yarn.lock') }}
+      - name: Install Dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: |
+          cd app/
+          yarn install
+      # - name: Cache node modules
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: node_modules
+      #     key: cache-node-modules-${{ hashFiles('yarn.lock') }}
       # Runs the test script that is defined by package.json.
       - name: Testing
         run: |
@@ -92,44 +98,49 @@ jobs:
           echo 'Yarn linting beginning'
           yarn lint
 
-  job3:
-    runs-on: ubuntu-latest
-    name: Push Docker image to Docker Hub
-    if: always()
-    # This requires job1 and job2 to complete before job3 starts, and then uses those jobs
-    # to proceed
-    needs: [job1, job2]
-    steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
-
-      - name: Log into Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v3
-        with:
-          images: docedson69/snapit-hacktoberfest
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+# TODO: Docker and Heroku may be used in future build-outs. The following are
+# groundwork code to start and update as needed.
 
   # job3:
+  #   # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
+  #   runs-on: ubuntu-latest
+  #   name: Push Docker image to Docker Hub
+  #   if: always()
+  #   # This requires job1 and job2 to complete before job3 starts, and then uses those jobs
+  #   # to proceed
+  #   needs: [job1, job2]
+  #   steps:
+  #     - name: Check out the repo
+  #       uses: actions/checkout@v2
+  #     # Logs into Docker Hub
+  #     - name: Log into Docker Hub
+  #       uses: docker/login-action@v1
+  #       with:
+  #         username: ${{ secrets.DOCKER_USERNAME }}
+  #         password: ${{ secrets.DOCKER_PASSWORD }}
+
+  #     - name: Extract metadata (tags, labels) for Docker
+  #       id: meta
+  #       uses: docker/metadata-action@v3
+  #       with:
+  #         images: docedson69/snapit-hacktoberfest
+
+  #     - name: Build and push Docker image
+  #       uses: docker/build-push-action@v2
+  #       with:
+  #         context: .
+  #         push: true
+  #         tags: ${{ steps.meta.outputs.tags }}
+  #         labels: ${{ steps.meta.outputs.labels }}
+
+  # job4:
+  #   # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
   #   runs-on: ubuntu-latest
   #   name: Push image to Heroku
   #   if: always()
   #   # This requires job1 and job2 to complete before job3 starts, and then uses those jobs
   #   # to proceed
-  #   needs: [job1, job2]
+  #   needs: [job1, job2, job3]
   #   steps:
   #     - uses: actions/checkout@v2
   #       # By default, auth is persisted by above, these lines do not allow this
