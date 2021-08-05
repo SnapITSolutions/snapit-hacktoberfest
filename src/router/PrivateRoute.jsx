@@ -4,12 +4,9 @@ import PropTypes from "prop-types";
 import { Route, Redirect } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 
-// A wrapper for <Route> that redirects to the login
-// screen if you're not yet authenticated.
-
+// Identifies a restricted route and redirects to the login page if not authenticated.
 const PrivateRoute = ({ component, ...rest }) => {
   const { user } = useAuthContext();
-
   return (
     <Route
       {...rest}

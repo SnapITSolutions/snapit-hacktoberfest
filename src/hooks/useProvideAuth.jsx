@@ -13,7 +13,7 @@ const fakeAuth = {
 };
 
 const useProvideAuth = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({ isAuthenticated: false });
 
   const signin = () =>
     fakeAuth.signin(() => {

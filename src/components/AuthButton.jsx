@@ -6,11 +6,11 @@ const AuthButton = () => {
   const history = useHistory();
   const { user, signout } = useAuthContext();
 
-  return user ? (
+  return user.isAuthenticated ? (
     <p>
       Welcome!{" "}
       <button
-        type="submit"
+        type="button"
         onClick={() => {
           signout(() => history.push("/"));
         }}
