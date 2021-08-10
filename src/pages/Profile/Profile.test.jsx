@@ -1,12 +1,12 @@
 import React from "react";
 import { shallow } from "enzyme";
-import ProfilePage from "./ProfilePage";
+import Profile from "./Profile";
 
 const findByTestAttribute = (wrapper, val) =>
   wrapper.find(`[data-test='${val}']`);
 
-describe("ProfilePage", () => {
-  const setup = () => shallow(<ProfilePage />);
+describe("Profile", () => {
+  const setup = () => shallow(<Profile />);
 
   test("renders without error", () => {
     const wrapper = setup();

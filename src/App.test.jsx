@@ -1,21 +1,12 @@
 import React from "react";
-import Enzyme, { shallow } from "enzyme";
-import EnzymeAdapter from "enzyme-adapter-react-16";
+import { shallow } from "enzyme";
 import App from "./App";
 import FAQ from "./pages/FAQ";
 import Information from "./pages/Information";
 import Profile from "./pages/Profile";
 import Registration from "./pages/Registration";
 import AccordionList from "./components/AccordionList";
-import NavBar from "./components/NavBar";
-
-// Set up enzyme's react adapter
-Enzyme.configure({ adapter: new EnzymeAdapter() });
-
-// Factory function to create a ShallowWrapper for the App Component.
-//   @function setup
-//   @returns {ShallowWrapper}
-// const setup = () => shallow(<App />);
+import Navigation from "./components/Navigation";
 
 const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test="${val}"]`);
 
@@ -58,8 +49,8 @@ test("renders Accordion List", () => {
   expect(accordionListComponent.length).toBe(1);
 });
 
-test("renders NavBar", () => {
-  const wrapper = shallow(<NavBar />);
-  const navBarComponent = findByTestAttr(wrapper, "component-navBar");
-  expect(navBarComponent.length).toBe(1);
+test("renders Navigation", () => {
+  const wrapper = shallow(<Navigation />);
+  const navigationComponent = findByTestAttr(wrapper, "component-navigation");
+  expect(navigationComponent.length).toBe(1);
 });
