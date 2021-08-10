@@ -4,6 +4,12 @@
   left: 500px;
 }
 
+.container {
+  background-color: green;
+  width: 70%;
+  margin: 0 auto;
+}
+
 .user {
   position: absolute;
   right: 700px;
