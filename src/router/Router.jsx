@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Information from "../pages/Information";
-import Profile from "../pages/Profile";
+import Profile from "../pages/Profile/Profile";
 import FAQ from "../pages/FAQ";
 import PrivateRoute from "./PrivateRoute";
 import Login from "../pages/Login";
