@@ -1,5 +1,4 @@
 import React from "react";
-// import { FormattedMessage } from "react-intl";
 import Router from "./router/Router";
 // import { Context } from "./components/Wrapper";
 import "./App.css";
