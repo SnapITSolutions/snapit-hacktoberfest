@@ -5,6 +5,6 @@ dist-ssr
 *.local
 .idea
 .eslintcache
-# .vscode
+.vscode
 yarn-error.log
 docker-compose.yml
