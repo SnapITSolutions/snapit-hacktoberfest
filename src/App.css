@@ -16,7 +16,8 @@ h1 {
 }
 
 ul {
-  margin-top: 40px;
+  margin-top: 0;
+  padding: 0;
 }
 
 li {
@@ -29,4 +30,39 @@ li {
 
 a:link {
   text-decoration: none;
+}
+
+/* COUNTDOWN TIMER */
+
+#displayTime li {
+  background-color: rgb(103, 104, 104);
+  display: inline-block;
+  margin: auto;
+  width: 140px;
+  border: solid 2px white;
+}
+
+#numbers li {
+  font-size: 100px;
+  height: 160px;
+  padding-top: 40px;
+  border-radius: 5px;
+}
+
+ul#labels {
+  margin: 0;
+}
+
+#labels li {
+  background-color: rgb(54, 54, 54);
+  height: 40px;
+  padding-top: 20px;
+}
+
+#labels li:first-child {
+  border-top-left-radius: 7px;
+}
+
+#labels li:last-child {
+  border-top-right-radius: 7px;
 }
