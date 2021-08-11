@@ -3,21 +3,23 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Route, Redirect } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
+// import Profile from "../pages/Profile"
 
 // Identifies a restricted route and redirects to the login page if not authenticated.
-const PrivateRoute = ({ component, ...rest }) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
   const { user } = useAuthContext();
+
   return (
     <Route
       {...rest}
-      render={({ location }) =>
+      component={(props) =>
         user.isAuthenticated ? (
-          component()
+          <Component {...props} />
         ) : (
           <Redirect
             to={{
               pathname: "/login",
-              state: { from: location },
+              state: { from: props.location },
             }}
           />
         )
@@ -28,6 +30,7 @@ const PrivateRoute = ({ component, ...rest }) => {
 
 PrivateRoute.propTypes = {
   component: PropTypes.func.isRequired,
+  location: PropTypes.element.isRequired,
 };
 
 export default PrivateRoute;

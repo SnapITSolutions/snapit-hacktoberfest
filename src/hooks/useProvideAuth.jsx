@@ -15,18 +15,20 @@ const fakeAuth = {
 const useProvideAuth = () => {
   const [user, setUser] = useState({ isAuthenticated: false });
 
-  const signin = () =>
+  const signin = (callback) =>
     fakeAuth.signin(() => {
       setUser({
         isAuthenticated: true,
       });
+      callback();
     });
 
-  const signout = () =>
+  const signout = (callback) =>
     fakeAuth.signout(() => {
       setUser({
         isAuthenticated: false,
       });
+      callback();
     });
 
   return {
