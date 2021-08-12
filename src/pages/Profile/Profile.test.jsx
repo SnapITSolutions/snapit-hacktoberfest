@@ -2,32 +2,38 @@ import React from "react";
 import { shallow } from "enzyme";
 import Profile from "./Profile";
 
-const findByTestAttribute = (wrapper, val) =>
-  wrapper.find(`[data-test='${val}']`);
-
 describe("Profile", () => {
   const setup = () => shallow(<Profile />);
+
+  const findByTestAttribute = (wrapper, val) =>
+    wrapper.find(`[data-test='${val}']`);
 
   test("renders without error", () => {
     const wrapper = setup();
     expect(wrapper.exists()).toBeTruthy();
   });
 
-  test("renders profile image display", () => {
+  test("renders user's avatar", () => {
     const wrapper = setup();
-    const imageDisplay = findByTestAttribute(wrapper, "profile-image");
-    expect(imageDisplay.length).toBe(1);
+    const avatarDisplay = findByTestAttribute(wrapper, "profile-avatar");
+    expect(avatarDisplay.length).toBe(1);
   });
 
-  test("renders profile user name", () => {
+  test("renders user's name", () => {
     const wrapper = setup();
-    const imageDisplay = findByTestAttribute(wrapper, "user-name");
-    expect(imageDisplay.length).toBe(1);
+    const nameDisplay = findByTestAttribute(wrapper, "user-name");
+    expect(nameDisplay.length).toBe(1);
   });
 
-  test("renders profile progress bar", () => {
+  test("renders user's info", () => {
     const wrapper = setup();
-    const imageDisplay = findByTestAttribute(wrapper, "progress-bar");
-    expect(imageDisplay.length).toBe(1);
+    const infoDisplay = findByTestAttribute(wrapper, "user-info");
+    expect(infoDisplay.length).toBe(1);
+  });
+
+  test("renders button on profile page", () => {
+    const wrapper = setup();
+    const buttonDisplay = findByTestAttribute(wrapper, "profile-button");
+    expect(buttonDisplay.length).toBe(1);
   });
 });

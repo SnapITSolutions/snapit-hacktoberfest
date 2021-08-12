@@ -51,6 +51,6 @@ test("renders Accordion List", () => {
 
 test("renders Navigation", () => {
   const wrapper = shallow(<Navigation />);
-  const navigationComponent = findByTestAttr(wrapper, "component-navigation");
+  const navigationComponent = findByTestAttr(wrapper, "navigation-display");
   expect(navigationComponent.length).toBe(1);
 });
