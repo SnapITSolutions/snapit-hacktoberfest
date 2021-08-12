@@ -1,19 +1,32 @@
-.profile-pic {
-  position: relative;
-  top: 70px;
-  left: 500px;
-}
+/* .wrapper-profile {
+  width: 70%;
+  height: 350px;
+  background-color: purple;
+};
 
 .container {
   background-color: green;
-  width: 70%;
-  margin: 0 auto;
+  width: 90%;
+  height: 300px;
+  margin: 20vh auto;
+
+}
+
+.profile-pic {
+  width: 300px;
+  border: 5px solid orange;
+  display: inline-block;
+  top: 70px;
+  position: absolute;
+
 }
 
 .user {
-  position: absolute;
-  right: 700px;
+  background-color: brown;
+  width: 500px;
   top: 70px;
+  display: inline-block;
+  position: absolute;
 }
 
 .track-progress {
@@ -28,3 +41,5 @@
   left: 300px;
   top: 90px;
 }
+
+ */
