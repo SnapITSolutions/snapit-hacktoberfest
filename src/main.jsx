@@ -7,7 +7,6 @@ import Spanish from "./lang/es-US.json";
 import English from "./lang/en-US.json";
 
 const locale = window.navigator.userLanguage || window.navigator.language;
-// console.log(locale);
 
 let messages;
 if (locale === "en-US") {
@@ -15,12 +14,6 @@ if (locale === "en-US") {
 } else {
   messages = Spanish;
 }
-
-// const messages = {
-//   first: "This is the first message"
-// }
-
-// console.log("the language is:", language.first);
 
 ReactDOM.render(
   <React.StrictMode>
