@@ -19,7 +19,7 @@ function Profile() {
   const classes = useStyles();
 
   return (
-    <Box mt={16} mx="auto" width="70%" height={12}>
+    <Box mt={16} mx="auto" width="70%" height={12} data-test="Profile-page">
       <Paper>
         <Grid container spacing={8}>
           <Box mx={12} mb={6} mt={5}>
@@ -34,17 +34,22 @@ function Profile() {
                         src="/static/images/grid/complex.jpg"
                         width="80%"
                         height="330"
+                        data-test="profile-avatar"
                       />
                     </Grid>
                     <Grid item>
                       <Box ml="15px">
-                        <Typography gutterBottom variant="h5">
+                        <Typography
+                          gutterBottom
+                          variant="h5"
+                          data-test="user-name"
+                        >
                           Users Name
                         </Typography>
                       </Box>
                     </Grid>
                   </Grid>
-                  <Box mt="25px" mb="21px">
+                  <Box mt="25px" mb="21px" data-test="user-info">
                     <Typography variant="body2" gutterBottom align="left">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
