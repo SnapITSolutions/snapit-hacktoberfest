@@ -2,6 +2,20 @@ import React from "react";
 import { shallow } from "enzyme";
 import Login from "./Login";
 
+jest.mock("../../context/AuthContext", () => ({
+  useAuthContext: () => ({
+    signin: jest.fn(),
+  }),
+}));
+
+const mockIsAuthenticated = false;
+
+jest.mock("../../hooks/useProvideAuth", () => ({
+  useProvideAuth: () => ({
+    isAuthenticated: mockIsAuthenticated,
+  }),
+}));
+
 describe("Login", () => {
   const setup = () => shallow(<Login />);
 
@@ -13,28 +27,22 @@ describe("Login", () => {
     expect(wrapper.exists()).toBeTruthy();
   });
 
-  test("renders button", () => {
+  test("renders login display", () => {
     const wrapper = setup();
-    const loginButtonDisplay = findByTestAttribute(
-      wrapper,
-      "login-button-display"
-    );
+    const loginDisplay = findByTestAttribute(wrapper, "login-display");
+    expect(loginDisplay.length).toBe(1);
+  });
+
+  test("renders button display", () => {
+    const wrapper = setup();
+    const loginButtonDisplay = findByTestAttribute(wrapper, "login-button");
     expect(loginButtonDisplay.length).toBe(1);
   });
 
-  test("clicking button redirects to login page when not authorized", () => {
+  test("button is clicked", () => {
     const wrapper = setup();
     const button = findByTestAttribute(wrapper, "login-button");
     button.simulate("click");
-    // const listDisplay = findByTestAttribute(wrapper, "list-display");
-    // expect(listDisplay.length).toBe(1);
-  });
-
-  test("clicking button allows access to profile page when authorized", () => {
-    const wrapper = setup();
-    const button = findByTestAttribute(wrapper, "login-button");
-    button.simulate("click");
-    // const listDisplay = findByTestAttribute(wrapper, "list-display");
-    // expect(listDisplay.length).toBe(1);
+    expect(button.length).toBe(1);
   });
 });
