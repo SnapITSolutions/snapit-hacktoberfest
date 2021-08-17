@@ -12,8 +12,12 @@ import { Link } from "react-router-dom";
 
 const links = [
   {
-    name: "Information",
+    name: "Home",
     endpoint: "/",
+  },
+  {
+    name: "Information",
+    endpoint: "/information",
   },
   {
     name: "FAQ",

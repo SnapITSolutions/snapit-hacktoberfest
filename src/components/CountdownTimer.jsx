@@ -20,7 +20,6 @@ const CountdownTimer = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setUpdate((seconds) => seconds - 1);
-      // console.log('This will run every second!');
     }, 1000);
     return () => clearInterval(interval);
   }, []);
