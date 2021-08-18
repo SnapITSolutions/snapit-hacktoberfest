@@ -3,7 +3,7 @@ import Router from "./router/Router";
 
 const App = () => (
   <div className="App" data-test="component-app">
-    <Router />
+    <Router data-test="router" />
   </div>
 );
 

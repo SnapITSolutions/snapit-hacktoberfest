@@ -42,8 +42,7 @@
     "stylelint-config-standard": "^22.0.0"
   },
   "engines": {
-    "node": "^14.17.3",
-    "yarn": "^1.22.10"
+    "node": "^14.17.3"
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint --cache --fix",
