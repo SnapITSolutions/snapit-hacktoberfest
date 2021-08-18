@@ -7,3 +7,5 @@ dist-ssr
 .eslintcache
 .vscode
 yarn-error.log
+docker-compose.yml
+docker-compose.debug.yml

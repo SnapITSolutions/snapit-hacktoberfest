@@ -1,6 +1,6 @@
 .App {
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
   margin: 0 auto;
   text-align: center;
@@ -20,11 +20,11 @@ ul {
 }
 
 li {
-  list-style: none;
-  display: inline-flex;
-  width: 120px;
-  padding: 0 30px;
   color: orange;
+  display: inline-flex;
+  list-style: none;
+  padding: 0 30px;
+  width: 120px;
 }
 
 a:link {
