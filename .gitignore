@@ -8,3 +8,4 @@ dist-ssr
 .vscode
 yarn-error.log
 docker-compose.yml
+docker-compose.debug.yml
