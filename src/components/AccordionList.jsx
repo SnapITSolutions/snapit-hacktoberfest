@@ -5,7 +5,6 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { FormattedMessage } from "react-intl";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,12 +29,7 @@ export default function SimpleAccordion() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>
-            <FormattedMessage
-              id="FAQ-list.header1"
-              defaultMessage="Question 1"
-            />
-          </Typography>
+          <Typography className={classes.heading}>Accordion 1</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -50,12 +44,7 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography className={classes.heading}>
-            <FormattedMessage
-              id="FAQ-list.header2"
-              defaultMessage="Question 2"
-            />
-          </Typography>
+          <Typography className={classes.heading}>Accordion 2</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -71,12 +60,7 @@ export default function SimpleAccordion() {
           aria-controls="panel3a-content"
           id="panel3a-header"
         >
-          <Typography className={classes.heading}>
-            <FormattedMessage
-              id="FAQ-list.header3"
-              defaultMessage="Question 3"
-            />
-          </Typography>
+          <Typography className={classes.heading}>Accordion 3</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -91,12 +75,7 @@ export default function SimpleAccordion() {
           aria-controls="panel4a-content"
           id="panel4a-header"
         >
-          <Typography className={classes.heading}>
-            <FormattedMessage
-              id="FAQ-list.header4"
-              defaultMessage="Question 4"
-            />
-          </Typography>
+          <Typography className={classes.heading}>Accordion 4</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -111,12 +90,7 @@ export default function SimpleAccordion() {
           aria-controls="panel5a-content"
           id="panel5a-header"
         >
-          <Typography className={classes.heading}>
-            <FormattedMessage
-              id="FAQ-list.header5"
-              defaultMessage="Question 5"
-            />
-          </Typography>
+          <Typography className={classes.heading}>Accordion 5</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -124,6 +98,7 @@ export default function SimpleAccordion() {
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </Typography>
         </AccordionDetails>
+        git
       </Accordion>
       <Accordion>
         <AccordionSummary
@@ -131,12 +106,7 @@ export default function SimpleAccordion() {
           aria-controls="panel6a-content"
           id="panel6a-header"
         >
-          <Typography className={classes.heading}>
-            <FormattedMessage
-              id="FAQ-list.header6"
-              defaultMessage="Question 6"
-            />
-          </Typography>
+          <Typography className={classes.heading}>Accordion 6</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -145,15 +115,6 @@ export default function SimpleAccordion() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      {/* <Accordion disabled>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3a-content"
-          id="panel3a-header"
-        >
-          <Typography className={classes.heading}>Disabled Accordion</Typography>
-        </AccordionSummary>
-      </Accordion> */}
     </div>
   );
 }
