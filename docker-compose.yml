@@ -1,12 +1,13 @@
-version: '3.4'
+version: '3.7'
 
 services:
-  snapithacktoberfest:
-    image: snapithacktoberfest
+  app:
     build:
       context: .
-      dockerfile: ./Dockerfile
-    environment:
-      NODE_ENV: production
+      dockerfile: Dockerfile
+    command: sh -c "yarn dev --host"
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
     ports:
       - 3000:3000
