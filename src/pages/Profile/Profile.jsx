@@ -32,8 +32,6 @@ function Profile() {
                         className={classes.large}
                         alt="User's Name"
                         src="/static/images/grid/complex.jpg"
-                        width="80%"
-                        height="330"
                         data-test="profile-avatar"
                       />
                     </Grid>
