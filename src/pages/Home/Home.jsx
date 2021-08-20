@@ -1,5 +1,6 @@
 import React from "react";
 import CountdownTimer from "../../components/CountdownTimer";
+import "./Home.css";
 
 const Home = () => (
   <div className="Home" data-test="Home-page">
