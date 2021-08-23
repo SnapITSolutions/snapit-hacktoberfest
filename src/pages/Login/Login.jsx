@@ -44,8 +44,4 @@ const Login = () => {
   );
 };
 
-// Button.propTypes = {
-//   onClick: PropTypes.func.isRequired
-// }
-
 export default Login;
