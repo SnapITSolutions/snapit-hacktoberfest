@@ -15,3 +15,9 @@ test("renders CountdownTimer", () => {
   const countdownDisplay = findByTestAttr(wrapper, "countdown-display");
   expect(countdownDisplay.length).toBe(1);
 });
+
+test("renders CountdownTimer", () => {
+  const wrapper = shallow(<Home />);
+  const countdownDisplay = findByTestAttr(wrapper, "heading-display");
+  expect(countdownDisplay.length).toBe(1);
+});
