@@ -1,5 +1,18 @@
 /* COUNTDOWN TIMER */
 
+ul {
+  margin-top: 0;
+  padding: 0;
+}
+
+li {
+  color: orange;
+  display: inline-flex;
+  list-style: none;
+  padding: 0 30px;
+  width: 120px;
+}
+
 #displayTime li {
   background-color: rgb(103, 104, 104);
   display: inline-block;
