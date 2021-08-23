@@ -1,6 +1,5 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Button from "@material-ui/core/Button";
 import Login from "./Login";
 
 jest.mock("../../context/AuthContext", () => ({
@@ -38,14 +37,5 @@ describe("Login", () => {
     const wrapper = setup();
     const loginButtonDisplay = findByTestAttribute(wrapper, "login-button");
     expect(loginButtonDisplay.length).toBe(1);
-  });
-
-  test("should call mock function when button is clicked", () => {
-    const mockFn = jest.fn();
-    const button = shallow(
-      <Button data-test="login-button" onClick={mockFn} />
-    );
-    button.simulate("click");
-    expect(mockFn).toHaveBeenCalled();
   });
 });

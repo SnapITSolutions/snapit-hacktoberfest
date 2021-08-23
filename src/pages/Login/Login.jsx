@@ -28,6 +28,7 @@ const Login = () => {
   return (
     <div data-test="login-display">
       <Button
+        id="login-button"
         size="small"
         variant="contained"
         color="primary"
@@ -42,5 +43,9 @@ const Login = () => {
     </div>
   );
 };
+
+// Button.propTypes = {
+//   onClick: PropTypes.func.isRequired
+// }
 
 export default Login;
