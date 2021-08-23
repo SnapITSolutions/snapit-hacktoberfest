@@ -56,20 +56,22 @@ function Profile() {
                     </Typography>
                   </Box>
                 </Grid>
-                <Grid item>
-                  <ButtonBase className={classes.image}>
-                    <Button
-                      backgroundColor="primary"
-                      href="#"
-                      size="small"
-                      variant="contained"
-                      color="primary"
-                      data-test="profile-button"
-                    >
-                      Link to Users Github Account
-                    </Button>
-                  </ButtonBase>
-                </Grid>
+                <Box mx="auto">
+                  <Grid item>
+                    <ButtonBase className={classes.image}>
+                      <Button
+                        backgroundColor="primary"
+                        href="#"
+                        size="small"
+                        variant="contained"
+                        color="primary"
+                        data-test="profile-button"
+                      >
+                        Link to Users Github Account
+                      </Button>
+                    </ButtonBase>
+                  </Grid>
+                </Box>
               </Grid>
             </Grid>
           </Box>
