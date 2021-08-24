@@ -75,7 +75,7 @@ const Navigation = () => {
       <List data-test="list-display">
         {links.map(({ name, endpoint }) => (
           <ListItem button key={name}>
-            <Link to={endpoint}>
+            <Link style={{ textDecoration: "none" }} to={endpoint}>
               <ListItemText primary={name} />
             </Link>
           </ListItem>

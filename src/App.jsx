@@ -1,7 +1,6 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
 import Router from "./router/Router";
-import "./App.css";
 
 const App = () => (
   <Box
