@@ -1,6 +1,6 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
-import AccordionList from "../components/AccordionList";
+import AccordionList from "../../components/AccordionList";
 
 const FAQ = () => (
   <Box mt="40" mx="auto ">
