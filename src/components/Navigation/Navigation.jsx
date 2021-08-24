@@ -16,16 +16,16 @@ const links = [
     endpoint: "/",
   },
   {
-    name: "Profile",
-    endpoint: "/profile",
-  },
-  {
     name: "FAQ",
     endpoint: "/faq",
   },
   {
-    name: "Registration",
-    endpoint: "/registration",
+    name: "Login",
+    endpoint: "/login",
+  },
+  {
+    name: "Profile",
+    endpoint: "/profile",
   },
 ];
 

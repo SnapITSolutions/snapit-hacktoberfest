@@ -4,18 +4,22 @@ import Navigation from "../components/Navigation";
 import Information from "../pages/Information";
 import Profile from "../pages/Profile";
 import FAQ from "../pages/FAQ";
-import Registration from "../pages/Registration";
+import PrivateRoute from "./PrivateRoute";
+import Login from "../pages/Login";
+import { AuthContextProvider } from "../context/AuthContext";
 
 const Router = () => (
-  <BrowserRouter basename="/HacktoberFest">
-    <Navigation />
-    <Switch>
-      <Route path="/" exact component={Information} />
-      <Route path="/registration" component={Registration} />
-      <Route path="/profile" component={Profile} />
-      <Route path="/faq" component={FAQ} />
-    </Switch>
-  </BrowserRouter>
+  <AuthContextProvider>
+    <BrowserRouter basename="/HacktoberFest">
+      <Navigation />
+      <Switch>
+        <Route path="/" exact component={Information} />
+        <Route path="/faq" component={FAQ} />
+        <Route path="/login" component={Login} />
+        <PrivateRoute path="/profile" component={Profile} />
+      </Switch>
+    </BrowserRouter>
+  </AuthContextProvider>
 );
 
 export default Router;
