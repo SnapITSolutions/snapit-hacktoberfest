@@ -15,5 +15,5 @@ jobs:
         with:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-          repository: snapit-hacktoberbest
+          repository: snapit-hacktoberfest
           tags: latest
