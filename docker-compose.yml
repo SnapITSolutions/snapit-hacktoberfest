@@ -1,12 +1,22 @@
-version: '3.4'
+# The version of Docker Comopose being used.
+version: '3.7'
 
+# Services defines the different containers being created.
 services:
-  snapithacktoberfest:
-    image: snapithacktoberfest
+  app:
+    # Specifies the location of our Dockerfile
     build:
       context: .
-      dockerfile: ./Dockerfile
-    environment:
-      NODE_ENV: production
+      dockerfile: Dockerfile
+    # Overrides a default command.
+    command: sh -c "yarn dev --host"
+    # Volumes are shared directorys in the host visible from other containers.
+    volumes:
+      # Mapping local project folder to the app folder
+      - '.:/app'
+      # Specify this path as its own volumen to avoid copying over local Node modules
+      # to Docker.
+      - '/app/node_modules'
+    # Map ports from within the container to different locations in our localhost.
     ports:
       - 3000:3000
