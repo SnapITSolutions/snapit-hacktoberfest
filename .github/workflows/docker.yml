@@ -1,5 +1,7 @@
 name: Docker
 
+# Sets when this will kick-off. TODO: Will need to update this to merge to main
+# after refactoring/updates to this file
 on:
   push:
     branches: [ andy-ci-pipeline ]
@@ -8,13 +10,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # This action checks-out the repo so the workflow can access it
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v2
+      # This logs into DockerHub. TODO: Will need to update most of this so that
+      # it saves to GH Packages instead of DockerHub, but this is basics of it.
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
+      # Once the docker image is built its pushed to the DockerHub repo. TODO:
+      # Will need to update to push to GH Packages instead.
       - name: Build and push docker
         uses: docker/build-push-action@v2
         with:
