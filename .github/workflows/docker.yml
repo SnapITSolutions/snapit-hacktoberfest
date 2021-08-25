@@ -15,5 +15,5 @@ jobs:
         with:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-          repository: docedson69/snapit-hacktoberfest:tagname
+          repository: docedson69/snapit-hacktoberfest
           tags: latest
