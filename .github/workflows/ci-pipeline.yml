@@ -5,9 +5,9 @@ on:
   # This causes the action to activate on a push to any branch.
   push:
     branches: [ '**' ]
-  # This causes the action to activate on a pull request from the master branch.
+  # This causes the action to activate on a pull request from the main branch.
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 # Groups together all the jobs that run in this workflow file.
 jobs:
