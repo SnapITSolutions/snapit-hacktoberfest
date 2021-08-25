@@ -1,4 +1,4 @@
-# SnapIT HacktoberFest Code of Conduct
+# SnapIT HacktoberFest Code of Conduct [![SnapIT](./src/assets/images/SnapIT-logo.png)](https://www.snapit.solutions)
 
 ## Our Pledge
 
