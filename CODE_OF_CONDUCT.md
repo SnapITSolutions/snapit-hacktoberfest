@@ -1,4 +1,6 @@
-# SnapIT HacktoberFest Code of Conduct [![SnapIT](./src/assets/images/SnapIT-logo.png)](https://www.snapit.solutions)
+[![SnapIT](./src/assets/images/SnapIT-logo.png)](https://www.snapit.solutions)
+
+# SnapIT HacktoberFest Code of Conduct
 
 ## Our Pledge
 
@@ -59,8 +61,12 @@ representative at an online or offline event.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-[INSERT CONTACT METHOD].
+reported to the community leaders responsible for enforcement at:
+
+[<img alt="SnapIt Solutions | Email" height="26px" src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/951a0d011f8c832991750c16136f8e260efa60b5/svgs/regular/envelope.svg" />][email]
+[<img alt="SnapIt Solutions | LinkedIn" height="26px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
+[<img alt="SnapIt Solutions" height="26px" src="https://raw.githubusercontent.com/iconic/open-iconic/36b618fb260c245ea35dc7b19117405d31308102/svg/globe.svg" />][website]
+
 All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the
@@ -130,3 +136,6 @@ at [https://www.contributor-covenant.org/translations][translations].
 [mozilla coc]: https://github.com/mozilla/diversity
 [faq]: https://www.contributor-covenant.org/faq
 [translations]: https://www.contributor-covenant.org/translations
+[email]: mailto:hr@snapit.solutions
+[website]: https://snapit.solutions
+[linkedin]: https://www.linkedin.com/company/snapitsolutions/mycompany/
