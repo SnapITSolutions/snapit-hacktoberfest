@@ -61,7 +61,7 @@ representative at an online or offline event.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at hr@snapit.solutions.
+reported to the community leaders responsible for enforcement at [hr@snapit.solutions](hr@snapit.solutions).
 
 All complaints will be reviewed and investigated promptly and fairly.
 
