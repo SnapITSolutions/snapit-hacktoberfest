@@ -18,7 +18,7 @@ if (locale === "en-US") {
   messages = Spanish;
 }
 
-const Wrapper = ({ children }) => (
+const IntlContext = ({ children }) => (
   <Context.Provider value={{ locale }}>
     <IntlProvider locale={locale} messages={messages}>
       <App />
@@ -27,8 +27,8 @@ const Wrapper = ({ children }) => (
   </Context.Provider>
 );
 
-Wrapper.propTypes = {
+IntlContext.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-export default Wrapper;
+export default IntlContext;

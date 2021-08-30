@@ -1,4 +1,4 @@
-import { locale } from "./components/Wrapper";
+import { locale } from "./components/IntlContext";
 
 jest.mock("react-intl", () => ({
   ...jest.requireActual("react-intl"),
