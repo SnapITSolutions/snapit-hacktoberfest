@@ -2,16 +2,20 @@ import React from "react";
 import { shallow } from "enzyme";
 import App from "./App";
 
-const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test="${val}"]`);
+describe("App", () => {
+  const setup = () => shallow(<App />);
 
-test("renders without error", () => {
-  const wrapper = shallow(<App />);
-  const appComponent = findByTestAttr(wrapper, "component-app");
-  expect(appComponent.length).toBe(1);
-});
+  const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test="${val}"]`);
 
-test("renders the Router component", () => {
-  const wrapper = shallow(<App />);
-  const router = findByTestAttr(wrapper, "router");
-  expect(router.length).toBe(1);
+  test("renders without error", () => {
+    const wrapper = setup();
+    const appComponent = findByTestAttr(wrapper, "component-app");
+    expect(appComponent.length).toBe(1);
+  });
+
+  test("renders the Router component", () => {
+    const wrapper = setup();
+    const router = findByTestAttr(wrapper, "router");
+    expect(router.length).toBe(1);
+  });
 });
