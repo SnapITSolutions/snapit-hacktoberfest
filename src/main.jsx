@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Wrapper from "./components/Wrapper";
+import IntlContext from "./components/IntlContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Wrapper />
+    <IntlContext />
   </React.StrictMode>,
   document.getElementById("root")
 );
