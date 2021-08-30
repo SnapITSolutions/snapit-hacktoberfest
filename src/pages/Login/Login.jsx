@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import { useAuthContext } from "../../context/AuthContext";
-import AuthButton from "./AuthButton";
+import AuthButton from "../../components/AuthButton";
 
 const Login = () => {
   const history = useHistory();
