@@ -8,12 +8,17 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useMediaQuery } from "react-responsive";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import Link from "@material-ui/core/Link";
 
 const links = [
   {
-    name: "Information",
+    name: "Home",
     endpoint: "/",
+  },
+  {
+    name: "Information",
+    endpoint: "/information",
   },
   {
     name: "FAQ",
@@ -71,7 +76,7 @@ const Navigation = () => {
       <List data-test="list-display">
         {links.map(({ name, endpoint }) => (
           <ListItem button key={name}>
-            <Link to={endpoint}>
+            <Link component={RouterLink} to={endpoint}>
               <ListItemText primary={name} />
             </Link>
           </ListItem>
