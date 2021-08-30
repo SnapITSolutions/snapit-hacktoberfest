@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import IntlContext from "./components/IntlContext";
+import IntlContext from "./context/IntlContext";
 
 ReactDOM.render(
   <React.StrictMode>
