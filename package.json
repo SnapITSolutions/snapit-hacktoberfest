@@ -30,7 +30,6 @@
   "devDependencies": {
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
-    "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -39,7 +38,6 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
     "husky": ">=6",
-    "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.6",
     "lint-staged": ">=10",
     "prettier": "2.3.2",
