@@ -1,62 +1,30 @@
 name: Docker
 
+# Sets when this will kick-off. TODO: Will need to update this to merge to main
+# after refactoring/updates to this file
 on:
-  release:
-    types: [created]
+  push:
+    branches: [ development ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      # This action checks-out the repo so the workflow can access it
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@v2
+      # This logs into DockerHub. TODO: Will need to update most of this so that
+      # it saves to GH Packages instead of DockerHub, but this is basics of it.
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
         with:
-          node-version: 12
-      - run: yarn install --frozen-lockfile
-      - run: yarn test
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+      # Once the docker image is built its pushed to the DockerHub repo. TODO:
+      # Will need to update to push to GH Packages instead. Will also need to
+      # update the 'tags' line.
+      - name: Build and push docker
+        uses: docker/build-push-action@v2
         with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-      - run: yarn install --frozen-lockfile
-      - run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-# # Sets when this will kick-off. TODO: Will need to update this to merge to main
-# # after refactoring/updates to this file
-# on:
-#   push:
-#     branches: [ development ]
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       # This action checks-out the repo so the workflow can access it
-#       - name: 'Checkout GitHub Action'
-#         uses: actions/checkout@v2
-#       # This logs into DockerHub. TODO: Will need to update most of this so that
-#       # it saves to GH Packages instead of DockerHub, but this is basics of it.
-#       - name: Login to DockerHub
-#         uses: docker/login-action@v1
-#         with:
-#           username: ${{ secrets.REGISTRY_USERNAME }}
-#           password: ${{ secrets.REGISTRY_PASSWORD }}
-#       # Once the docker image is built its pushed to the DockerHub repo. TODO:
-#       # Will need to update to push to GH Packages instead. Will also need to
-#       # update the 'tags' line.
-#       - name: Build and push docker
-#         uses: docker/build-push-action@v2
-#         with:
-#           push: true
-#           tags: docedson69/snapit-hacktoberfest:latest
+          push: true
+          tags: docedson69/snapit-hacktoberfest:latest
