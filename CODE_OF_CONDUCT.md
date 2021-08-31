@@ -1,5 +1,3 @@
-[![SnapIT](./src/assets/images/SnapIT-logo.png)](https://www.snapit.solutions)
-
 # SnapIT HacktoberFest Code of Conduct
 
 ## Our Pledge
