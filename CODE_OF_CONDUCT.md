@@ -127,19 +127,8 @@ For answers to common questions about this code of conduct, see the FAQ at
 [https://www.contributor-covenant.org/faq][faq]. Translations are available
 at [https://www.contributor-covenant.org/translations][translations].
 
-[<img alt="SnapIt Solutions | Email" height="26px" src="https://user-images.githubusercontent.com/73480669/131162282-791e3375-bcde-45c0-95ee-c9fc0b6dcd70.png" />][email]
-[<img alt="SnapIt Solutions | LinkedIn" height="26px" src="https://user-images.githubusercontent.com/73480669/131162086-c39db1d9-ea29-4349-abbd-d40876f4d9b5.png" />][linkedin]
-[<img alt="SnapIt Solutions" height="26px" src="https://user-images.githubusercontent.com/73480669/131162944-4808ab78-eb2e-4f8d-add9-c2bec8d9d6ee.png" />][website]
-[<img alt="SnapIT Solutions" height ="26px" src="https://user-images.githubusercontent.com/73480669/131161636-60c02330-f070-41ed-8bc1-8bd704f75fd3.png" />][facebook]
-[<img alt="SnapIT Solutions" height ="26px" src="https://user-images.githubusercontent.com/73480669/131163086-436cd5ec-38ba-4fc1-8745-f9952eba2a96.png" />][instagram]
-
 [homepage]: https://www.contributor-covenant.org
 [v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
 [mozilla coc]: https://github.com/mozilla/diversity
 [faq]: https://www.contributor-covenant.org/faq
 [translations]: https://www.contributor-covenant.org/translations
-[email]: mailto:hr@snapit.solutions
-[website]: https://snapit.solutions
-[linkedin]: https://www.linkedin.com/company/snapitsolutions/mycompany/
-[facebook]: https://www.facebook.com/SnapITSolutionsLLC/
-[instagram]: https://www.instagram.com/snapitsolutions
