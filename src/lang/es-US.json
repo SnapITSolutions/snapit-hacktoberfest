@@ -13,8 +13,9 @@
   "Info.third-paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   "Profile.first-header": "Perfil",
   "Registration.first-header": "Registro",
+  "home-nav": "Casa",
   "faq-nav": "FAQ",
   "information-nav": "Información",
   "profile-nav": "Perfil",
-  "registration-nav": "Registro"
+  "login-nav": "Acceso"
 }
