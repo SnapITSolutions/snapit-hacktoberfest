@@ -8,7 +8,7 @@ import FAQ from "../pages/FAQ";
 import PrivateRoute from "./PrivateRoute";
 import Login from "../pages/Login";
 import { AuthContextProvider } from "../context/AuthContext";
-import PageNotFound from "../pages/PageNotFound/PageNotFound";
+import NotFound from "../pages/NotFound";
 
 const Router = () => (
   <AuthContextProvider>
@@ -16,11 +16,11 @@ const Router = () => (
       <Navigation />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/information" exact component={Information} />
-        <Route path="/faq" exact component={FAQ} />
-        <Route path="/login" exact component={Login} />
-        <PrivateRoute path="/profile" exact component={Profile} />
-        <Route component={PageNotFound} />
+        <Route path="/information" component={Information} />
+        <Route path="/faq" component={FAQ} />
+        <Route path="/login" component={Login} />
+        <PrivateRoute path="/profile" component={Profile} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   </AuthContextProvider>

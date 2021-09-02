@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow } from "enzyme";
-import PageNotFound from "./PageNotFound";
+import NotFound from "./NotFound";
 
 describe("notFound", () => {
-  const setup = () => shallow(<PageNotFound />);
+  const setup = () => shallow(<NotFound />);
 
   const findByTestAttribute = (wrapper, val) =>
     wrapper.find(`[data-test='${val}']`);
