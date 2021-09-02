@@ -23,6 +23,8 @@ jobs:
 
     steps:
       - name: 'Checkout repository'
+        # This checks out the repo and downloads it to the runner, allowing it to
+        # run actions against the code (such as testing tools).
         uses: actions/checkout@v2
 
       # Logs into the registry using the acct & password that will publish the
