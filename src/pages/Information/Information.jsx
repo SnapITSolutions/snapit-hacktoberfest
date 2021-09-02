@@ -18,7 +18,7 @@ const Information = () => (
       </p>
       <img
         data-test="image-display"
-        src="https://pngimg.com/uploads/pumpkin/pumpkin_PNG86719.png"
+        src="../src/assets/pumpkin_PNG86719.png"
         alt="hacktoberfest"
         style={{ height: "100px" }}
       />
