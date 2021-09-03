@@ -26,23 +26,23 @@ const Navigation = () => {
 
   const links = [
     {
-      name: intl.formatMessage({ id: "home-nav" }),
+      name: intl.formatMessage({ id: "Home-nav" }),
       endpoint: "/",
     },
     {
-      name: intl.formatMessage({ id: "information-nav" }),
+      name: intl.formatMessage({ id: "Information-nav" }),
       endpoint: "information",
     },
     {
-      name: intl.formatMessage({ id: "faq-nav" }),
+      name: intl.formatMessage({ id: "FAQ-nav" }),
       endpoint: "/faq",
     },
     {
-      name: intl.formatMessage({ id: "login-nav" }),
+      name: intl.formatMessage({ id: "Login-nav" }),
       endpoint: "/login",
     },
     {
-      name: intl.formatMessage({ id: "profile-nav" }),
+      name: intl.formatMessage({ id: "Profile-nav" }),
       endpoint: "/profile",
     },
   ];

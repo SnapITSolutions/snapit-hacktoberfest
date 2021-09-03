@@ -32,7 +32,7 @@ export default function SimpleAccordion() {
         >
           <Typography className={classes.heading}>
             <FormattedMessage
-              id="FAQ-list.header1"
+              id="FAQ-list-header1"
               defaultMessage="Question 1"
             />
           </Typography>
@@ -52,7 +52,7 @@ export default function SimpleAccordion() {
         >
           <Typography className={classes.heading}>
             <FormattedMessage
-              id="FAQ-list.header2"
+              id="FAQ-list-header2"
               defaultMessage="Question 2"
             />
           </Typography>
@@ -73,7 +73,7 @@ export default function SimpleAccordion() {
         >
           <Typography className={classes.heading}>
             <FormattedMessage
-              id="FAQ-list.header3"
+              id="FAQ-list-header3"
               defaultMessage="Question 3"
             />
           </Typography>
@@ -93,7 +93,7 @@ export default function SimpleAccordion() {
         >
           <Typography className={classes.heading}>
             <FormattedMessage
-              id="FAQ-list.header4"
+              id="FAQ-list-header4"
               defaultMessage="Question 4"
             />
           </Typography>
@@ -113,7 +113,7 @@ export default function SimpleAccordion() {
         >
           <Typography className={classes.heading}>
             <FormattedMessage
-              id="FAQ-list.header5"
+              id="FAQ-list-header5"
               defaultMessage="Question 5"
             />
           </Typography>
@@ -133,7 +133,7 @@ export default function SimpleAccordion() {
         >
           <Typography className={classes.heading}>
             <FormattedMessage
-              id="FAQ-list.header6"
+              id="FAQ-list-header6"
               defaultMessage="Question 6"
             />
           </Typography>

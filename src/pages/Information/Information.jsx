@@ -6,13 +6,13 @@ const Information = () => (
     <div data-test="information-display">
       <h2 data-test="heading-display">
         <FormattedMessage
-          id="Info.first-header"
+          id="Info-first-header"
           defaultMessage="What is HacktoberFest?"
         />
       </h2>
       <p data-test="para-display">
         <FormattedMessage
-          id="Info.first-paragraph"
+          id="Info-first-paragraph"
           defaultMessage="Lorem ipsum..."
         />
       </p>
@@ -26,13 +26,13 @@ const Information = () => (
     <div>
       <h2 data-test="heading-display">
         <FormattedMessage
-          id="Info.second-header"
+          id="Info-second-header"
           defaultMessage="When & Where"
         />
       </h2>
       <p data-test="para-display">
         <FormattedMessage
-          id="Info.second-paragraph"
+          id="Info-second-paragraph"
           defaultMessage="Lorem ipsum..."
         />
       </p>
@@ -40,13 +40,13 @@ const Information = () => (
     <div>
       <h2 data-test="heading-display">
         <FormattedMessage
-          id="Info.third-header"
+          id="Info-third-header"
           defaultMessage="Come join the FUN!"
         />
       </h2>
       <p data-test="para-display">
         <FormattedMessage
-          id="Info.third-paragraph"
+          id="Info-third-paragraph"
           defaultMessage="Lorem ipsum..."
         />
       </p>
