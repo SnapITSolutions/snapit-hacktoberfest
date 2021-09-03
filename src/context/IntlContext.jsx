@@ -1,34 +1,21 @@
 import React, { createContext } from "react";
-import PropTypes from "prop-types";
 import { IntlProvider } from "react-intl";
-import App from "../App";
-import Spanish from "../lang/es-US.json";
-import English from "../lang/en-US.json";
+import PropTypes from "prop-types";
+import useLocale from "../hooks/useLocale";
 
-export const { Provider, Consumer } = createContext();
+const IntlContext = createContext();
 
-// detect the language preference of the user's browser
-export const locale =
-  window.navigator.userLanguage || window.navigator.language;
-
-let messages;
-if (locale === "en-US") {
-  messages = English;
-} else {
-  messages = Spanish;
-}
-
-const IntlContext = ({ children }) => (
-  <Provider value={{ locale }}>
+const IntlContextProvider = ({ children }) => {
+  const { locale, messages } = useLocale();
+  return (
     <IntlProvider locale={locale} messages={messages}>
-      <App />
+      {children}
     </IntlProvider>
-    {children}
-  </Provider>
-);
+  );
+};
 
-IntlContext.propTypes = {
+IntlContextProvider.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-export default IntlContext;
+export { IntlContext, IntlContextProvider };
