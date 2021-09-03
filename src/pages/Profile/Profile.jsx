@@ -1,12 +1,10 @@
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import ButtonBase from "@material-ui/core/ButtonBase";
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -56,22 +54,6 @@ function Profile() {
                     </Typography>
                   </Box>
                 </Grid>
-                <Box mx="auto">
-                  <Grid item>
-                    <ButtonBase className={classes.image}>
-                      <Button
-                        backgroundColor="primary"
-                        href="#"
-                        size="small"
-                        variant="contained"
-                        color="primary"
-                        data-test="profile-button"
-                      >
-                        Link to Users Github Account
-                      </Button>
-                    </ButtonBase>
-                  </Grid>
-                </Box>
               </Grid>
             </Grid>
           </Box>
