@@ -123,6 +123,12 @@ const Navigation = () => {
           open={menu[anchor]}
           onClose={toggleDrawer(anchor, false)}
         >
+          <Avatar
+            className={classes.small}
+            alt="User's Name"
+            src="/static/images/avatar/1.jpg"
+            data-test="navigation-avatar"
+          />
           {list(anchor)}
         </Drawer>
       </React.Fragment>
