@@ -5,9 +5,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { useAuthContext } from "../../contexts/AuthContext";
 import AuthButton from "../../components/AuthButton";
 
-const Login = () => {
-  const history = useHistory();
-  const { signin } = useAuthContext();
+const Login = () => <AuthButton />;
 
   const onLoginButtonClick = () => {
     signin(() => {
