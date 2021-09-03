@@ -1,10 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import Button from "@material-ui/core/Button";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import { makeStyles } from "@material-ui/core/styles";
+import Button from "@mui/material/Button";
+import GitHubIcon from "@mui/icons/GitHub";
 import { useAuthContext } from "../../contexts/AuthContext";
-// import { onLoginButtonClick } from "../../pages/Login"
 
 const AuthButton = () => {
   const history = useHistory();
