@@ -16,6 +16,7 @@ import {
   Toolbar,
 } from "@mui/material";
 import logo from "../../assets/SnapIT-logo.svg";
+import AvatarMenu from "../AvatarMenu";
 
 const Navigation = () => {
   const intl = useIntl();
@@ -123,12 +124,7 @@ const Navigation = () => {
           open={menu[anchor]}
           onClose={toggleDrawer(anchor, false)}
         >
-          <Avatar
-            className={classes.small}
-            alt="User's Name"
-            src="/static/images/avatar/1.jpg"
-            data-test="navigation-avatar"
-          />
+          <AvatarMenu />
           {list(anchor)}
         </Drawer>
       </React.Fragment>
