@@ -1,11 +1,11 @@
-import React from "react";
+import React, { createContext } from "react";
 import PropTypes from "prop-types";
 import { IntlProvider } from "react-intl";
 import App from "../App";
 import Spanish from "../lang/es-US.json";
 import English from "../lang/en-US.json";
 
-export const Context = React.createContext();
+export const { Provider, Consumer } = createContext();
 
 // detect the language preference of the user's browser
 export const locale =
@@ -19,12 +19,12 @@ if (locale === "en-US") {
 }
 
 const IntlContext = ({ children }) => (
-  <Context.Provider value={{ locale }}>
+  <Provider value={{ locale }}>
     <IntlProvider locale={locale} messages={messages}>
       <App />
     </IntlProvider>
     {children}
-  </Context.Provider>
+  </Provider>
 );
 
 IntlContext.propTypes = {
