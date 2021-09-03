@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import IntlContext from "./context/IntlContext";
+import App from "./App";
+import { IntlContextProvider } from "./context/IntlContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <IntlContext />
+    <IntlContextProvider>
+      <App />
+    </IntlContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
