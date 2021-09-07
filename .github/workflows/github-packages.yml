@@ -1,10 +1,9 @@
 name: GitHub Packages
 
-# Configures to run this workflow when pushed to the branch 'development'.
-# TODO: Will need to update this to run when pushed/merged with master.
+# Configures to run this workflow when pushed to the branch 'main'.
 on:
   push:
-    branches: ['development']
+    branches: ['main']
 
 # Defines variables for the workflow. Used for the Container registry domain & a
 # name for the Docker image that is built.
