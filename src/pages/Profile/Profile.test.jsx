@@ -30,10 +30,4 @@ describe("Profile", () => {
     const infoDisplay = findByTestAttribute(wrapper, "user-info");
     expect(infoDisplay.length).toBe(1);
   });
-
-  test("renders button on profile page", () => {
-    const wrapper = setup();
-    const buttonDisplay = findByTestAttribute(wrapper, "profile-button");
-    expect(buttonDisplay.length).toBe(1);
-  });
 });
