@@ -30,13 +30,13 @@ const AuthButton = () => {
   ) : (
     <>
       <p>You are not logged in.</p>
-      <div data-test="login-display">
+      <div data-test="auth-display">
         <Button
-          id="login-button"
+          id="auth-button"
           size="small"
           variant="contained"
           color="primary"
-          data-test="login-button"
+          data-test="auth-button"
           className={classes.button}
           startIcon={<GitHubIcon />}
           onClick={onLoginButtonClick}
