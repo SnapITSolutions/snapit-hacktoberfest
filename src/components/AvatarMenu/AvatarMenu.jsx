@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(8),
   },
   root: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundcolor: theme.palette.background.paper,
   },
 }));
 
@@ -28,7 +28,7 @@ const AvatarMenu = () => {
   const { signout } = useAuthContext();
 
   const handleClickListItem = (event) => {
-    setAnchorEl(event);
+    setAnchorEl(event.target);
   };
 
   const handleMenuItemClick = (index) => {

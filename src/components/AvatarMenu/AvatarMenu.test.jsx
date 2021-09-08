@@ -4,7 +4,7 @@ import AvatarMenu from "./AvatarMenu";
 
 jest.mock("../../context/AuthContext", () => ({
   useAuthContext: () => ({
-    signin: jest.fn(),
+    signout: jest.fn(),
   }),
 }));
 
@@ -36,7 +36,7 @@ describe("AvatarMenu", () => {
   test("clicking button displays avatar menu", () => {
     const wrapper = setup();
     const button = findByTestAttribute(wrapper, "avatar-button");
-    button.simulate("click");
+    button.simulate("click", new Event("click"));
     const menuDisplay = findByTestAttribute(wrapper, "menu-display");
     expect(menuDisplay.length).toBe(1);
   });
