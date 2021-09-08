@@ -2,6 +2,20 @@ import React from "react";
 import { shallow } from "enzyme";
 import AvatarMenu from "./AvatarMenu";
 
+jest.mock("../../context/AuthContext", () => ({
+  useAuthContext: () => ({
+    signin: jest.fn(),
+  }),
+}));
+
+const mockIsAuthenticated = false;
+
+jest.mock("../../hooks/useProvideAuth", () => ({
+  useProvideAuth: () => ({
+    isAuthenticated: mockIsAuthenticated,
+  }),
+}));
+
 describe("AvatarMenu", () => {
   const setup = () => shallow(<AvatarMenu />);
 

@@ -3,8 +3,6 @@ import { useHistory } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
-// import ListItem from "@material-ui/core/ListItem";
-// import ListItemText from "@material-ui/core/ListItemText";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { useAuthContext } from "../../context/AuthContext";
@@ -30,10 +28,10 @@ const AvatarMenu = () => {
   const { signout } = useAuthContext();
 
   const handleClickListItem = (event) => {
-    setAnchorEl(event.target);
+    setAnchorEl(event);
   };
 
-  const handleMenuItemClick = (event, index) => {
+  const handleMenuItemClick = (index) => {
     setSelectedIndex(index);
     setAnchorEl(null);
     signout(() => {
@@ -57,16 +55,6 @@ const AvatarMenu = () => {
       />
       <div className={classes.root}>
         <List component="nav" aria-label="Device settings" />
-        {/* <ListItem
-            // button
-            aria-haspopup="true"
-            aria-controls="lock-menu"
-            // aria-label="when device is locked"
-            // onClick={handleClickListItem}
-            >
-            {/* <ListItemText primary="When device is locked" secondary={options[selectedIndex]} /> */}
-        {/* </ListItem>  */}
-        {/* </List> */}
         <Menu
           id="lock-menu"
           anchorEl={anchorEl}
