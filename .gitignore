@@ -9,3 +9,4 @@ dist-ssr
 yarn-error.log
 docker-compose.yml
 docker-compose.debug.yml
+package-lock.json
