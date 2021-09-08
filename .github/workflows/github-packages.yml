@@ -3,7 +3,7 @@ name: GitHub Packages
 # Configures to run this workflow when pushed to the branch 'main'.
 on:
   push:
-    branches: ['main']
+    branches: ['testing_package_branch']
 
 # Defines variables for the workflow. Used for the Container registry domain & a
 # name for the Docker image that is built.
