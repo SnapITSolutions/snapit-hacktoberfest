@@ -33,6 +33,12 @@ describe("AvatarMenu", () => {
     expect(avatarDisplay.length).toBe(1);
   });
 
+  test("renders username display", () => {
+    const wrapper = setup();
+    const usernameDisplay = findByTestAttribute(wrapper, "username-display");
+    expect(usernameDisplay.length).toBe(1);
+  });
+
   test("clicking button displays avatar menu", () => {
     const wrapper = setup();
     const button = findByTestAttribute(wrapper, "avatar-button");

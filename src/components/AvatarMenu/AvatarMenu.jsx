@@ -44,35 +44,38 @@ const AvatarMenu = () => {
   };
 
   return (
-    <div data-test="avatar-display">
-      <Avatar
-        className={classes.small}
-        alt="User's Name"
-        src="/static/images/avatar/1.jpg"
-        button="true"
-        onClick={handleClickListItem}
-        data-test="avatar-button"
-      />
-      <div className={classes.root}>
-        <List component="nav" aria-label="Device settings" />
-        <Menu
-          id="lock-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-          data-test="menu-display"
-        >
-          {options.map((option, index) => (
-            <MenuItem
-              key={option}
-              selected={index === selectedIndex}
-              onClick={(event) => handleMenuItemClick(event, index)}
-            >
-              {option}
-            </MenuItem>
-          ))}
-        </Menu>
+    <div>
+      <div data-test="avatar-display">
+        <Avatar
+          className={classes.small}
+          alt="User's Name"
+          src="/static/images/avatar/1.jpg"
+          button="true"
+          onClick={handleClickListItem}
+          data-test="avatar-button"
+        />
+        <h3 data-test="username-display">Username</h3>
+        <div className={classes.root}>
+          <List component="nav" aria-label="Device settings" />
+          <Menu
+            id="lock-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            data-test="menu-display"
+          >
+            {options.map((option, index) => (
+              <MenuItem
+                key={option}
+                selected={index === selectedIndex}
+                onClick={(event) => handleMenuItemClick(event, index)}
+              >
+                {option}
+              </MenuItem>
+            ))}
+          </Menu>
+        </div>
       </div>
     </div>
   );
