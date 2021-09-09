@@ -4683,6 +4683,11 @@ p-try@^2.0.0:
   resolved "https://registry.npmjs.org/p-try/-/p-try-2.2.0.tgz"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
+package-1@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/package-1/-/package-1-1.0.1.tgz#df9703398521272303a0811b62cbebbfbf680d8d"
+  integrity sha1-35cDOYUhJyMDoIEbYsvrv79oDY0=
+
 parent-module@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/parent-module/-/parent-module-1.0.1.tgz"
