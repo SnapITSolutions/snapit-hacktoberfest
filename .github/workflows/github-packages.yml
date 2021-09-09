@@ -1,9 +1,10 @@
 name: GitHub Packages
 
-# Configures to run this workflow when pushed to the branch 'main'.
+# Configures to run this workflow when pushed to the branch 'development'. TODO: Update this to main
+# when ready.
 on:
   push:
-    branches: ['main']
+    branches: ['development']
 
 # Defines variables for the workflow. Used for the Container registry domain & a
 # name for the Docker image that is built.
@@ -57,3 +58,49 @@ jobs:
           # Adds the tags and labels from the 'meta' step above.
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Create file 'RUN_HEROKU_DEPLOY.TXT' and write 'true' into it
+        run: echo 'true' > RUN_HEROKU_DEPLOY.TXT
+
+      - name: Upload file 'RUN_HEROKU_DEPLOY.TXT' as an artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: pass_file
+          path: RUN_HEROKU_DEPLOY.TXT
+
+  # The second job - Deploying to Heroku
+  heroku-deploy:
+    # This requires build-and-push-image job to complete before heroku-deploy
+    # job starts, and then uses that job to proceed
+    needs: build-and-push-image
+    # This makes job2 always run after job1 completes even if job1 fails.
+    if: always()
+    # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download file 'RUN_HEROKU_DEPLOY.TXT' as an artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: pass_file
+
+      - name: Read file 'RUN_HEROKU_DEPLOY.TXT' and set output parameters
+        id: set_output
+        run: echo "::set-output name=RUN_HEROKU_DEPLOY::$(<pass_file/RUN_HEROKU_DEPLOY.TXT)"
+
+      - name: Run steps of heroku-deploy
+        if: steps.set_output.outputs.RUN_HEROKU_DEPLOY == 'true'
+        run: echo "Continuing steps of heroku_deploy"
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+
+
+
+
