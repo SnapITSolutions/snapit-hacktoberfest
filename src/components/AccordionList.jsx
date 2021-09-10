@@ -32,6 +32,7 @@ export default function SimpleAccordion() {
         >
           <Typography className={classes.heading}>
             <FormattedMessage
+              data-test="AccordionList-question"
               id="FAQ-list-header1"
               defaultMessage="Question 1"
             />

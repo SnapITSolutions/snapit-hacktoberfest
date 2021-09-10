@@ -78,7 +78,7 @@ const Navigation = () => {
     >
       <List data-test="list-display">
         {links.map(({ name, endpoint }) => (
-          <ListItem button key={name}>
+          <ListItem button key={name} data-test="link-name">
             <Link component={RouterLink} to={endpoint}>
               <ListItemText primary={name} />
             </Link>
