@@ -3,13 +3,18 @@ import English from "../lang/en-US.json";
 
 // detect the language preference of the user's browser
 const useLocale = () => {
-  const locale = window.navigator.userLanguage || window.navigator.language;
+  const locale = navigator.language;
 
   let messages;
-  if (locale === "en-US") {
-    messages = English;
-  } else {
-    messages = Spanish;
+  switch (locale) {
+    case "en-US":
+      messages = English;
+      break;
+    case "es-US":
+      messages = Spanish;
+      break;
+    default:
+      messages = English;
   }
   return { locale, messages };
 };
