@@ -8,7 +8,8 @@
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "stylelint": "stylelint src",
     "prettier": "prettier --check \"src\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "node app.js"
   },
   "license": "MIT",
   "dependencies": {
