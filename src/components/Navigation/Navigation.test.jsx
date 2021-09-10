@@ -9,42 +9,6 @@ jest.mock("react-intl", () => ({
   }),
 }));
 
-// describe("Navigation", () => {
-//   const setup = () => shallowWithIntl(<Navigation />);
-// const findByTestAttribute = (wrapper, val) => wrapper.find(`[data-test='${val}']`);
-
-//   test("contains the text `Home`", () => {
-//     const wrapper = setup();
-//     const navListLink = findByTestAttribute(wrapper, "link-name");
-//     expect(navListLink.text()).at(0).toBe("Home");
-//   });
-// });
-
-// test("contains the text `Home`", () => {
-//   const wrapper = setup();
-//   // const navListLink = findByTestAttribute(wrapper.dive(), "link-name");
-//     // expect(List.text()).at(0).toBe("Home");
-//     // expect(wrapper.find(List).containsMatchingElement(<ListItemText><formatMessage id="Home-nav" /></ListItemText>)).toBe(true
-//     expect(wrapper.find(List).dive().find(ListItem).text()).toBe("Home");
-
-//   });
-// });
-
-// test("contains the text `Home`", () => {
-//   expect(List.contains("Home").toBe(true));
-// });
-
-// const users = [{id: 1, name: 'Hugo'}, {id: 2, name: 'Francesco'}];
-
-// test('we should have ids 1 and 2', () => {
-//   expect(users).toEqual(
-//     expect.arrayContaining([
-//       expect.objectContaining({id: 1}),
-//       expect.objectContaining({id: 2})
-//     ])
-//   );
-// });
-
 describe("Navigation", () => {
   const setup = () => shallowWithIntl(<Navigation />);
   const findByTestAttribute = (wrapper, val) =>
