@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FormattedMessage } from "react-intl";
 
 const CountdownTimer = () => {
   const [, setUpdate] = useState(0);
@@ -28,10 +29,30 @@ const CountdownTimer = () => {
     <div className="CountDownTimer">
       <div id="displayTime">
         <ul id="labels">
-          <li>DAYS</li>
-          <li>HOURS</li>
-          <li>MINUTES</li>
-          <li>SECONDS</li>
+          <li data-test="list-item">
+            <FormattedMessage
+              id="Countdown-first-list-item"
+              defaultMessage="DAYS"
+            />
+          </li>
+          <li data-test="list-item">
+            <FormattedMessage
+              id="Countdown-second-list-item"
+              defaultMessage="HOURS"
+            />
+          </li>
+          <li data-test="list-item">
+            <FormattedMessage
+              id="Countdown-third-list-item"
+              defaultMessage="MINUTES"
+            />
+          </li>
+          <li data-test="list-item">
+            <FormattedMessage
+              id="Countdown-fourth-list-item"
+              defaultMessage="SECONDS"
+            />
+          </li>
         </ul>
         <ul id="numbers">
           <li className="Display">{d} </li>
