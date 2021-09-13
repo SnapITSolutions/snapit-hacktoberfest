@@ -13,7 +13,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  # The first job - Build and push images
+  # The first job - Build and push images.
   build-and-push-image:
     # Set the job to run on the latest ubuntu version.
     runs-on: ubuntu-latest
