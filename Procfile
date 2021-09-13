@@ -1,1 +1,1 @@
-web: bundle exec thin start -p $PORT
+worker: yarn dev --bind :$PORT
