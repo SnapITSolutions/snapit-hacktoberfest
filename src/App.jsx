@@ -5,10 +5,14 @@ import Router from "./router/Router";
 import useLocale from "./hooks/useLocale";
 
 const App = () => {
-  const { locale, messages } = useLocale();
+  const { locale, messages, defaultLanguage } = useLocale();
 
   return (
-    <IntlProvider locale={locale} messages={messages}>
+    <IntlProvider
+      locale={locale}
+      messages={messages}
+      defaultLanguage={defaultLanguage}
+    >
       <Box
         mx="auto"
         display="flex"
