@@ -9,7 +9,7 @@
     "stylelint": "stylelint src",
     "prettier": "prettier --check \"src\"",
     "prepare": "husky install",
-    "start": "node server.js"
+    "start": "vue-cli-service serve"
   },
   "license": "MIT",
   "dependencies": {
