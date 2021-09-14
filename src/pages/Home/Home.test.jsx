@@ -1,9 +1,9 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mountWithIntl } from "../../utils/intl-enzyme-test-helper";
 import Home from "./Home";
 
 describe("Home", () => {
-  const setup = () => shallow(<Home />);
+  const setup = () => mountWithIntl(<Home />);
 
   const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test='${val}']`);
 
@@ -19,9 +19,14 @@ describe("Home", () => {
     expect(countdownDisplay.length).toBe(1);
   });
 
-  test("renders CountdownTimer", () => {
+  describe("heading-display", () => {
     const wrapper = setup();
-    const countdownDisplay = findByTestAttr(wrapper, "heading-display");
-    expect(countdownDisplay.length).toBe(1);
+    const headingDisplay = findByTestAttr(wrapper, "heading-display");
+    test("contains the text `SnapIt Hacktoberfest Starts In:`", () => {
+      expect(headingDisplay.text()).toBe("SnapIT Hacktoberfest Starts In:");
+    });
+    test("renders page header", () => {
+      expect(headingDisplay.length).toBe(1);
+    });
   });
 });

@@ -1,9 +1,9 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mountWithIntl } from "../../utils/intl-enzyme-test-helper";
 import FAQ from "./FAQ";
 
 describe("FAQ", () => {
-  const setup = () => shallow(<FAQ />);
+  const setup = () => mountWithIntl(<FAQ />);
 
   const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test='${val}']`);
 
@@ -15,13 +15,13 @@ describe("FAQ", () => {
 
   test("renders FAQ Accordion list", () => {
     const wrapper = setup();
-    const countdownDisplay = findByTestAttr(wrapper, "FAQ-list");
-    expect(countdownDisplay.length).toBe(1);
+    const FAQList = findByTestAttr(wrapper, "FAQ-list");
+    expect(FAQList.length).toBe(1);
   });
 
   test("renders FAQ heading", () => {
     const wrapper = setup();
-    const countdownDisplay = findByTestAttr(wrapper, "heading-display");
-    expect(countdownDisplay.length).toBe(1);
+    const headingDisplay = findByTestAttr(wrapper, "heading-display");
+    expect(headingDisplay.length).toBe(1);
   });
 });

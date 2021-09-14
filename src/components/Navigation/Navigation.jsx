@@ -9,30 +9,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useMediaQuery } from "react-responsive";
 import { Link as RouterLink } from "react-router-dom";
+import { useIntl } from "react-intl";
 import Link from "@material-ui/core/Link";
-
-const links = [
-  {
-    name: "Home",
-    endpoint: "/",
-  },
-  {
-    name: "Information",
-    endpoint: "/information",
-  },
-  {
-    name: "FAQ",
-    endpoint: "/faq",
-  },
-  {
-    name: "Login",
-    endpoint: "/login",
-  },
-  {
-    name: "Profile",
-    endpoint: "/profile",
-  },
-];
 
 const useStyles = makeStyles({
   list: {
@@ -44,6 +22,31 @@ const useStyles = makeStyles({
 });
 
 const Navigation = () => {
+  const intl = useIntl();
+
+  const links = [
+    {
+      name: intl.formatMessage({ id: "Home-nav" }),
+      endpoint: "/",
+    },
+    {
+      name: intl.formatMessage({ id: "Information-nav" }),
+      endpoint: "/information",
+    },
+    {
+      name: intl.formatMessage({ id: "FAQ-nav" }),
+      endpoint: "/faq",
+    },
+    {
+      name: intl.formatMessage({ id: "Login-nav" }),
+      endpoint: "/login",
+    },
+    {
+      name: intl.formatMessage({ id: "Profile-nav" }),
+      endpoint: "/profile",
+    },
+  ];
+
   const classes = useStyles();
   const [menu, setMenu] = useState({
     top: false,
@@ -75,7 +78,7 @@ const Navigation = () => {
     >
       <List data-test="list-display">
         {links.map(({ name, endpoint }) => (
-          <ListItem button key={name}>
+          <ListItem button key={`list-item-${name}`}>
             <Link component={RouterLink} to={endpoint}>
               <ListItemText primary={name} />
             </Link>
