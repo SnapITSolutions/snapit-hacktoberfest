@@ -1,9 +1,9 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mountWithIntl } from "../../utils/intl-enzyme-test-helper";
 import Information from "./Information";
 
 describe("Information", () => {
-  const setup = () => shallow(<Information />);
+  const setup = () => mountWithIntl(<Information />);
 
   const findByTestAttribute = (wrapper, val) =>
     wrapper.find(`[data-test='${val}']`);
@@ -22,10 +22,15 @@ describe("Information", () => {
     expect(informationDisplay.length).toBe(1);
   });
 
-  test("renders heading display", () => {
+  describe("heading-display", () => {
     const wrapper = setup();
     const headingDisplay = findByTestAttribute(wrapper, "heading-display");
-    expect(headingDisplay.length).toBe(3);
+    test("renders heading display", () => {
+      expect(headingDisplay.length).toBe(3);
+    });
+    test("contains the text `What is HacktoberFest?`", () => {
+      expect(headingDisplay.at(0).text()).toBe("What is HacktoberFest?");
+    });
   });
 
   test("renders paragraph display", () => {
