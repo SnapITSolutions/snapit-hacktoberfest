@@ -1,9 +1,9 @@
 name: GitHub Packages
 
-# Configures to run this workflow when pushed to the branch 'main'.
 on:
+  # Configures to run this workflow when pushed to any branch.
   push:
-    branches: ['main']
+    branches: [ '**' ]
 
 # Defines variables for the workflow. Used for the Container registry domain & a
 # name for the Docker image that is built.
@@ -11,9 +11,10 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
-# Set the job to run on the latest ubuntu version.
 jobs:
+  # The first job - Build and push images.
   build-and-push-image:
+    # Set the job to run on the latest ubuntu version.
     runs-on: ubuntu-latest
     # Sets the permission granted to the GITHUB_TOKEN for the actions
     permissions:
@@ -57,3 +58,58 @@ jobs:
           # Adds the tags and labels from the 'meta' step above.
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      # This creates text file RUN_HEROKU_DEPLOY and writes the content 'true' in it.
+      - name: Create file 'RUN_HEROKU_DEPLOY.TXT' and write 'true' into it
+        run: echo 'true' > RUN_HEROKU_DEPLOY.TXT
+
+      # This uploads RUN_HEROKU_DEPLOY text file as an artifact to be used in the heroku-deploy job.
+      - name: Upload file 'RUN_HEROKU_DEPLOY.TXT' as an artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: pass_file
+          path: RUN_HEROKU_DEPLOY.TXT
+
+  # The second job - Deploying to Heroku
+  heroku-deploy:
+    # This requires build-and-push-image job to complete before heroku-deploy
+    # job starts, and then uses that job to proceed
+    needs: build-and-push-image
+    # This makes heroku-deploy job to always run after build-and-push-image job completes.
+    if: always()
+    # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
+    runs-on: ubuntu-latest
+    steps:
+      # This downloads the artifact created in build-and-push-image job.
+      - name: Download file 'RUN_HEROKU_DEPLOY.TXT' as an artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: pass_file
+
+      # This reads the content of RUN_HEROKU_DEPLOY & sets the context as the value of an output
+      # parameter. The value of output parameters can only can be shared between steps in the same job, not
+      # across jobs, so using artifact to pass the value across jobs.
+      - name: Read file 'RUN_HEROKU_DEPLOY.TXT' and set output parameters
+        id: set_output
+        run: echo "::set-output name=RUN_HEROKU_DEPLOY::$(<pass_file/RUN_HEROKU_DEPLOY.TXT)"
+
+      # If RUN_HEROKU_DEPLOY is true, the following steps will occur.
+      - name: Run steps of heroku-deploy
+        if: steps.set_output.outputs.RUN_HEROKU_DEPLOY == 'true'
+        run: echo "Continuing steps of heroku_deploy"
+
+      # This action checks-out the repository so the workflow can access it
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      # If previous steps all occur, the image is deployed to Heroku.
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+
+
+
+
