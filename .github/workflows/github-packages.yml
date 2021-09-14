@@ -3,12 +3,14 @@ name: GitHub Packages
 # Configures to run this workflow when pushed to the branch 'development'. TODO: Update this to main
 # after testing.
 on:
+  push:
+    branches: ['development']
   workflow_run:
     workflows: ["CI Pipeline"]
     types:
       - completed
-    # on-success:
-    #   if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    on-success:
+      if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
 # Defines variables for the workflow. Used for the Container registry domain & a
 # name for the Docker image that is built.
