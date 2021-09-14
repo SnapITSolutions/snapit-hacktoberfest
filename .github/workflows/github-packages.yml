@@ -1,10 +1,9 @@
 name: GitHub Packages
 
-# Configures to run this workflow when pushed to the branch 'development'. TODO: Update this to main
-# after testing.
 on:
+  # Configures to run this workflow when pushed to any branch.
   push:
-    branches: ['development']
+    branches: [ '**' ]
 
 # Defines variables for the workflow. Used for the Container registry domain & a
 # name for the Docker image that is built.
