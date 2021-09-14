@@ -31,7 +31,7 @@ const Navigation = () => {
     },
     {
       name: intl.formatMessage({ id: "Information-nav" }),
-      endpoint: "information",
+      endpoint: "/information",
     },
     {
       name: intl.formatMessage({ id: "FAQ-nav" }),
@@ -78,7 +78,7 @@ const Navigation = () => {
     >
       <List data-test="list-display">
         {links.map(({ name, endpoint }) => (
-          <ListItem button key={name}>
+          <ListItem button key={`list-item-${name}`}>
             <Link component={RouterLink} to={endpoint}>
               <ListItemText primary={name} />
             </Link>

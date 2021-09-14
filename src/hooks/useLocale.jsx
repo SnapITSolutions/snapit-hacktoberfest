@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Spanish from "../lang/es-US.json";
 import English from "../lang/en-US.json";
-import defaultLanguage from "../utils/constant";
+import DEFAULT_LANGUAGE from "../utils/constants";
 
 // detect the language preference of the user's browser
 const useLocale = () => {
   const locale = navigator.language;
-  const [messages, setMessages] = useState(defaultLanguage);
+  const [messages, setMessages] = useState(English);
 
   useEffect(() => {
     switch (locale) {
@@ -17,10 +17,10 @@ const useLocale = () => {
         setMessages(Spanish);
         break;
       default:
-        setMessages(defaultLanguage);
+        setMessages(DEFAULT_LANGUAGE);
     }
   }, [locale]);
-  return { locale, messages, defaultLanguage };
+  return { locale, messages, defaultLanguage: DEFAULT_LANGUAGE };
 };
 
 export default useLocale;
