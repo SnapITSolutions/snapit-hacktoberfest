@@ -7,12 +7,12 @@ import Profile from "../pages/Profile";
 import FAQ from "../pages/FAQ";
 import PrivateRoute from "./PrivateRoute";
 import Login from "../pages/Login";
-import { AuthContextProvider } from "../context/AuthContext";
+import { AuthContextProvider } from "../contexts/AuthContext";
 import NotFound from "../pages/NotFound";
 
 const Router = () => (
   <AuthContextProvider>
-    <BrowserRouter basename="/HacktoberFest">
+    <BrowserRouter>
       <Navigation />
       <Switch>
         <Route path="/" exact component={Home} />
