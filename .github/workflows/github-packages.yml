@@ -4,8 +4,9 @@ name: GitHub Packages
 # after testing.
 on:
   workflow_run:
-    workflows: ["CI pipeline"]
-    types: [completed]
+    workflows: ["CI Pipeline"]
+    types:
+      - completed
     on-success:
       if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
