@@ -9,6 +9,10 @@ import { useMediaQuery } from "react-responsive";
 import { Link as RouterLink } from "react-router-dom";
 import { useIntl } from "react-intl";
 import Link from "@mui/material/Link";
+import clsx from "clsx";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import AppBar from "@mui/material/AppBar";
 
 const Navigation = () => {
   const intl = useIntl();
@@ -82,9 +86,25 @@ const Navigation = () => {
   return (
     <div data-test="navigation-display">
       <React.Fragment key={anchor}>
-        <Button data-test="nav-button" onClick={toggleDrawer(anchor, true)}>
-          <MenuIcon />
-        </Button>
+        <AppBar position="absolute">
+          <Toolbar>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+              data-test="nav-button"
+              onClick={toggleDrawer(anchor, true)}
+            >
+              <MenuIcon />
+            </IconButton>
+            <img
+              src="../../src/assets/SnapIT-logo.png"
+              alt="logo"
+              style={{ height: "40px" }}
+            />
+          </Toolbar>
+        </AppBar>
         <Drawer
           anchor={anchor}
           open={menu[anchor]}
