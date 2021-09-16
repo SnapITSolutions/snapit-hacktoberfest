@@ -13,6 +13,7 @@ import clsx from "clsx";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import AppBar from "@mui/material/AppBar";
+import Grid from "@mui/material/Grid";
 
 const Navigation = () => {
   const intl = useIntl();
@@ -84,25 +85,34 @@ const Navigation = () => {
   const anchor = isDesktopOrLaptop ? "left" : "top";
 
   return (
-    <div data-test="navigation-display">
+    <div data-test="navigation-display" style={{ marginBottom: "125px" }}>
       <React.Fragment key={anchor}>
         <AppBar position="absolute">
           <Toolbar>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-              data-test="nav-button"
-              onClick={toggleDrawer(anchor, true)}
-            >
-              <MenuIcon />
-            </IconButton>
-            <img
-              src="../../src/assets/SnapIT-logo.png"
-              alt="logo"
-              style={{ height: "40px" }}
-            />
+            <Grid container justify="space-between">
+              <Grid xs={1} item>
+                <IconButton
+                  edge="start"
+                  className={classes.menuButton}
+                  color="inherit"
+                  aria-label="menu"
+                  data-test="nav-button"
+                  onClick={toggleDrawer(anchor, true)}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Grid>
+              <Grid item xs={4} />
+            </Grid>
+            <Grid xs={2} item>
+              <Grid container justify="space-between">
+                <img
+                  src="../../src/assets/SnapIT-logo.png"
+                  alt="logo"
+                  style={{ height: "40px", marginLeft: "50px" }}
+                />
+              </Grid>
+            </Grid>
           </Toolbar>
         </AppBar>
         <Drawer
