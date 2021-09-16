@@ -87,7 +87,7 @@ const Navigation = () => {
   return (
     <div data-test="navigation-display" style={{ marginBottom: "125px" }}>
       <React.Fragment key={anchor}>
-        <AppBar position="absolute">
+        <AppBar position="absolute" data-test="app-bar-display">
           <Toolbar>
             <Grid container justify="space-between">
               <Grid xs={1} item>
