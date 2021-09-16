@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import AuthButton from "./AuthButton";
 
-jest.mock("../../context/AuthContext", () => ({
+jest.mock("../../contexts/AuthContext", () => ({
   useAuthContext: () => ({
     signin: jest.fn(),
     user: {},

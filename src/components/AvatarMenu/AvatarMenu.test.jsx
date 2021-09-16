@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import AvatarMenu from "./AvatarMenu";
 
-jest.mock("../../context/AuthContext", () => ({
+jest.mock("../../contexts/AuthContext", () => ({
   useAuthContext: () => ({
     signout: jest.fn(),
   }),

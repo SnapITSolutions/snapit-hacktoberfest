@@ -9,9 +9,9 @@ const AuthButton = () => {
   const { user, signin } = useAuthContext();
 
   const useStyles = makeStyles((theme) => ({
-    large: {
-      width: theme.spacing(8),
-      height: theme.spacing(8),
+    small: {
+      width: theme.spacing(4),
+      height: theme.spacing(4),
     },
   }));
 
