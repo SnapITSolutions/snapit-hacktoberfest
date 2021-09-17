@@ -15,4 +15,4 @@ jobs:
     - uses: actions/checkout@v2
     - uses: Klemensas/action-autotag@1.2.3
       with:
-        ghtags-access: ${{ secrets.GITHUB_TOKEN }}
+        changelog_structure: ${{ secrets.GITHUB_TOKEN }}
