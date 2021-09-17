@@ -31,7 +31,7 @@ describe("Navigation", () => {
   test("renders AppBar display", () => {
     const wrapper = setup();
     const appBarDisplay = findByTestAttribute(wrapper, "app-bar-display");
-    expect(appBarDisplay.length).toBe(1);
+    expect(appBarDisplay.exists()).toBeTruthy();
   });
 
   test("clicking button displays navigation menu", () => {

@@ -14,6 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import AppBar from "@mui/material/AppBar";
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
 const Navigation = () => {
   const intl = useIntl();
@@ -85,36 +86,40 @@ const Navigation = () => {
   const anchor = isDesktopOrLaptop ? "left" : "top";
 
   return (
-    <div data-test="navigation-display" style={{ marginBottom: "125px" }}>
+    <div data-test="navigation-display">
       <React.Fragment key={anchor}>
-        <AppBar position="absolute" data-test="app-bar-display">
-          <Toolbar>
-            <Grid container justify="space-between">
-              <Grid xs={1} item>
-                <IconButton
-                  edge="start"
-                  className={classes.menuButton}
-                  color="inherit"
-                  aria-label="menu"
-                  data-test="nav-button"
-                  onClick={toggleDrawer(anchor, true)}
-                >
-                  <MenuIcon />
-                </IconButton>
+        <Box sx={{ display: "grid", gridAutoColumns: "1fr", gap: 1, mb: 15 }}>
+          <AppBar
+            position="absolute"
+            data-test="app-bar-display"
+            className={classes.bar}
+          >
+            <Toolbar>
+              <Grid container spacing={2}>
+                <Grid item xs={1}>
+                  <IconButton
+                    edge="start"
+                    className={classes.menuButton}
+                    color="inherit"
+                    aria-label="menu"
+                    data-test="nav-button"
+                    onClick={toggleDrawer(anchor, true)}
+                  >
+                    <MenuIcon />
+                  </IconButton>
+                </Grid>
+                <Grid item xs={9} />
+                <Grid item xs={2}>
+                  <img
+                    src="../../src/assets/SnapIT-logo.png"
+                    alt="logo"
+                    className={classes.logo}
+                  />
+                </Grid>
               </Grid>
-              <Grid item xs={4} />
-            </Grid>
-            <Grid xs={2} item>
-              <Grid container justify="space-between">
-                <img
-                  src="../../src/assets/SnapIT-logo.png"
-                  alt="logo"
-                  style={{ height: "40px", marginLeft: "50px" }}
-                />
-              </Grid>
-            </Grid>
-          </Toolbar>
-        </AppBar>
+            </Toolbar>
+          </AppBar>
+        </Box>
         <Drawer
           anchor={anchor}
           open={menu[anchor]}
