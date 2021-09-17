@@ -1,6 +1,10 @@
 name: GitHub Packages
 
 on:
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    types:
+      - completed
   # Configures to run this workflow when pushed to any branch.
   push:
     branches: [ '**' ]
@@ -109,7 +113,3 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
-
-
-
-
