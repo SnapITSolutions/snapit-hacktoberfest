@@ -88,7 +88,7 @@ const Navigation = () => {
   return (
     <div data-test="navigation-display">
       <React.Fragment key={anchor}>
-        <Box sx={{ display: "grid", gridAutoColumns: "1fr", gap: 1, mb: 15 }}>
+        <Box sx={{ mb: 15 }}>
           <AppBar
             position="absolute"
             data-test="app-bar-display"
