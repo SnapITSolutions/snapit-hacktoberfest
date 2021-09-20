@@ -1,7 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
-import { makeStyles } from "@mui/styles";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useAuthContext } from "../../contexts/AuthContext";
 import AuthButton from "../../components/AuthButton";
@@ -9,15 +8,6 @@ import AuthButton from "../../components/AuthButton";
 const Login = () => {
   const history = useHistory();
   const { signin } = useAuthContext();
-
-  const useStyles = makeStyles((theme) => ({
-    large: {
-      width: theme.spacing(8),
-      height: theme.spacing(8),
-    },
-  }));
-
-  const classes = useStyles();
 
   const onLoginButtonClick = () => {
     signin(() => {
@@ -29,11 +19,10 @@ const Login = () => {
     <div data-test="login-display">
       <Button
         id="login-button"
-        size="small"
+        size="large"
         variant="contained"
         color="primary"
         data-test="login-button"
-        className={classes.button}
         startIcon={<GitHubIcon />}
         onClick={onLoginButtonClick}
       >

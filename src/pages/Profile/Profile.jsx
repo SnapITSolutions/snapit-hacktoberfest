@@ -1,20 +1,20 @@
 import React from "react";
 import Avatar from "@mui/material/Avatar";
-import { makeStyles } from "@mui/styles";
+// import { makeStyles } from "@mui/styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
-const useStyles = makeStyles((theme) => ({
-  large: {
-    width: theme.spacing(8),
-    height: theme.spacing(8),
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   large: {
+//     width: theme.spacing(8),
+//     height: theme.spacing(8),
+//   },
+// }));
 
 function Profile() {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <Box mt={16} mx="auto" width="70%" height={12} data-test="Profile-page">
@@ -27,7 +27,8 @@ function Profile() {
                   <Grid container direction="row" alignItems="center">
                     <Grid item>
                       <Avatar
-                        className={classes.large}
+                        // className={classes.large}
+                        sx={{ width: 60, height: 60 }}
                         alt="User's Name"
                         src="/static/images/grid/complex.jpg"
                         data-test="profile-avatar"
