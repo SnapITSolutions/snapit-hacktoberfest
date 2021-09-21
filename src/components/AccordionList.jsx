@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@mui/styles";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -7,26 +6,16 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { FormattedMessage } from "react-intl";
 
-const useStyles = makeStyles(() => ({
-  root: {
-    width: "80%",
-    margin: "0 auto",
-    textAlign: "left",
-  },
-}));
-
 export default function SimpleAccordion() {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root} data-test="component-accordionList">
+    <div data-test="component-accordionList">
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>
+          <Typography>
             <FormattedMessage
               data-test="AccordionList-question"
               id="FAQ-list-header1"
@@ -47,7 +36,7 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography className={classes.heading}>
+          <Typography>
             <FormattedMessage
               id="FAQ-list-header2"
               defaultMessage="Question 2"
@@ -68,7 +57,7 @@ export default function SimpleAccordion() {
           aria-controls="panel3a-content"
           id="panel3a-header"
         >
-          <Typography className={classes.heading}>
+          <Typography>
             <FormattedMessage
               id="FAQ-list-header3"
               defaultMessage="Question 3"
@@ -88,7 +77,7 @@ export default function SimpleAccordion() {
           aria-controls="panel4a-content"
           id="panel4a-header"
         >
-          <Typography className={classes.heading}>
+          <Typography>
             <FormattedMessage
               id="FAQ-list-header4"
               defaultMessage="Question 4"
@@ -108,7 +97,7 @@ export default function SimpleAccordion() {
           aria-controls="panel5a-content"
           id="panel5a-header"
         >
-          <Typography className={classes.heading}>
+          <Typography>
             <FormattedMessage
               id="FAQ-list-header5"
               defaultMessage="Question 5"
@@ -128,7 +117,7 @@ export default function SimpleAccordion() {
           aria-controls="panel6a-content"
           id="panel6a-header"
         >
-          <Typography className={classes.heading}>
+          <Typography>
             <FormattedMessage
               id="FAQ-list-header6"
               defaultMessage="Question 6"

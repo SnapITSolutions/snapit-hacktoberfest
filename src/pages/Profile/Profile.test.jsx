@@ -1,7 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
 import Profile from "./Profile";
-// import { ThemeProvider } from "@mui/styles"
 
 describe("Profile", () => {
   const setup = () => shallow(<Profile />);

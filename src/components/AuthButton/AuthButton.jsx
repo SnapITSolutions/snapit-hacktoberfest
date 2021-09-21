@@ -1,30 +1,19 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
-import { makeStyles } from "@mui/styles";
 import { useAuthContext } from "../../contexts/AuthContext";
 
 const AuthButton = () => {
   const history = useHistory();
   const { user, signout } = useAuthContext();
 
-  const useStyles = makeStyles((theme) => ({
-    large: {
-      width: theme.spacing(8),
-      height: theme.spacing(8),
-    },
-  }));
-
-  const classes = useStyles();
-
   return user.isAuthenticated ? (
     <p>
       Welcome!{" "}
       <Button
-        size="small"
+        size="large"
         variant="contained"
         color="secondary"
-        className={classes.button}
         onClick={() => {
           signout(() => history.push("/"));
         }}

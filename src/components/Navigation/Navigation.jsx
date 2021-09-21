@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import clsx from "clsx";
-import { makeStyles } from "@mui/styles";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
@@ -11,15 +9,6 @@ import { useMediaQuery } from "react-responsive";
 import { Link as RouterLink } from "react-router-dom";
 import { useIntl } from "react-intl";
 import Link from "@mui/material/Link";
-
-const useStyles = makeStyles({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: "auto",
-  },
-});
 
 const Navigation = () => {
   const intl = useIntl();
@@ -47,7 +36,6 @@ const Navigation = () => {
     },
   ];
 
-  const classes = useStyles();
   const [menu, setMenu] = useState({
     top: false,
     left: false,
@@ -69,9 +57,6 @@ const Navigation = () => {
 
   const list = (anchor) => (
     <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === "top" || anchor === "bottom",
-      })}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
