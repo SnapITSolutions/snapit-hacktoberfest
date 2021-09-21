@@ -1,5 +1,5 @@
 import React from "react";
-import Box from "@material-ui/core/Box";
+import Box from "@mui/material/Box";
 import { IntlProvider } from "react-intl";
 import Router from "./router/Router";
 import useLocale from "./hooks/useLocale";
