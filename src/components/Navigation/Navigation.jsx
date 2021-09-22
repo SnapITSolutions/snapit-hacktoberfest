@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -9,7 +8,6 @@ import { useMediaQuery } from "react-responsive";
 import { Link as RouterLink } from "react-router-dom";
 import { useIntl } from "react-intl";
 import Link from "@mui/material/Link";
-import clsx from "clsx";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import AppBar from "@mui/material/AppBar";
@@ -92,14 +90,13 @@ const Navigation = () => {
           <AppBar
             position="absolute"
             data-test="app-bar-display"
-            className={classes.bar}
+            sx={{ backgroundColor: "black" }}
           >
             <Toolbar>
               <Grid container spacing={2}>
                 <Grid item xs={1}>
                   <IconButton
                     edge="start"
-                    className={classes.menuButton}
                     color="inherit"
                     aria-label="menu"
                     data-test="nav-button"
@@ -113,7 +110,7 @@ const Navigation = () => {
                   <img
                     src="../../src/assets/SnapIT-logo.png"
                     alt="logo"
-                    className={classes.logo}
+                    style={{ height: 40 }}
                   />
                 </Grid>
               </Grid>
