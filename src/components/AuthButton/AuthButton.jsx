@@ -1,21 +1,12 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
-import GitHubIcon from "@mui/icons/GitHub";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { useAuthContext } from "../../contexts/AuthContext";
 
 const AuthButton = () => {
   const history = useHistory();
   const { user, signin } = useAuthContext();
-
-  const useStyles = makeStyles((theme) => ({
-    small: {
-      width: theme.spacing(4),
-      height: theme.spacing(4),
-    },
-  }));
-
-  const classes = useStyles();
 
   const onLoginButtonClick = () => {
     signin(() => {
@@ -37,7 +28,6 @@ const AuthButton = () => {
           variant="contained"
           color="primary"
           data-test="auth-button"
-          className={classes.button}
           startIcon={<GitHubIcon />}
           onClick={onLoginButtonClick}
         >
