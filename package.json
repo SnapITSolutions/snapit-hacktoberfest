@@ -8,8 +8,7 @@
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "stylelint": "stylelint src",
     "prettier": "prettier --check \"src\"",
-    "prepare": "husky install",
-    "start": "vue-cli-service serve"
+    "prepare": "husky install"
   },
   "license": "MIT",
   "dependencies": {
