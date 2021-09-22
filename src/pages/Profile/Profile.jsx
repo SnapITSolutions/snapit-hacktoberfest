@@ -1,21 +1,11 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import { makeStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-
-const useStyles = makeStyles((theme) => ({
-  large: {
-    width: theme.spacing(8),
-    height: theme.spacing(8),
-  },
-}));
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
 
 function Profile() {
-  const classes = useStyles();
-
   return (
     <Box mt={16} mx="auto" width="70%" height={12} data-test="Profile-page">
       <Paper>
@@ -27,7 +17,7 @@ function Profile() {
                   <Grid container direction="row" alignItems="center">
                     <Grid item>
                       <Avatar
-                        className={classes.large}
+                        sx={{ width: 60, height: 60 }}
                         alt="User's Name"
                         src="/static/images/grid/complex.jpg"
                         data-test="profile-avatar"
