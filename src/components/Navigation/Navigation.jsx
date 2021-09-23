@@ -107,11 +107,7 @@ const Navigation = () => {
                 </Grid>
                 <Grid item xs={9} />
                 <Grid item xs={2}>
-                  <img
-                    src="../../src/assets/SnapIT-logo.png"
-                    alt="logo"
-                    style={{ height: 40 }}
-                  />
+                  <img src="../../src/assets/SnapIT-logo.svg" alt="logo" />
                 </Grid>
               </Grid>
             </Toolbar>
