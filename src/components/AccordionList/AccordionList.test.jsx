@@ -1,5 +1,5 @@
 import React from "react";
-import { mountWithIntl } from "../utils/intl-enzyme-test-helper";
+import { mountWithIntl } from "../../utils/intl-enzyme-test-helper";
 import AccordionList from "./AccordionList";
 
 describe("FAQ AccordionList", () => {
