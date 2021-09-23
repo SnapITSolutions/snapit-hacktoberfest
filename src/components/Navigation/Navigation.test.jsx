@@ -28,6 +28,12 @@ describe("Navigation", () => {
     expect(navigationDisplay.length).toBe(1);
   });
 
+  test("renders AppBar display", () => {
+    const wrapper = setup();
+    const appBarDisplay = findByTestAttribute(wrapper, "app-bar-display");
+    expect(appBarDisplay.exists()).toBeTruthy();
+  });
+
   test("clicking button displays navigation menu", () => {
     const wrapper = setup();
     const button = findByTestAttribute(wrapper, "nav-button");
