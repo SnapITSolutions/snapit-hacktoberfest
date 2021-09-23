@@ -44,7 +44,6 @@ const AvatarMenu = () => {
         />
         <h3 data-test="username-display">Username</h3>
         <div>
-          {/* className={classes.root}> */}
           <List component="nav" aria-label="Device settings" />
           <Menu
             id="lock-menu"

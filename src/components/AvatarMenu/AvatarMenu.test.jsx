@@ -30,13 +30,13 @@ describe("AvatarMenu", () => {
   test("renders avatar display", () => {
     const wrapper = setup();
     const avatarDisplay = findByTestAttribute(wrapper, "avatar-display");
-    expect(avatarDisplay.length).toBe(1);
+    expect(avatarDisplay.exists()).toBeTruthy();
   });
 
   test("renders username display", () => {
     const wrapper = setup();
     const usernameDisplay = findByTestAttribute(wrapper, "username-display");
-    expect(usernameDisplay.length).toBe(1);
+    expect(usernameDisplay.exists()).toBeTruthy();
   });
 
   test("clicking button displays avatar menu", () => {
@@ -44,6 +44,6 @@ describe("AvatarMenu", () => {
     const button = findByTestAttribute(wrapper, "avatar-button");
     button.simulate("click", new Event("click"));
     const menuDisplay = findByTestAttribute(wrapper, "menu-display");
-    expect(menuDisplay.length).toBe(1);
+    expect(menuDisplay.exists()).toBeTruthy();
   });
 });
