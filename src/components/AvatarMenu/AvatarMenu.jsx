@@ -4,6 +4,7 @@ import Avatar from "@mui/material/Avatar";
 import List from "@mui/material/List";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
+import Box from "@mui/material/Box";
 import { useAuthContext } from "../../contexts/AuthContext";
 
 const options = ["Sign Out"];
@@ -34,15 +35,19 @@ const AvatarMenu = () => {
   return (
     <div>
       <div data-test="avatar-display">
-        <Avatar
-          size="small"
-          alt="User's Name"
-          src="/static/images/avatar/1.jpg"
-          button="true"
-          onClick={handleClickListItem}
-          data-test="avatar-button"
-        />
-        <h3 data-test="username-display">Username</h3>
+        <Box sx={{ ml: 4.5 }}>
+          <Avatar
+            size="small"
+            alt="User's Name"
+            src="/static/images/avatar/1.jpg"
+            button="true"
+            onClick={handleClickListItem}
+            data-test="avatar-button"
+          />
+        </Box>
+        <Box sx={{ ml: 2 }}>
+          <h3 data-test="username-display">Username</h3>
+        </Box>
         <div>
           <List component="nav" aria-label="Device settings" />
           <Menu

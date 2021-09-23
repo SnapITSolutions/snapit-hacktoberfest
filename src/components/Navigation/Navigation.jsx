@@ -124,8 +124,10 @@ const Navigation = () => {
           open={menu[anchor]}
           onClose={toggleDrawer(anchor, false)}
         >
-          <AvatarMenu />
-          {list(anchor)}
+          <Box sx={{ mt: 3 }}>
+            <AvatarMenu />
+          </Box>
+          <Box>{list(anchor)}</Box>
         </Drawer>
       </React.Fragment>
     </div>
