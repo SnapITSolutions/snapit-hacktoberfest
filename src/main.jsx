@@ -13,14 +13,14 @@ const theme = createTheme({
       contrastText: "#fff3f3",
     },
     secondary: {
-      main: "#2b3531",
+      main: "#b04814",
     },
     background: {
       default: "#f4f0e1",
     },
     text: {
       primary: "#2b3531",
-      secondary: "#fff",
+      secondary: "#ffe",
       disabled: "#fff",
       hint: "#aaa",
     },
