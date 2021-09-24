@@ -20,7 +20,6 @@
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
     "clsx": "^1.1.1",
     "enzyme": "^3.11.0",
-    "node.js": "^0.0.1-security",
     "prop-types": "^15.7.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
@@ -44,8 +43,7 @@
     "lint-staged": ">=10",
     "prettier": "2.3.2",
     "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0",
-    "vite": "^2.4.2"
+    "stylelint-config-standard": "^22.0.0"
   },
   "engines": {
     "node": "^14.17.3"
