@@ -26,7 +26,7 @@ describe("Information", () => {
     const wrapper = setup();
     const headingDisplay = findByTestAttribute(wrapper, "heading-display");
     test("renders heading display", () => {
-      expect(headingDisplay.length).toBe(3);
+      expect(headingDisplay.length).toBe(18);
     });
     test("contains the text `What is HacktoberFest?`", () => {
       expect(headingDisplay.at(0).text()).toBe("What is HacktoberFest?");
@@ -36,7 +36,7 @@ describe("Information", () => {
   test("renders paragraph display", () => {
     const wrapper = setup();
     const paraDisplay = findByTestAttribute(wrapper, "para-display");
-    expect(paraDisplay.length).toBe(3);
+    expect(paraDisplay.length).toBe(18);
   });
 
   test("renders image display", () => {
