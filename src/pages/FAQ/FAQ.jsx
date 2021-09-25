@@ -1,11 +1,14 @@
 import React from "react";
 import Box from "@mui/material/Box";
+import { Typography } from "@mui/material";
 import AccordionList from "../../components/AccordionList";
 
 const FAQ = () => (
   <Box mt="40" mx="auto " bgcolor="aliceblue">
     <div className="FAQ" data-test="FAQ-page">
-      <h1 data-test="heading-display">FAQ</h1>
+      <Typography m={5} variant="h4" data-test="heading-display">
+        FAQ
+      </Typography>
       <AccordionList data-test="FAQ-list" />
     </div>
   </Box>

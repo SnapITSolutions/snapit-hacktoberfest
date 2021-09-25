@@ -1,16 +1,18 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
+import { Typography } from "@mui/material";
 import CountdownTimer from "../../components/CountdownTimer/CountdownTimer";
 import "../../components/CountdownTimer/CountdownTimer.css";
 
 const Home = () => (
   <div className="Home" data-test="Home-page">
-    <h1 data-test="heading-display">
+    <Typography mb={3} mt={5} variant="h4">
       <FormattedMessage
         id="Home-header"
+        data-test="heading-display"
         defaultMessage="SnapIT Hacktoberfest Starts In:"
       />
-    </h1>
+    </Typography>
     <CountdownTimer data-test="countdown-display" />
   </div>
 );
