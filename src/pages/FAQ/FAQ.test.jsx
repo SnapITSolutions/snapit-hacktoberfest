@@ -22,6 +22,6 @@ describe("FAQ", () => {
   test("renders FAQ heading", () => {
     const wrapper = setup();
     const headingDisplay = findByTestAttr(wrapper, "heading-display");
-    expect(headingDisplay.length).toBe(1);
+    expect(headingDisplay.length).toBe(3);
   });
 });
