@@ -1,0 +1,115 @@
+name: GitHub Packages
+
+on:
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    types:
+      - completed
+  # Configures to run this workflow when pushed to any branch.
+  push:
+    branches: [ '**' ]
+
+# Defines variables for the workflow. Used for the Container registry domain & a
+# name for the Docker image that is built.
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  # The first job - Build and push images.
+  build-and-push-image:
+    # Set the job to run on the latest ubuntu version.
+    runs-on: ubuntu-latest
+    # Sets the permission granted to the GITHUB_TOKEN for the actions
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: 'Checkout repository'
+        # This checks out the repo and downloads it to the runner, allowing it to
+        # run actions against the code (such as testing tools).
+        uses: actions/checkout@v2
+
+      # Logs into the registry using the acct & password that will publish the
+      # packages. Once published, the packages are owned by the acct defined here.
+      - name: Log in to the Container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Extracts tags and labels to be applied to the image.
+      - name: Extract metadata (tags, labels) for Docker
+        # 'id' allows output to be referenced in steps below.
+        id: meta
+        uses: docker/metadata-action@v1
+        with:
+          # 'images' provides base name for the tags and labels.
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        # Builds the image based on repo's Dockerfile.
+        uses: docker/build-push-action@v2
+        # Sends req'd parameters to the build-push-action action, defined below.
+        with:
+          # Defines build's context as the set of files located in this path
+          context: .
+          # Pushes the image to the registry if it builds successfully.
+          push: true
+          # Adds the tags and labels from the 'meta' step above.
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      # This creates text file RUN_HEROKU_DEPLOY and writes the content 'true' in it.
+      - name: Create file 'RUN_HEROKU_DEPLOY.TXT' and write 'true' into it
+        run: echo 'true' > RUN_HEROKU_DEPLOY.TXT
+
+      # This uploads RUN_HEROKU_DEPLOY text file as an artifact to be used in the heroku-deploy job.
+      - name: Upload file 'RUN_HEROKU_DEPLOY.TXT' as an artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: pass_file
+          path: RUN_HEROKU_DEPLOY.TXT
+
+  # The second job - Deploying to Heroku
+  heroku-deploy:
+    # This requires build-and-push-image job to complete before heroku-deploy
+    # job starts, and then uses that job to proceed
+    needs: build-and-push-image
+    # This makes heroku-deploy job to always run after build-and-push-image job completes.
+    if: always()
+    # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
+    runs-on: ubuntu-latest
+    steps:
+      # This downloads the artifact created in build-and-push-image job.
+      - name: Download file 'RUN_HEROKU_DEPLOY.TXT' as an artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: pass_file
+
+      # This reads the content of RUN_HEROKU_DEPLOY & sets the context as the value of an output
+      # parameter. The value of output parameters can only can be shared between steps in the same job, not
+      # across jobs, so using artifact to pass the value across jobs.
+      - name: Read file 'RUN_HEROKU_DEPLOY.TXT' and set output parameters
+        id: set_output
+        run: echo "::set-output name=RUN_HEROKU_DEPLOY::$(<pass_file/RUN_HEROKU_DEPLOY.TXT)"
+
+      # If RUN_HEROKU_DEPLOY is true, the following steps will occur.
+      - name: Run steps of heroku-deploy
+        if: steps.set_output.outputs.RUN_HEROKU_DEPLOY == 'true'
+        run: echo "Continuing steps of heroku_deploy"
+
+      # This action checks-out the repository so the workflow can access it
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      # If previous steps all occur, the image is deployed to Heroku.
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
