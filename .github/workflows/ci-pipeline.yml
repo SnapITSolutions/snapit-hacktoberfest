@@ -12,7 +12,7 @@ on:
 # Groups together all the jobs that run in this workflow file.
 jobs:
   # The first job - environment setting, installing, and building
-  job1:
+  install_build_job:
     name: Environment Install and Build
     # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
     runs-on: ubuntu-latest
@@ -60,14 +60,14 @@ jobs:
           yarn build
 
   # The second job - testing and lint
-  job2:
+  test_lint:
     # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
     runs-on: ubuntu-latest
     # This makes job2 always run after job1 completes even if job1 fails.
     if: always()
     # This requires job1 to complete before job2 starts, and then uses that job
     # to proceed
-    needs: job1
+    needs: install_build_job
     name: Testing and Lint
     # Configures the job to run on an Ubuntu Linux runner. This means that the job will execute on a fresh virtual machine hosted by GitHub.
     steps:
