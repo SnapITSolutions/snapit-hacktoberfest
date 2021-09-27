@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -9,6 +8,11 @@ import { useMediaQuery } from "react-responsive";
 import { Link as RouterLink } from "react-router-dom";
 import { useIntl } from "react-intl";
 import Link from "@mui/material/Link";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import AppBar from "@mui/material/AppBar";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
 const Navigation = () => {
   const intl = useIntl();
@@ -82,9 +86,33 @@ const Navigation = () => {
   return (
     <div data-test="navigation-display">
       <React.Fragment key={anchor}>
-        <Button data-test="nav-button" onClick={toggleDrawer(anchor, true)}>
-          <MenuIcon />
-        </Button>
+        <Box sx={{ mb: 15 }}>
+          <AppBar
+            position="absolute"
+            data-test="app-bar-display"
+            sx={{ backgroundColor: "black" }}
+          >
+            <Toolbar>
+              <Grid container spacing={2}>
+                <Grid item xs={1}>
+                  <IconButton
+                    edge="start"
+                    color="inherit"
+                    aria-label="menu"
+                    data-test="nav-button"
+                    onClick={toggleDrawer(anchor, true)}
+                  >
+                    <MenuIcon />
+                  </IconButton>
+                </Grid>
+                <Grid item xs={9} />
+                <Grid item xs={2}>
+                  <img src="../../src/assets/SnapIT-logo.svg" alt="logo" />
+                </Grid>
+              </Grid>
+            </Toolbar>
+          </AppBar>
+        </Box>
         <Drawer
           anchor={anchor}
           open={menu[anchor]}
