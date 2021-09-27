@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
 import { useMediaQuery } from "react-responsive";
 import { Link as RouterLink } from "react-router-dom";
 import { useIntl } from "react-intl";
-import Link from "@mui/material/Link";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import AppBar from "@mui/material/AppBar";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
+import { Menu } from "@mui/icons-material";
+import {
+  AppBar,
+  Box,
+  Drawer,
+  Grid,
+  IconButton,
+  Link,
+  List,
+  ListItem,
+  ListItemText,
+  Toolbar,
+} from "@mui/material";
+import logo from "../../assets/SnapIT-logo.svg";
 
 const Navigation = () => {
   const intl = useIntl();
@@ -60,7 +63,8 @@ const Navigation = () => {
   };
 
   const list = (anchor) => (
-    <div
+    <Box
+      sx={{ width: 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -74,7 +78,7 @@ const Navigation = () => {
           </ListItem>
         ))}
       </List>
-    </div>
+    </Box>
   );
 
   const isDesktopOrLaptop = useMediaQuery({
@@ -86,28 +90,29 @@ const Navigation = () => {
   return (
     <div data-test="navigation-display">
       <React.Fragment key={anchor}>
-        <Box sx={{ mb: 15 }}>
-          <AppBar
-            position="absolute"
-            data-test="app-bar-display"
-            sx={{ backgroundColor: "black" }}
-          >
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar position="static" data-test="app-bar-display">
             <Toolbar>
-              <Grid container spacing={2}>
-                <Grid item xs={1}>
+              <Grid
+                container
+                alignItems="center"
+                justifyContent="space-between"
+              >
+                <Grid item>
                   <IconButton
+                    size="large"
                     edge="start"
                     color="inherit"
                     aria-label="menu"
+                    sx={{ mr: 2 }}
                     data-test="nav-button"
                     onClick={toggleDrawer(anchor, true)}
                   >
-                    <MenuIcon />
+                    <Menu />
                   </IconButton>
                 </Grid>
-                <Grid item xs={9} />
-                <Grid item xs={2}>
-                  <img src="../../src/assets/SnapIT-logo.svg" alt="logo" />
+                <Grid mt={1}>
+                  <img src={logo} alt="SnapIt Logo" />
                 </Grid>
               </Grid>
             </Toolbar>

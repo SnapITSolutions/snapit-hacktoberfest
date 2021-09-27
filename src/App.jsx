@@ -1,5 +1,4 @@
 import React from "react";
-import Box from "@mui/material/Box";
 import { IntlProvider } from "react-intl";
 import Router from "./router/Router";
 import useLocale from "./hooks/useLocale";
@@ -8,23 +7,15 @@ const App = () => {
   const { locale, messages, defaultLanguage } = useLocale();
 
   return (
-    <IntlProvider
-      locale={locale}
-      messages={messages}
-      defaultLanguage={defaultLanguage}
-    >
-      <Box
-        mx="auto"
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        textAlign="center"
+    <div data-test="component-app">
+      <IntlProvider
+        locale={locale}
+        messages={messages}
+        defaultLanguage={defaultLanguage}
       >
-        <div className="App" data-test="component-app">
-          <Router data-test="router" />
-        </div>
-      </Box>
-    </IntlProvider>
+        <Router data-test="router" />
+      </IntlProvider>
+    </div>
   );
 };
 export default App;
