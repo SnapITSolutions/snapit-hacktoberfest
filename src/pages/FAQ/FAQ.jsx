@@ -1,6 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import AccordionList from "../../components/AccordionList/AccordionList";
+import AccordionList from "../../components/AccordionList";
 
 const FAQ = () => (
   <Box mt="40" mx="auto " bgcolor="aliceblue">
