@@ -20,7 +20,7 @@ const Information = () => (
         data-test="image-display"
         src="../src/assets/pumpkin_PNG86719.png"
         alt="hacktoberfest"
-        style={{ height: "100px" }}
+        style={{ height: 100 }}
       />
     </div>
     <div>
