@@ -1,6 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { useIntl } from "react-intl";
+import Box from "@mui/material/Box";
 
 const Information = () => {
   const intl = useIntl();
@@ -37,32 +38,27 @@ const Information = () => {
     return (
       <>
         <div data-test="information-display">
-          {infoData.map(({ header, paragraph, defaultMessage }) => {
+          {infoData.map(({ header, paragraph, values }) => {
             const result = (
               <div>
                 <Typography
                   mt={2}
                   variant="h4"
                   data-test="heading-display"
-                  defaultMessage={defaultMessage}
+                  defaultMessage={values}
+                  textAlign="center"
                 >
                   {header}
                 </Typography>
-
-                <Typography
-                  paragraph="true"
-                  data-test="para-display"
-                  defaultMessage={defaultMessage}
-                >
-                  {paragraph}
-                </Typography>
-                {i === 1 && (
-                  <img
-                    data-test="image-display"
-                    src="../src/assets/pumpkin_PNG86719.png"
-                    alt="hacktoberfest"
-                    style={{ height: 100 }}
-                  />
+                {i === 0 && (
+                  <Box justifyContent="center" display="flex">
+                    <img
+                      data-test="image-display"
+                      src="../src/assets/pumpkin_PNG86719.png"
+                      alt="hacktoberfest"
+                      style={{ height: 100 }}
+                    />
+                  </Box>
                 )}
               </div>
             );
