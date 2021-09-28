@@ -33,42 +33,40 @@ const AvatarMenu = () => {
   };
 
   return (
-    <div>
-      <div data-test="avatar-display">
-        <Box sx={{ ml: 4.5 }}>
-          <Avatar
-            size="small"
-            alt="User's Name"
-            src="/static/images/avatar/1.jpg"
-            button="true"
-            onClick={handleClickListItem}
-            data-test="avatar-button"
-          />
-        </Box>
-        <Box sx={{ ml: 2 }}>
-          <h3 data-test="username-display">Username</h3>
-        </Box>
-        <div>
-          <List component="nav" aria-label="Device settings" />
-          <Menu
-            id="lock-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-            data-test="menu-display"
-          >
-            {options.map((option, index) => (
-              <MenuItem
-                key={option}
-                selected={index === selectedIndex}
-                onClick={(event) => handleMenuItemClick(event, index)}
-              >
-                {option}
-              </MenuItem>
-            ))}
-          </Menu>
-        </div>
+    <div data-test="avatar-display">
+      <Box sx={{ ml: 4.5 }}>
+        <Avatar
+          size="small"
+          alt="User's Name"
+          src="/static/images/avatar/1.jpg"
+          button="true"
+          onClick={handleClickListItem}
+          data-test="avatar-button"
+        />
+      </Box>
+      <Box sx={{ ml: 2 }}>
+        <h3 data-test="username-display">Username</h3>
+      </Box>
+      <div>
+        <List component="nav" aria-label="Device settings" />
+        <Menu
+          id="lock-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+          data-test="menu-display"
+        >
+          {options.map((option, index) => (
+            <MenuItem
+              key={option}
+              selected={index === selectedIndex}
+              onClick={(event) => handleMenuItemClick(event, index)}
+            >
+              {option}
+            </MenuItem>
+          ))}
+        </Menu>
       </div>
     </div>
   );
