@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import AccordionList from "../../components/AccordionList";
 
 const FAQ = () => (
-  <Box mt="40" mx="auto " bgcolor="aliceblue">
+  <Box mt="40" mx="auto" sx={{ width: "70%" }}>
     <div className="FAQ" data-test="FAQ-page">
       <h1 data-test="heading-display">FAQ</h1>
       <AccordionList data-test="FAQ-list" />
