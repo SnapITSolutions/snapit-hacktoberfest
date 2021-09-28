@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import { useAuthContext } from "../../contexts/AuthContext";
 
 const AuthButton = () => {
@@ -22,7 +23,9 @@ const AuthButton = () => {
       </Button>
     </p>
   ) : (
-    <p>You are not logged in.</p>
+    <Typography textAlign="center" mt={3}>
+      You are not logged in.
+    </Typography>
   );
 };
 
