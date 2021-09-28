@@ -7,28 +7,34 @@ const Information = () => {
 
   const infoData = [
     {
-      header: intl.formatMessage({ id: "Info-first-header" }),
-      defaultMessage: "What is HacktoberFest?",
+      header: intl.formatMessage({
+        id: "Info-first-header",
+        values: { defaultMessage: "What is HacktoberFest?" },
+      }),
+      paragraph: intl.formatMessage({
+        id: "Info-first-paragraph",
+        values: { defaultMessage: "Lorem ipsum..." },
+      }),
     },
     {
-      paragraph: intl.formatMessage({ id: "Info-first-paragraph" }),
-      defaultMessage: "Lorem ipsum...",
+      header: intl.formatMessage({
+        id: "Info-second-header",
+        values: { defaultMessage: "When & Where" },
+      }),
+      paragraph: intl.formatMessage({
+        id: "Info-second-paragraph",
+        values: { defaultMessage: "Lorem ipsum..." },
+      }),
     },
     {
-      header: intl.formatMessage({ id: "Info-second-header" }),
-      defaultMessage: "When & Where",
-    },
-    {
-      paragraph: intl.formatMessage({ id: "Info-second-paragraph" }),
-      defaultMessage: "Lorem ipsum...",
-    },
-    {
-      header: intl.formatMessage({ id: "Info-third-header" }),
-      defaultMessage: "Come join the FUN!",
-    },
-    {
-      paragraph: intl.formatMessage({ id: "Info-third-paragraph" }),
-      defaultMessage: "Lorem ipsum...",
+      header: intl.formatMessage({
+        id: "Info-third-header",
+        values: { defaultMessage: "Come join the FUN!" },
+      }),
+      paragraph: intl.formatMessage({
+        id: "Info-third-paragraph",
+        values: { defaultMessage: "Lorem ipsum..." },
+      }),
     },
   ];
 
@@ -41,22 +47,17 @@ const Information = () => {
             const result = (
               <div>
                 <Typography
-                  mt={2}
+                  m={4}
                   variant="h4"
                   data-test="heading-display"
                   defaultMessage={defaultMessage}
                 >
                   {header}
+                  <Typography variant="body1" pt={1} data-test="para-display">
+                    {paragraph}
+                  </Typography>
                 </Typography>
-
-                <Typography
-                  paragraph="true"
-                  data-test="para-display"
-                  defaultMessage={defaultMessage}
-                >
-                  {paragraph}
-                </Typography>
-                {i === 1 && (
+                {i === 0 && (
                   <img
                     data-test="image-display"
                     src="../src/assets/pumpkin_PNG86719.png"
