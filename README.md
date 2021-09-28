@@ -30,5 +30,4 @@ will fail, and you will have to manually correct the issues.
 
 [![CodeQL](https://github.com/SnapITSolutions/snapit-hacktoberfest/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/SnapITSolutions/snapit-hacktoberfest/actions/workflows/codeql-analysis.yml)
 
-[![GitHub
-Packages](https://github.com/SnapITSolutions/snapit-hacktoberfest/actions/workflows/github-packages.yml/badge.svg)](https://github.com/SnapITSolutions/snapit-hacktoberfest/actions/workflows/github-packages.yml)
+[![GitHub Packages](https://github.com/SnapITSolutions/snapit-hacktoberfest/actions/workflows/github-packages.yml/badge.svg)](https://github.com/SnapITSolutions/snapit-hacktoberfest/actions/workflows/github-packages.yml)
