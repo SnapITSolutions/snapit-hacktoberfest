@@ -18,7 +18,7 @@ const Home = () => (
           defaultMessage="SnapIT Hacktoberfest Starts In:"
         />
       </Typography>
-      <Box justifyContent="center">
+      <Box justifyContent="center" mx="auto" mt={2}>
         <CountdownTimer data-test="countdown-display" />
       </Box>
     </Grid>
