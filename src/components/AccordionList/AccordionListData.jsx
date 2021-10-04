@@ -9,7 +9,7 @@ const AccordionListData = [
     details: {
       id: "FAQ-list-answer1",
       value: {
-        defaultMessage: "Lorem ipsum dolor sit amet",
+        defaultMessage: "Answer 1",
       },
     },
   },
@@ -23,7 +23,7 @@ const AccordionListData = [
     details: {
       id: "FAQ-list-answer2",
       value: {
-        defaultMessage: "Lorem ipsum dolor sit amet",
+        defaultMessage: "Answer 2",
       },
     },
   },
@@ -37,7 +37,7 @@ const AccordionListData = [
     details: {
       id: "FAQ-list-answer3",
       value: {
-        defaultMessage: "Lorem ipsum dolor sit amet",
+        defaultMessage: "Answer 3",
       },
     },
   },
@@ -51,7 +51,7 @@ const AccordionListData = [
     details: {
       id: "FAQ-list-answer4",
       value: {
-        defaultMessage: "Lorem ipsum dolor sit amet",
+        defaultMessage: "Answer 4",
       },
     },
   },
@@ -65,7 +65,7 @@ const AccordionListData = [
     details: {
       id: "FAQ-list-answer5",
       value: {
-        defaultMessage: "Lorem ipsum dolor sit amet",
+        defaultMessage: "Answer 5",
       },
     },
   },
@@ -79,7 +79,7 @@ const AccordionListData = [
     details: {
       id: "FAQ-list-answer6",
       value: {
-        defaultMessage: "Lorem ipsum dolor sit amet",
+        defaultMessage: "Answer 6",
       },
     },
   },
