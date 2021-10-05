@@ -1,4 +1,7 @@
 {
+  "AuthButton-login-message1": "Bienvenido!",
+  "AuthButton-login-message2": "Usted no se ha identificado.",
+  "AuthButton-text": "Iniciar sesión con Github",
   "Countdown-first-list-item": "DIAS",
   "Countdown-fourth-list-item": "SEGUNDOS",
   "Countdown-second-list-item": "HORAS",

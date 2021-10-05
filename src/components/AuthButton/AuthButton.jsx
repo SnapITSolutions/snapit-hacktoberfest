@@ -1,6 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
+import { FormattedMessage } from "react-intl";
+import { Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useAuthContext } from "../../contexts/AuthContext";
 
@@ -16,22 +18,36 @@ const AuthButton = () => {
 
   return user.isAuthenticated ? (
     <>
-      <p>Welcome! </p>
+      <Typography>
+        <FormattedMessage
+          id="AuthButton-login-message1"
+          defaultMessage="Welcome!"
+        />
+      </Typography>
     </>
   ) : (
     <>
-      <p>You are not logged in.</p>
+      <Typography textAlign="center">
+        <FormattedMessage
+          id="AuthButton-login-message2"
+          defaultMessage="You are not logged in."
+        />
+      </Typography>
       <div data-test="auth-display">
         <Button
           id="auth-button"
           size="small"
           variant="contained"
           color="primary"
+          textAlign="center"
           data-test="auth-button"
           startIcon={<GitHubIcon />}
           onClick={onLoginButtonClick}
         >
-          Login with Github
+          <FormattedMessage
+            id="AuthButton-text"
+            defaultMessage="Login with Github"
+          />
         </Button>
       </div>
     </>
