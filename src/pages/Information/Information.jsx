@@ -14,7 +14,7 @@ const Information = () => {
             const result = (
               <div key={header.id}>
                 <Typography
-                  mt={2}
+                  m={4}
                   variant="h4"
                   data-test="heading-display"
                   textAlign="center"
