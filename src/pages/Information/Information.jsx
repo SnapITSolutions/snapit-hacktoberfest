@@ -5,41 +5,6 @@ import { FormattedMessage } from "react-intl";
 import InformationData from "./InformationData";
 
 const Information = () => {
-  //   const intl = useIntl();
-
-  //   const infoData = [
-  //     {
-  //       header: intl.formatMessage({
-  //         id: "Info-first-header",
-  //         values: { defaultMessage: "What is HacktoberFest?" },
-  //       }),
-  //       paragraph: intl.formatMessage({
-  //         id: "Info-first-paragraph",
-  //         values: { defaultMessage: "Lorem ipsum..." },
-  //       }),
-  //     },
-  //     {
-  //       header: intl.formatMessage({
-  //         id: "Info-second-header",
-  //         values: { defaultMessage: "When & Where" },
-  //       }),
-  //       paragraph: intl.formatMessage({
-  //         id: "Info-second-paragraph",
-  //         values: { defaultMessage: "Lorem ipsum..." },
-  //       }),
-  //     },
-  //     {
-  //       header: intl.formatMessage({
-  //         id: "Info-third-header",
-  //         values: { defaultMessage: "Come join the FUN!" },
-  //       }),
-  //       paragraph: intl.formatMessage({
-  //         id: "Info-third-paragraph",
-  //         values: { defaultMessage: "Lorem ipsum..." },
-  //       }),
-  //     },
-  //   ];
-
   const displayInfo = () => {
     let i = 0;
     return (
