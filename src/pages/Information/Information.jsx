@@ -1,54 +1,69 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import { useIntl } from "react-intl";
 import Box from "@mui/material/Box";
+import { FormattedMessage } from "react-intl";
+import InformationData from "./InformationData";
 
 const Information = () => {
-  const intl = useIntl();
+  //   const intl = useIntl();
 
-  const infoData = [
-    {
-      header: intl.formatMessage({ id: "Info-first-header" }),
-      defaultMessage: "What is HacktoberFest?",
-    },
-    {
-      paragraph: intl.formatMessage({ id: "Info-first-paragraph" }),
-      defaultMessage: "Lorem ipsum...",
-    },
-    {
-      header: intl.formatMessage({ id: "Info-second-header" }),
-      defaultMessage: "When & Where",
-    },
-    {
-      paragraph: intl.formatMessage({ id: "Info-second-paragraph" }),
-      defaultMessage: "Lorem ipsum...",
-    },
-    {
-      header: intl.formatMessage({ id: "Info-third-header" }),
-      defaultMessage: "Come join the FUN!",
-    },
-    {
-      paragraph: intl.formatMessage({ id: "Info-third-paragraph" }),
-      defaultMessage: "Lorem ipsum...",
-    },
-  ];
+  //   const infoData = [
+  //     {
+  //       header: intl.formatMessage({
+  //         id: "Info-first-header",
+  //         values: { defaultMessage: "What is HacktoberFest?" },
+  //       }),
+  //       paragraph: intl.formatMessage({
+  //         id: "Info-first-paragraph",
+  //         values: { defaultMessage: "Lorem ipsum..." },
+  //       }),
+  //     },
+  //     {
+  //       header: intl.formatMessage({
+  //         id: "Info-second-header",
+  //         values: { defaultMessage: "When & Where" },
+  //       }),
+  //       paragraph: intl.formatMessage({
+  //         id: "Info-second-paragraph",
+  //         values: { defaultMessage: "Lorem ipsum..." },
+  //       }),
+  //     },
+  //     {
+  //       header: intl.formatMessage({
+  //         id: "Info-third-header",
+  //         values: { defaultMessage: "Come join the FUN!" },
+  //       }),
+  //       paragraph: intl.formatMessage({
+  //         id: "Info-third-paragraph",
+  //         values: { defaultMessage: "Lorem ipsum..." },
+  //       }),
+  //     },
+  //   ];
 
   const displayInfo = () => {
     let i = 0;
     return (
       <>
         <div data-test="information-display">
-          {infoData.map(({ header, paragraph, values }) => {
+          {InformationData.map(({ header, paragraph }) => {
             const result = (
-              <div>
+              <div key={header.id}>
                 <Typography
                   mt={2}
                   variant="h4"
                   data-test="heading-display"
-                  defaultMessage={values}
                   textAlign="center"
                 >
-                  {header}
+                  <FormattedMessage
+                    id={header.id}
+                    defaultMessage={header.values}
+                  />
+                  <Typography variant="body1" pt={1} data-test="para-display">
+                    <FormattedMessage
+                      id={paragraph.id}
+                      defaultMessage={paragraph.values}
+                    />
+                  </Typography>
                 </Typography>
                 {i === 0 && (
                   <Box justifyContent="center" display="flex">
@@ -69,7 +84,6 @@ const Information = () => {
       </>
     );
   };
-
   return displayInfo();
 };
 
