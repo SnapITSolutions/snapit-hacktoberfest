@@ -1,7 +1,7 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import { Grid, Typography, Box } from "@mui/material";
-import CountdownTimer from "../../components/CountdownTimer/CountdownTimer";
+import CountdownTimer from "../../components/CountdownTimer";
 import "../../components/CountdownTimer/CountdownTimer.css";
 
 const Home = () => (
