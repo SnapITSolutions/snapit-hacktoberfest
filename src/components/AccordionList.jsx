@@ -5,7 +5,6 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { FormattedMessage } from "react-intl";
-
 import AccordionListData from "./AccordionList/AccordionListData";
 
 const AccordionList = () => {
