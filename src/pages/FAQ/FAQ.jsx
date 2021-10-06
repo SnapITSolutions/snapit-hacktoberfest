@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { FormattedMessage } from "react-intl";
 import AccordionList from "../../components/AccordionList";
 
 const FAQ = () => (
@@ -11,7 +12,10 @@ const FAQ = () => (
         data-test="heading-display"
         textAlign="center"
       >
-        FAQ
+        <FormattedMessage
+          id="FAQ-heading"
+          defaultMessage="Frequently Asked Questions"
+        />
       </Typography>
       <AccordionList data-test="FAQ-list" />
     </div>
