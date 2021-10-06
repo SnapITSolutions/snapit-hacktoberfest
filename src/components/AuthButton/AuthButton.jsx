@@ -1,8 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import Button from "@mui/material/Button";
 import { FormattedMessage } from "react-intl";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useAuthContext } from "../../contexts/AuthContext";
 

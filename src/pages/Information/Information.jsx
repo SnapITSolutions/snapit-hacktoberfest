@@ -1,6 +1,5 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import { Box, Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
 import informationData from "./informationData";
 
