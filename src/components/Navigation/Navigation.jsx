@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link as RouterLink } from "react-router-dom";
 import { useIntl } from "react-intl";
-import { Menu } from "@mui/icons-material";
+import MenuIcon from "@mui/icons-material/Menu";
+import HomeIcon from "@mui/icons-material/Home";
+import LoginIcon from "@mui/icons-material/Login";
+import HelpIcon from "@mui/icons-material/Help";
+import ImportContactsIcon from "@mui/icons-material/ImportContacts";
+import PersonIcon from "@mui/icons-material/Person";
 import {
   AppBar,
   Box,
@@ -13,6 +18,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  ListItemIcon,
   Toolbar,
 } from "@mui/material";
 import logo from "../../assets/SnapIT-logo.svg";
@@ -23,22 +29,27 @@ const Navigation = () => {
 
   const links = [
     {
+      icon: <HomeIcon />,
       name: intl.formatMessage({ id: "Home-nav" }),
       endpoint: "/",
     },
     {
+      icon: <ImportContactsIcon />,
       name: intl.formatMessage({ id: "Information-nav" }),
       endpoint: "/information",
     },
     {
+      icon: <HelpIcon />,
       name: intl.formatMessage({ id: "FAQ-nav" }),
       endpoint: "/faq",
     },
     {
+      icon: <LoginIcon />,
       name: intl.formatMessage({ id: "Login-nav" }),
       endpoint: "/login",
     },
     {
+      icon: <PersonIcon />,
       name: intl.formatMessage({ id: "Profile-nav" }),
       endpoint: "/profile",
     },
@@ -65,13 +76,13 @@ const Navigation = () => {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: 250 }}
+      sx={{ width: 175 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List data-test="list-display">
-        {links.map(({ name, endpoint }) => (
+        {links.map(({ icon, name, endpoint }) => (
           <Link
             component={RouterLink}
             to={endpoint}
@@ -79,6 +90,9 @@ const Navigation = () => {
             key={`list-item-${name}`}
           >
             <ListItem button>
+              <ListItemIcon sx={{ color: "secondary.main" }}>
+                {icon}
+              </ListItemIcon>
               <ListItemText primary={name} />
             </ListItem>
           </Link>
@@ -114,7 +128,7 @@ const Navigation = () => {
                     data-test="nav-button"
                     onClick={toggleDrawer(anchor, true)}
                   >
-                    <Menu />
+                    <MenuIcon />
                   </IconButton>
                 </Grid>
                 <Grid mt={1}>
