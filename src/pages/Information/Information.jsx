@@ -2,6 +2,7 @@ import React from "react";
 import { Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
 import informationData from "./informationData";
+import Map from "../../components/Map/Map";
 
 const Information = () => (
   <>
@@ -28,6 +29,7 @@ const Information = () => (
         return result;
       })}
     </div>
+    <Map />
   </>
 );
 
