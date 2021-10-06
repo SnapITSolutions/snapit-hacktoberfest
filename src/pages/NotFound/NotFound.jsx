@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
 
 const NotFound = () => (
   <div data-test="page-not-found-display">
@@ -6,7 +7,11 @@ const NotFound = () => (
     <h2 data-test="heading-display">Page not found</h2>
     <img data-test="image-display" src="" alt="error" />
     <p data-test="para-display">
-      We are sorry, the page you are looking for could not be found.
+          <FormattedMessage
+              id="notFound-header"
+              description="Not Found formatted message"
+              defaultMessage="We are sorry, the page you are looking for could not be found."
+          />
     </p>
   </div>
 );
