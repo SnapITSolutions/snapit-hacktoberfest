@@ -1,4 +1,4 @@
-const InformationData = [
+const informationData = [
   {
     header: {
       id: "Info-first-header",
@@ -31,4 +31,4 @@ const InformationData = [
   },
 ];
 
-export default InformationData;
+export default informationData;

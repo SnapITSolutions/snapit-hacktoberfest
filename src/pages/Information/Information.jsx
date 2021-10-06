@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { FormattedMessage } from "react-intl";
-import InformationData from "./InformationData";
+import informationData from "./informationData";
 
 const Information = () => {
   const displayInfo = () => {
@@ -10,7 +10,7 @@ const Information = () => {
     return (
       <>
         <div data-test="information-display">
-          {InformationData.map(({ header, paragraph }) => {
+          {informationData.map(({ header, paragraph }) => {
             const result = (
               <div key={header.id}>
                 <Typography
