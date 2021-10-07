@@ -38,10 +38,4 @@ describe("Information", () => {
     const paraDisplay = findByTestAttribute(wrapper, "para-display");
     expect(paraDisplay.exists()).toBeTruthy();
   });
-
-  test("renders image display", () => {
-    const wrapper = setup();
-    const imageDisplay = findByTestAttribute(wrapper, "image-display");
-    expect(imageDisplay.length).toBe(1);
-  });
 });
