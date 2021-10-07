@@ -5,11 +5,11 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { FormattedMessage } from "react-intl";
-import AccordionListData from "./accordionListData";
+import accordionListData from "./accordionListData";
 
 const AccordionList = () => (
   <div data-test="component-accordionList">
-    {AccordionListData.map(({ summary, details }) => (
+    {accordionListData.map(({ summary, details }) => (
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon sx={{ color: "text.secondary" }} />}
