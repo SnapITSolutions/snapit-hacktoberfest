@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link as RouterLink } from "react-router-dom";
 import { useIntl } from "react-intl";
-import { Menu } from "@mui/icons-material";
+import {
+  Menu,
+  Home,
+  Login,
+  Help,
+  ImportContacts,
+  Person,
+} from "@mui/icons-material";
 import {
   AppBar,
   Box,
@@ -13,6 +20,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  ListItemIcon,
   Toolbar,
 } from "@mui/material";
 import logo from "../../assets/SnapIT-logo.svg";
@@ -23,22 +31,27 @@ const Navigation = () => {
 
   const links = [
     {
+      icon: <Home />,
       name: intl.formatMessage({ id: "Home-nav" }),
       endpoint: "/",
     },
     {
+      icon: <ImportContacts />,
       name: intl.formatMessage({ id: "Information-nav" }),
       endpoint: "/information",
     },
     {
+      icon: <Help />,
       name: intl.formatMessage({ id: "FAQ-nav" }),
       endpoint: "/faq",
     },
     {
+      icon: <Login />,
       name: intl.formatMessage({ id: "Login-nav" }),
       endpoint: "/login",
     },
     {
+      icon: <Person />,
       name: intl.formatMessage({ id: "Profile-nav" }),
       endpoint: "/profile",
     },
@@ -65,13 +78,13 @@ const Navigation = () => {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: 250 }}
+      sx={{ width: 175 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List data-test="list-display">
-        {links.map(({ name, endpoint }) => (
+        {links.map(({ icon, name, endpoint }) => (
           <Link
             component={RouterLink}
             to={endpoint}
@@ -79,6 +92,9 @@ const Navigation = () => {
             key={`list-item-${name}`}
           >
             <ListItem button>
+              <ListItemIcon sx={{ color: "secondary.main" }}>
+                {icon}
+              </ListItemIcon>
               <ListItemText primary={name} />
             </ListItem>
           </Link>
