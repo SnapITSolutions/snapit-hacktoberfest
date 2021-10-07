@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link as RouterLink } from "react-router-dom";
 import { useIntl } from "react-intl";
-import MenuIcon from "@mui/icons-material/Menu";
-import HomeIcon from "@mui/icons-material/Home";
-import LoginIcon from "@mui/icons-material/Login";
-import HelpIcon from "@mui/icons-material/Help";
-import ImportContactsIcon from "@mui/icons-material/ImportContacts";
-import PersonIcon from "@mui/icons-material/Person";
+import {
+  Menu,
+  Home,
+  Login,
+  Help,
+  ImportContacts,
+  Person,
+} from "@mui/icons-material";
 import {
   AppBar,
   Box,
@@ -29,27 +31,27 @@ const Navigation = () => {
 
   const links = [
     {
-      icon: <HomeIcon />,
+      icon: <Home />,
       name: intl.formatMessage({ id: "Home-nav" }),
       endpoint: "/",
     },
     {
-      icon: <ImportContactsIcon />,
+      icon: <ImportContacts />,
       name: intl.formatMessage({ id: "Information-nav" }),
       endpoint: "/information",
     },
     {
-      icon: <HelpIcon />,
+      icon: <Help />,
       name: intl.formatMessage({ id: "FAQ-nav" }),
       endpoint: "/faq",
     },
     {
-      icon: <LoginIcon />,
+      icon: <Login />,
       name: intl.formatMessage({ id: "Login-nav" }),
       endpoint: "/login",
     },
     {
-      icon: <PersonIcon />,
+      icon: <Person />,
       name: intl.formatMessage({ id: "Profile-nav" }),
       endpoint: "/profile",
     },
@@ -128,7 +130,7 @@ const Navigation = () => {
                     data-test="nav-button"
                     onClick={toggleDrawer(anchor, true)}
                   >
-                    <MenuIcon />
+                    <Menu />
                   </IconButton>
                 </Grid>
                 <Grid mt={1}>
