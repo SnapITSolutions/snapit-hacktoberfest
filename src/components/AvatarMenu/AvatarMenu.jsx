@@ -34,7 +34,12 @@ const AvatarMenu = () => {
 
   return (
     <div data-test="avatar-display">
-      <Box sx={{ ml: 4.5 }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <Avatar
           size="small"
           alt="User's Name"
@@ -44,7 +49,12 @@ const AvatarMenu = () => {
           data-test="avatar-button"
         />
       </Box>
-      <Box sx={{ ml: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <h3 data-test="username-display">Username</h3>
       </Box>
       <div>
