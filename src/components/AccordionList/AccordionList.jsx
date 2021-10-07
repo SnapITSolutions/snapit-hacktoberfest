@@ -10,7 +10,7 @@ import accordionListData from "./accordionListData";
 const AccordionList = () => (
   <div data-test="component-accordionList">
     {accordionListData.map(({ summary, details }) => (
-      <Accordion>
+      <Accordion key={summary.id}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon sx={{ color: "text.secondary" }} />}
           aria-controls="panel1a-content"
