@@ -6,18 +6,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import contributorData from "./contributorData";
 
-function createData(name, github) {
-  return { name, github };
-}
-
-const rows = [
-  createData("Cami Taylor", "github.com/camitaylor"),
-  createData("Steve Simmons", "github.com/stevesimmons"),
-  createData("Aaron Shivers", "github.com/aaronshivers"),
-  createData("Becca Simmons", "github.com/beccasimmons"),
-  createData("Lis Phelps", "github.com/lisphelps"),
-];
+const rows = contributorData;
 
 const ContributorTable = () => (
   <TableContainer component={Paper} sx={{ width: 700 }}>
