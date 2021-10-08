@@ -6,27 +6,21 @@ const defaultValues = {
   github: "",
 };
 
-const ContributorForm = () => {
+const RegistrationForm = () => {
   const [formValues, setFormValues] = useState(defaultValues);
 
   const handleInputChange = (e) => {
-    // const { name, value } = e.target;
-    // setFormValues({
-    //   ...formValues,
-    //   [name]: value,
-    // });
-    setFormValues(e.target.value); // TO DO- check if works
+    setFormValues(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(formValues);
-    setFormValues(formValues); // TO DO- check if works
+    setFormValues(formValues);
   };
 
   return (
     <Box>
-      <form onSubmit={handleSubmit}>
+      <form data-test="form-display" onSubmit={handleSubmit}>
         <Grid container direction="column">
           <Grid item>
             <TextField
@@ -36,10 +30,10 @@ const ContributorForm = () => {
               type="text"
               value={formValues.name}
               onChange={handleInputChange}
-              sx={{ mb: 2 }}
+              sx={{ mb: 2, backgroundColor: "secondary.darkseagreen" }}
             />
           </Grid>
-          <Grid item>
+          <Grid item sx={{ color: "text.primary" }}>
             <TextField
               id="github-input"
               name="github"
@@ -47,11 +41,11 @@ const ContributorForm = () => {
               type="text"
               value={formValues.github}
               onChange={handleInputChange}
-              sx={{ mb: 2 }}
+              sx={{ mb: 3, backgroundColor: "secondary.darkseagreen" }}
             />
           </Grid>
           <Grid item>
-            <Button variant="contained" color="primary" type="submit">
+            <Button variant="contained" color="secondary" type="submit">
               Submit
             </Button>
           </Grid>
@@ -61,4 +55,4 @@ const ContributorForm = () => {
   );
 };
 
-export default ContributorForm;
+export default RegistrationForm;

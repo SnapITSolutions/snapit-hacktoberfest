@@ -10,6 +10,7 @@ import {
   ImportContacts,
   Person,
   AddToQueue,
+  Assignment,
 } from "@mui/icons-material";
 import {
   AppBar,
@@ -61,6 +62,11 @@ const Navigation = () => {
       name: intl.formatMessage({ id: "Contributor-nav" }),
       endpoint: "/contributor",
     },
+    {
+      icon: <Assignment />,
+      name: intl.formatMessage({ id: "Registration-nav" }),
+      endpoint: "/registration",
+    },
   ];
 
   const [menu, setMenu] = useState({
@@ -84,7 +90,7 @@ const Navigation = () => {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: 175 }}
+      sx={{ width: 200 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
