@@ -7,6 +7,7 @@ const Map = () => {
   return (
     <>
       <MapContainer
+        data-test="Map-display"
         style={{ height: "280px" }}
         center={position}
         zoom={13}
