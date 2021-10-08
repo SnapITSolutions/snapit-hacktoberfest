@@ -1,4 +1,4 @@
-const AccordionListData = [
+const accordionListData = [
   {
     summary: {
       id: "FAQ-list-header1",
@@ -85,4 +85,4 @@ const AccordionListData = [
   },
 ];
 
-export default AccordionListData;
+export default accordionListData;
