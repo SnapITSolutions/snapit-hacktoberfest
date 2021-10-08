@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, Box } from "@mui/material";
 import { FormattedMessage } from "react-intl";
 import informationData from "./informationData";
-import Map from "../../components/Map/Map";
+import Map from "../../components/Map";
 
 const Information = () => (
   <>
