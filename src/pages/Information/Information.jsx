@@ -1,7 +1,8 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import { FormattedMessage } from "react-intl";
 import informationData from "./informationData";
+import Map from "../../components/Map";
 
 const Information = () => (
   <>
@@ -28,6 +29,9 @@ const Information = () => (
         return result;
       })}
     </div>
+    <Box sx={{ height: "350px", width: "500px", mb: "40px" }}>
+      <Map />
+    </Box>
   </>
 );
 
