@@ -45,3 +45,16 @@ ul#labels {
 #labels li:last-child {
   border-top-right-radius: 7px;
 }
+
+@media (min-width: 385px) and (max-width: 640px) {
+  #displayTime li {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 384px) {
+  #displayTime li {
+    width: 100%;
+  }
+}
