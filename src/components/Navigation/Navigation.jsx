@@ -134,7 +134,9 @@ const Navigation = () => {
                   </IconButton>
                 </Grid>
                 <Grid mt={1}>
-                  <img src={logo} alt="SnapIt Logo" />
+                  <a href="https://snapit.solutions/">
+                    <img src={logo} alt="SnapIt Logo" />
+                  </a>
                 </Grid>
               </Grid>
             </Toolbar>
