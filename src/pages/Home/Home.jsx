@@ -7,7 +7,7 @@ import "../../components/CountdownTimer/CountdownTimer.css";
 import { HACKTOBERFEST_URL } from "../../utils/constants";
 import isHacktoberfest from "../../utils/hacktoberfestCheck";
 
-const Home = () => {
+const Home = () => (
   <div className="Home" data-test="Home-page">
     <Grid
       container
@@ -48,7 +48,7 @@ const Home = () => {
         </>
       )}
     </Grid>
-  </div>;
-};
+  </div>
+);
 
 export default Home;
