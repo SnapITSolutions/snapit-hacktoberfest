@@ -1,5 +1,6 @@
 const accordionListData = [
   {
+    accordionId: `accordion-1`,
     summary: {
       id: "FAQ-list-header1",
       value: {
@@ -14,6 +15,7 @@ const accordionListData = [
     },
   },
   {
+    accordionId: `accordion-2`,
     summary: {
       id: "FAQ-list-header2",
       value: {
@@ -28,6 +30,7 @@ const accordionListData = [
     },
   },
   {
+    accordionId: `accordion-3`,
     summary: {
       id: "FAQ-list-header3",
       value: {
@@ -42,6 +45,7 @@ const accordionListData = [
     },
   },
   {
+    accordionId: `accordion-4`,
     summary: {
       id: "FAQ-list-header4",
       value: {
@@ -56,6 +60,7 @@ const accordionListData = [
     },
   },
   {
+    accordionId: `accordion-5`,
     summary: {
       id: "FAQ-list-header5",
       value: {
@@ -70,6 +75,7 @@ const accordionListData = [
     },
   },
   {
+    accordionId: `accordion-6`,
     summary: {
       id: "FAQ-list-header6",
       value: {
