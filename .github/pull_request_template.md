@@ -3,8 +3,16 @@ We appreciate the effort for this pull request but before that please make sure 
 
 Please format the PR title appropriately based on the type of change:
   <type>[!]: <description>
-Where <type> is one of: docs, chore, feat, fix, test.
+Where <type> is one of: docs, chore, feat, fix, test, refactor.
 Add a '!' after the type for breaking changes (e.g. feat!: new breaking feature).
+
+Types
+feat: (new feature for the user, not a new feature for build script)
+fix: (bug fix for the user, not a fix to a build script)
+docs: (changes to the documentation)
+refactor: (refactoring production code, eg. renaming a variable)
+test: (adding missing tests, refactoring tests; no production code change)
+chore: (updating grunt tasks etc; no production code change)
 
 **All third-party contributors acknowledge that any contributions they provide will be made under the same open-source license that the open-source project is provided under.**
 
@@ -22,7 +30,7 @@ A short description of what this PR does.
 <!-- Remove any lines that don't apply to your PR. -->
 - [ ] I acknowledge that all my contributions will be made under the project's license
 - [ ] I have made a material change to the repo (functionality, testing, spelling, grammar)
-- [ ] I have read the [Contribution Guidelines](https://github.com/aaronshivers/snapit-hacktoberfest/blob/main/CONTRIBUTING.md) and my PR follows them
+- [ ] I have read the [Contribution Guidelines](https://github.com/snapitsolutions/snapit-hacktoberfest/blob/main/CONTRIBUTING.md) and my PR follows them
 - [ ] I have titled the PR appropriately
 - [ ] I have updated my branch with the main branch
 - [ ] I have added tests and/or screenshots that prove my fix is effective or that my feature works
