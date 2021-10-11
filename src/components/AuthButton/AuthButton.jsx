@@ -26,7 +26,7 @@ const AuthButton = () => {
           id="auth-button"
           size="small"
           variant="contained"
-          color="primary"
+          color="secondary"
           data-test="auth-button"
           startIcon={<GitHubIcon />}
           onClick={onLoginButtonClick}

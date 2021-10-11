@@ -14,6 +14,10 @@ const theme = createTheme({
     },
     secondary: {
       main: "#b04814",
+      rosybrown: "#a88671",
+      darkseagreen: "#90a78b",
+      seagreen: "#dae8d9",
+      dimgray: "#677662",
     },
     background: {
       default: "#f4f0e1",
