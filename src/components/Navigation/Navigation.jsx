@@ -9,6 +9,7 @@ import {
   Help,
   ImportContacts,
   Person,
+  AddToQueue,
 } from "@mui/icons-material";
 import {
   AppBar,
@@ -54,6 +55,11 @@ const Navigation = () => {
       icon: <Person />,
       name: intl.formatMessage({ id: "Profile-nav" }),
       endpoint: "/profile",
+    },
+    {
+      icon: <AddToQueue />,
+      name: intl.formatMessage({ id: "Contributor-nav" }),
+      endpoint: "/contributor",
     },
   ];
 
