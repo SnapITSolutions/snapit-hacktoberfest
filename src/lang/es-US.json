@@ -1,8 +1,11 @@
 {
+  "Contributor-nav": "Contribuyente",
   "Countdown-first-list-item": "DIAS",
   "Countdown-fourth-list-item": "SEGUNDOS",
   "Countdown-second-list-item": "HORAS",
   "Countdown-third-list-item": "MINUTOS",
+  "Downloads-nav": "Descargas",
+  "Downloads-page-header": "Descargas",
   "FAQ-list-answer1": "Respuesta 1",
   "FAQ-list-answer2": "Respuesta 2",
   "FAQ-list-answer3": "Respuesta 3",
@@ -27,6 +30,5 @@
   "Information-nav": "Información",
   "Login-nav": "Acceso",
   "Profile-nav": "Perfil",
-  "Contributor-nav": "Contribuyente",
   "Registration-nav": "Registro"
 }

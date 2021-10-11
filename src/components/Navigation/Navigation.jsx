@@ -11,6 +11,7 @@ import {
   Person,
   AddToQueue,
   Assignment,
+  Download,
 } from "@mui/icons-material";
 import {
   AppBar,
@@ -66,6 +67,11 @@ const Navigation = () => {
       icon: <Assignment />,
       name: intl.formatMessage({ id: "Registration-nav" }),
       endpoint: "/registration",
+    },
+    {
+      icon: <Download />,
+      name: intl.formatMessage({ id: "Downloads-nav" }),
+      endpoint: "/downloads",
     },
   ];
 
