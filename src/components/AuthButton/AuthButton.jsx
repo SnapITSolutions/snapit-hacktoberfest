@@ -7,7 +7,6 @@ import { useAuthContext } from "../../contexts/AuthContext";
 const AuthButton = () => {
   const history = useHistory();
   const { user, signin } = useAuthContext();
-
   const onLoginButtonClick = () => {
     signin(() => {
       history.push("/profile");
