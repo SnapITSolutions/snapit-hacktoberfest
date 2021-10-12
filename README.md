@@ -17,6 +17,8 @@ It makes it much easier to switch node versions when working on multiple project
 ### Install Node.js
 `nvm install` will install the correct version of node required for the project.
 
+If you don't use nvm, you can [install node](https://nodejs.org/en/) yourself.
+
 ### Switch to the project version of Node.js
 `nvm use` will switch to the correct version of node required for the project.
 
@@ -30,6 +32,34 @@ It makes it much easier to switch node versions when working on multiple project
 `yarn dev`
 
 ## Development
+
+Try to use [MUI](https://mui.com/) components whenever posssible.
+
+We use:
+* [React](https://reactjs.org/)
+* [MUI](https://mui.com/)
+
+### Testing
+
+All tests must pass before a PR will be accepted.
+* `yarn test` will run the test suite.
+
+We use:
+* [Jest](https://jestjs.io/)
+* [Enzyme](https://enzymejs.github.io/enzyme/)
+
+### Linting and Formatting
+
+All lint must be removed, and the code must be formatted correctly before a PR will be accepted.
+* `yarn lint` will run the JavaScript linter.
+* `yarn stylelint` will run the css linter.
+* `yarn prettier` will run the formatter.
+
+We use:
+* [ESLint](https://eslint.org/)
+* [AirBnb Style Guide](https://airbnb.io/javascript/react/)
+* [stylelint](https://stylelint.io/)
+* [Prettier](https://prettier.io/)
 
 ### Commits
 

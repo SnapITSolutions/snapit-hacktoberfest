@@ -18,6 +18,8 @@
   "FAQ-nav": "FAQ",
   "Home-header": "SnapIT Hacktoberfest Starts In:",
   "Home-nav": "Home",
+  "Home-begun": "HacktoberFest is here!",
+  "Home-link": "Sign up to start hacking!",
   "Info-first-header": "What is HacktoberFest?",
   "Info-first-paragraph": "Lorem ipsum dolor sit amet consectetur adipiscing   elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.",
   "Info-second-header": "When & Where",
@@ -27,6 +29,8 @@
   "Information-nav": "Information",
   "Login-nav": "Login",
   "Profile-nav": "Profile",
+  "Contributor-nav": "Contributor",
+  "Registration-nav": "Registration",
   "notFound-header": "We are sorry, the page you are looking for could not be found.",
   "notFound-header-h1": "404",
   "notFound-header-h2": "Page not found."
