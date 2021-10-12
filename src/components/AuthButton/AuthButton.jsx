@@ -1,13 +1,12 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Button, Typography, Box } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useAuthContext } from "../../contexts/AuthContext";
 
 const AuthButton = () => {
   const history = useHistory();
   const { user, signin } = useAuthContext();
-
   const onLoginButtonClick = () => {
     signin(() => {
       history.push("/profile");
@@ -16,12 +15,12 @@ const AuthButton = () => {
 
   return user.isAuthenticated ? (
     <>
-      <p>Welcome! </p>
+      <Typography variant="subtitle1">Welcome!</Typography>
     </>
   ) : (
     <>
-      <p>You are not logged in.</p>
-      <div data-test="auth-display">
+      <Typography variant="subtitle1">You are not logged in.</Typography>
+      <Box data-test="auth-display">
         <Button
           id="auth-button"
           size="small"
@@ -33,7 +32,7 @@ const AuthButton = () => {
         >
           Login with Github
         </Button>
-      </div>
+      </Box>
     </>
   );
 };
