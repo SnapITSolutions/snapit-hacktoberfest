@@ -1,13 +1,15 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import AccordionList from "../../components/AccordionList";
 
 const FAQ = () => (
   <Box mt="40" mx="auto" sx={{ width: "70%" }}>
-    <div className="FAQ" data-test="FAQ-page">
-      <h1 data-test="heading-display">FAQ</h1>
+    <Box className="FAQ" data-test="FAQ-page">
+      <Typography variant="h3" my={2} data-test="heading-display">
+        FAQ
+      </Typography>
       <AccordionList data-test="FAQ-list" />
-    </div>
+    </Box>
   </Box>
 );
 
