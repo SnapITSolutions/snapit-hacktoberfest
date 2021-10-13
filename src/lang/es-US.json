@@ -32,5 +32,8 @@
   "Information-nav": "Información",
   "Login-nav": "Acceso",
   "Profile-nav": "Perfil",
-  "Registration-nav": "Registro"
+  "Registration-nav": "Registro",
+  "Registration-register": "Registrate Con Nosotras",
+  "Registration-name": "Nombre",
+  "Registration-submit": "Enviar"
 }
