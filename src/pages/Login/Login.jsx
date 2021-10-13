@@ -1,10 +1,11 @@
 import React from "react";
+import { Box } from "@mui/material";
 import AuthButton from "../../components/AuthButton";
 
 const Login = () => (
-  <div data-test="login-display">
+  <Box data-test="login-display">
     <AuthButton />
-  </div>
+  </Box>
 );
 
 export default Login;
