@@ -19,7 +19,7 @@ describe("Information", () => {
       wrapper,
       "information-display"
     );
-    expect(informationDisplay.length).toBe(1);
+    expect(informationDisplay.exists()).toBeTruthy();
   });
 
   describe("heading-display", () => {
