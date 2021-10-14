@@ -10,7 +10,7 @@ describe("FAQ", () => {
   test("renders FAQ page", () => {
     const wrapper = setup();
     const FAQComponent = findByTestAttr(wrapper, "FAQ-page");
-    expect(FAQComponent.length).toBe(1);
+    expect(FAQComponent.exists()).toBeTruthy();
   });
 
   test("renders FAQ Accordion list", () => {
