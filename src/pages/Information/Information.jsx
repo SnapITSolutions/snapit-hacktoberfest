@@ -6,15 +6,10 @@ import Map from "../../components/Map";
 
 const Information = () => (
   <>
-    <div data-test="information-display">
+    <Box data-test="information-display">
       {informationData.map(({ header, paragraph }) => {
         const result = (
-          <Box
-            key={header.id}
-            m={4}
-            textAlign="center"
-            data-test="information-item-display"
-          >
+          <Box key={header.id} m={4} textAlign="center">
             <Typography variant="h4" data-test="heading-display">
               <FormattedMessage id={header.id} defaultMessage={header.values} />
             </Typography>
@@ -28,7 +23,7 @@ const Information = () => (
         );
         return result;
       })}
-    </div>
+    </Box>
     <Box sx={{ height: "350px", width: "500px", mb: "40px" }}>
       <Map />
     </Box>
