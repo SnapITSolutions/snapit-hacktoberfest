@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
+import { FormattedMessage } from "react-intl";
 import RegistrationForm from "./RegistrationForm";
 
 const Registration = () => (
@@ -13,7 +14,10 @@ const Registration = () => (
     <Grid container spacing={10} direction="column" sx={{ pt: 5 }}>
       <Grid item>
         <Typography variant="h3" textAlign="center" data-test="heading-display">
-          Register With Us
+          <FormattedMessage
+            id="Registration-register"
+            defaultMessage="Register With Us"
+          />
         </Typography>
       </Grid>
       <Grid item textAlign="center" data-test="form-display">
