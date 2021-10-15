@@ -1,6 +1,6 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
-import { Grid, Link, Box, Typograpghy, Typography } from "@mui/material";
+import { Grid, Link, Box, Typography } from "@mui/material";
 import CountdownTimer from "../../components/CountdownTimer";
 import "./Home.css";
 import "../../components/CountdownTimer/CountdownTimer.css";
@@ -27,16 +27,18 @@ const Home = () => (
         </>
       ) : (
         <>
-          <Typograpghy
+          <Typography
             data-test="heading-display"
-            varaint="h1"
+            variant="h3"
             style={{ fontWeight: 700 }}
+            mt={9}
+            mb={5}
           >
             <FormattedMessage
               id="Home-begun"
               defaultMessage="HacktoberFest is here!"
             />
-          </Typograpghy>
+          </Typography>
           <Link
             href={HACKTOBERFEST_URL}
             className="link"
