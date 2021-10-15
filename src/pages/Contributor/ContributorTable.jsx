@@ -6,6 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { FormattedMessage } from "react-intl";
 import contributorData from "./contributorData";
 
 const rows = contributorData;
@@ -30,7 +31,10 @@ const ContributorTable = () => (
               backgroundColor: "secondary.dimgray",
             }}
           >
-            Name
+            <FormattedMessage
+              id="Contributor-table-heading"
+              defaultMessage="Name"
+            />
           </TableCell>
           <TableCell
             align="left"
