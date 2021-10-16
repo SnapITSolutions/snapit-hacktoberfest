@@ -34,6 +34,19 @@ const Home = () => (
             />
           </h1>
           <Link
+            sx={{
+              m: 0,
+              p: "20px",
+              background: "rgb(103, 104, 104)",
+              borderRadius: "5px",
+              fontSize: "4rem",
+              fontWeight: "bold",
+              "&:hover": {
+                color: "rgb(248, 203, 121) !important",
+              },
+              color: "orange !important",
+              textDecorationColor: "orange !important",
+            }}
             href={HACKTOBERFEST_URL}
             className="link"
             target="_blank"
