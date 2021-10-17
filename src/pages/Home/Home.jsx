@@ -32,6 +32,7 @@ const Home = () => (
               defaultMessage="HacktoberFest is here!"
             />
           </h1>
+          {/* removed Home.css, MUI component styled using sx prop */}
           <Link
             sx={{
               color: "orange !important",
