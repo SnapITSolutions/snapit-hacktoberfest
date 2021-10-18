@@ -37,9 +37,7 @@ const Home = () => (
               id="Home-begun"
               defaultMessage="HacktoberFest is here!"
             />
-          </h1>
           </Typography>
-
           {/* removed Home.css, MUI component styled using sx prop */}
           <Link
             sx={{
