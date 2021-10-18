@@ -13,7 +13,7 @@ describe("Home", () => {
   test("renders Home page", () => {
     const wrapper = setup();
     const homeComponent = findByTestAttr(wrapper, "Home-page");
-    expect(homeComponent.length).toBe(1);
+    expect(homeComponent.length).toBeTruthy();
   });
 
   testIf(!isHacktoberfest)("renders CountdownTimer", () => {
@@ -34,11 +34,11 @@ describe("Home", () => {
     testIf(isHacktoberfest)(
       "contains the text `HacktoberFest is here!`",
       () => {
-        expect(headingDisplay.text()).toBe("HacktoberFest is here!");
+        expect(headingDisplay.first().text()).toBe("HacktoberFest is here!");
       }
     );
     test("renders page header", () => {
-      expect(headingDisplay.length).toBe(1);
+      expect(headingDisplay.exists()).toBeTruthy();
     });
   });
 

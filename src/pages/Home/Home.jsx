@@ -1,13 +1,13 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
-import { Grid, Link } from "@mui/material";
+import { Grid, Link, Box, Typography } from "@mui/material";
 import CountdownTimer from "../../components/CountdownTimer";
 import "../../components/CountdownTimer/CountdownTimer.css";
 import { HACKTOBERFEST_URL } from "../../utils/constants";
 import isHacktoberfest from "../../utils/hacktoberfestCheck";
 
 const Home = () => (
-  <div className="Home" data-test="Home-page">
+  <Box className="Home" data-test="Home-page">
     <Grid
       container
       justifyContent="center"
@@ -16,22 +16,30 @@ const Home = () => (
     >
       {!isHacktoberfest ? (
         <>
-          <h1 data-test="heading-display">
+          <Typography data-test="heading-display">
             <FormattedMessage
               id="Home-header"
               defaultMessage="SnapIT Hacktoberfest Starts In:"
             />
-          </h1>
+          </Typography>
           <CountdownTimer data-test="countdown-display" />
         </>
       ) : (
         <>
-          <h1 data-test="heading-display">
+          <Typography
+            data-test="heading-display"
+            variant="h3"
+            style={{ fontWeight: 700 }}
+            mt={9}
+            mb={5}
+          >
             <FormattedMessage
               id="Home-begun"
               defaultMessage="HacktoberFest is here!"
             />
           </h1>
+          </Typography>
+
           {/* removed Home.css, MUI component styled using sx prop */}
           <Link
             sx={{
@@ -61,7 +69,7 @@ const Home = () => (
         </>
       )}
     </Grid>
-  </div>
+  </Box>
 );
 
 export default Home;
