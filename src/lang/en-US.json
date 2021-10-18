@@ -1,5 +1,7 @@
 {
   "Contributor-nav": "Contributor",
+  "Contributor-title": "Add to the JSON file to be placed in the Wall of Coders",
+  "Contributor-table-heading": "Name",
   "Countdown-first-list-item": "DAYS",
   "Countdown-fourth-list-item": "SECONDS",
   "Countdown-second-list-item": "HOURS",
@@ -35,5 +37,8 @@
   "Registration-nav": "Registration",
   "notFound-header": "We are sorry, the page you are looking for could not be found.",
   "notFound-header-h1": "404",
-  "notFound-header-h2": "Page not found."
+  "notFound-header-h2": "Page not found.",
+  "Registration-register": "Register With Us",
+  "name-input": "Name",
+  "Registration-submit": "Submit"
 }

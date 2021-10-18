@@ -1,5 +1,7 @@
 {
   "Contributor-nav": "Contribuyente",
+  "Contributor-title": "Añadir al archivo JSON que se colocará en el Muro de Codificadores",
+  "Contributor-table-heading": "Nombre",
   "Countdown-first-list-item": "DIAS",
   "Countdown-fourth-list-item": "SEGUNDOS",
   "Countdown-second-list-item": "HORAS",
@@ -19,7 +21,9 @@
   "FAQ-list-header5": "Pregunta 5",
   "FAQ-list-header6": "Pregunta 6",
   "FAQ-nav": "FAQ",
+  "Home-begun": "HacktoberFest está aquí!",
   "Home-header": "SnapIT Hacktoberfest Comienza En:",
+  "Home-link": "Regístrate para empezar a piratear!",
   "Home-nav": "Casa",
   "Info-first-header": "¿Qué es Hacktoberfest?",
   "Info-first-paragraph": "Lorem ipsum dolor sit amet consectetur adipiscing   elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -30,5 +34,8 @@
   "Information-nav": "Información",
   "Login-nav": "Acceso",
   "Profile-nav": "Perfil",
-  "Registration-nav": "Registro"
+  "Registration-nav": "Registro",
+  "Registration-register": "Registrate Con Nosotras",
+  "Registration-name": "Nombre",
+  "Registration-submit": "Enviar"
 }

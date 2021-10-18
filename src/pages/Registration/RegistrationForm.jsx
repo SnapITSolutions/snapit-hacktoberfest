@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Grid, TextField, Button, Box } from "@mui/material";
+import { FormattedMessage } from "react-intl";
 
 const defaultValues = {
   name: "",
@@ -23,15 +24,19 @@ const RegistrationForm = () => {
       <form data-test="form-display" onSubmit={handleSubmit}>
         <Grid container direction="column">
           <Grid item>
-            <TextField
-              id="name-input"
-              name="name"
-              label="Name"
-              type="text"
-              value={formValues.name}
-              onChange={handleInputChange}
-              sx={{ mb: 2, backgroundColor: "secondary.darkseagreen" }}
-            />
+            <FormattedMessage id="Registration-name" defaultMessage="Name">
+              {registrationName =>
+                <TextField
+                  id="name-input"
+                  name="name"
+                  label={registrationName}
+                  type="text"
+                  value={formValues.name}
+                  onChange={handleInputChange}
+                  sx={{ mb: 2, backgroundColor: "secondary.darkseagreen" }}
+                />
+              }
+            </FormattedMessage>
           </Grid>
           <Grid item sx={{ color: "text.primary" }}>
             <TextField
@@ -46,7 +51,10 @@ const RegistrationForm = () => {
           </Grid>
           <Grid item>
             <Button variant="contained" color="secondary" type="submit">
-              Submit
+              <FormattedMessage
+                id="Registration-submit"
+                defaultMessage="Submit"
+              />
             </Button>
           </Grid>
         </Grid>
