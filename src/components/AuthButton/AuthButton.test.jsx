@@ -17,6 +17,13 @@ jest.mock("../../hooks/useProvideAuth", () => ({
   }),
 }));
 
+jest.mock("react-intl", () => ({
+  ...jest.requireActual("react-intl"),
+  useIntl: () => ({
+    formatMessage: jest.fn(),
+  }),
+}));
+
 describe("AuthButton", () => {
   const setup = () => shallow(<AuthButton />);
 
