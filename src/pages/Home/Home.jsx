@@ -2,7 +2,6 @@ import React from "react";
 import { FormattedMessage } from "react-intl";
 import { Grid, Link, Box, Typography } from "@mui/material";
 import CountdownTimer from "../../components/CountdownTimer";
-import "./Home.css";
 import "../../components/CountdownTimer/CountdownTimer.css";
 import { HACKTOBERFEST_URL } from "../../utils/constants";
 import isHacktoberfest from "../../utils/hacktoberfestCheck";
@@ -39,7 +38,21 @@ const Home = () => (
               defaultMessage="HacktoberFest is here!"
             />
           </Typography>
+          {/* removed Home.css, MUI component styled using sx prop */}
           <Link
+            sx={{
+              color: "orange !important",
+              textDecorationColor: "orange !important",
+              "&:hover": {
+                color: "rgb(248, 203, 121) !important",
+              },
+              fontSize: "4rem",
+              fontWeight: "bold",
+              m: 0,
+              p: "20px",
+              background: "rgb(103, 104, 104)",
+              borderRadius: "5px",
+            }}
             href={HACKTOBERFEST_URL}
             className="link"
             target="_blank"
