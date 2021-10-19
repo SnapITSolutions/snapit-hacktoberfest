@@ -33,9 +33,7 @@ const Projects = () => {
       {fetchedData.length === 0 ? (
         <Grid className="grid" container>
           <CardActions>
-            <Typography className="title" variant="h4">
-              Loading ...
-            </Typography>
+            <Typography variant="h4">Loading ...</Typography>
           </CardActions>
         </Grid>
       ) : (
@@ -55,12 +53,12 @@ const Projects = () => {
               />
               <CardActions>
                 <div className="body">
-                  <Typography className="title" variant="h4" gutterBottom>
+                  <Typography variant="h4" gutterBottom>
                     {item.name}
                   </Typography>
                   <Typography variant="body2">{item.description}</Typography>
                   <Button
-                    style={{ marginTop: "20px", marginRight: "20px" }}
+                    className="button"
                     variant="contained"
                     type="button"
                     size="small"
@@ -69,7 +67,7 @@ const Projects = () => {
                     Homepage
                   </Button>
                   <Button
-                    style={{ marginTop: "20px" }}
+                    className="button"
                     variant="contained"
                     type="button"
                     size="small"
