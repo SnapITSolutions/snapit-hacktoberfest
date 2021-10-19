@@ -8,6 +8,7 @@ import {
   AddToQueue,
   Assignment,
   Download,
+  AccountTree,
 } from "@mui/icons-material";
 
 const navigationData = [
@@ -26,6 +27,14 @@ const navigationData = [
   {
     icon: <Help />,
     name: { id: "FAQ-nav", endpoint: "/faq", defaultMessage: "FAQ" },
+  },
+  {
+    icon: <AccountTree />,
+    name: {
+      id: "Projects-nav",
+      endpoint: "/projects",
+      defaultMessage: "Projects",
+    },
   },
   {
     icon: <Login />,
