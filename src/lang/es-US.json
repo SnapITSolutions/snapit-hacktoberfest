@@ -35,6 +35,9 @@
   "Login-nav": "Acceso",
   "Profile-nav": "Perfil",
   "Registration-nav": "Registro",
+  "notFound-header": "Lo sentimos, no se pudo encontrar la página que está buscando.",
+  "notFound-header-h1": "404",
+  "notFound-header-h2": "Página no encontrada.",
   "Registration-register": "Registrate Con Nosotras",
   "Registration-name": "Nombre",
   "Registration-submit": "Enviar"
