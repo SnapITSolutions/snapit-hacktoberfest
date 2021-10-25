@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "./styles.css";
 
 import {
@@ -13,16 +12,18 @@ import {
 
 const Projects = () => {
   const [fetchedData, setfetchedData] = useState([]);
-
-  const fetchData = async () => {
-    const { data } = await axios.get(
-      "https://api.github.com/search/repositories?q=stars:>100000&per_page=6"
-    );
-    setfetchedData(data);
-  };
-
   useEffect(() => {
-    fetchData();
+    fetch(
+      "https://api.github.com/search/repositories?q=stars:>100000&per_page=6"
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw response;
+      })
+      .then((data) => setfetchedData(data))
+      .catch((error) => console.error("Error fetching data", error));
   }, []);
 
   return (
@@ -44,7 +45,7 @@ const Projects = () => {
           style={{ marginTop: "30px" }}
         >
           {fetchedData.items.map((item) => (
-            <Card className="card" sx={{ maxWidth: 440 }} id={item.id}>
+            <Card className="card" sx={{ maxWidth: 440 }} key={item.id}>
               <CardMedia
                 component="img"
                 height="240"
