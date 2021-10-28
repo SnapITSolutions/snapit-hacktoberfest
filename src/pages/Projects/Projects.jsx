@@ -26,6 +26,8 @@ const Projects = () => {
       .catch((error) => console.error("Error fetching data", error));
   }, []);
 
+  console.log(fetchedData);
+
   return (
     <>
       <Typography variant="h2" gutterBottom>
@@ -38,12 +40,7 @@ const Projects = () => {
           </CardActions>
         </Grid>
       ) : (
-        <Grid
-          className="grid"
-          container
-          spacing={10}
-          style={{ marginTop: "30px" }}
-        >
+        <Grid className="grid" container spacing={10}>
           {fetchedData.items.map((item) => (
             <Card className="card" sx={{ maxWidth: 440 }} key={item.id}>
               <CardMedia
@@ -72,7 +69,7 @@ const Projects = () => {
                     variant="contained"
                     type="button"
                     size="small"
-                    href={item.homepage}
+                    href={item.html_url}
                   >
                     Github
                   </Button>
