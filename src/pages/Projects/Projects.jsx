@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-
 import {
   Grid,
   Typography,
@@ -25,8 +24,6 @@ const Projects = () => {
       .then((data) => setfetchedData(data))
       .catch((error) => console.error("Error fetching data", error));
   }, []);
-
-  console.log(fetchedData);
 
   return (
     <>
