@@ -1,0 +1,26 @@
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px !important;
+  margin-left: 0 !important;
+}
+
+.card {
+  margin: 15px;
+}
+
+.body {
+  margin: 10px;
+}
+
+.button {
+  transition: 0.3s ease-in-out !important;
+  margin-top: 20px !important;
+  margin-right: 20px !important;
+}
+
+.button:hover {
+  background-color: #b53a25 !important;
+  letter-spacing: 3px !important;
+}
